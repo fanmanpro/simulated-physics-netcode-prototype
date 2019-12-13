@@ -1,0 +1,155 @@
+syntax = "proto3";
+import "google/protobuf/any.proto";
+
+package gamedata;
+
+message Packet {
+    Header.OpCode opCode = 1;
+    google.protobuf.Any data = 2;
+    string cid = 3;
+}
+
+message ClientSeat {
+    // CID of client that is assigned to this seat
+    string owner = 1;
+    // GUID of the object this seat is on
+    string guid = 2;
+}
+
+//message ClientJoin {
+//    string owns = 1;
+//}
+//
+//message SimulationJoin {
+//}
+
+//message ClientConnection {
+//    // id of client to accept packets from
+//    string ID = 1;
+//    // address of the client packets should be coming from
+//    string address = 2;
+//}
+
+//message ClientOnline {
+//    string name = 1;
+//}
+
+message GameServerOnline {
+    string secret = 1;
+    string region = 2;
+    int32 capacity = 3;
+}
+
+//message GameServerStart {
+//    string ID = 1;
+//    repeated ClientConnection clients = 2;
+//}
+//
+//message ClientGameFound {
+//    string ID = 1;
+//}
+//
+//message ClientGameRequest {
+//    string region = 1;
+//}
+//
+//message ClientGameCancel {
+//}
+
+// message NewClientGameObject {
+//    int32 ID = 1;
+//    Prefab prefab = 2;
+//}
+//
+// message NewGameObject {
+//    int32 ID = 1;
+//    Prefab prefab = 2;
+//}
+//
+message SimulationState {
+    repeated GameObject transforms = 1;
+    repeated Rigidbody rigidBodies = 2;
+}
+
+message GameObject {
+    string ID = 1;
+    Prefab Prefab = 2;
+    Vector2 position = 3;
+    float rotation = 4;
+}
+
+message Rigidbody {
+    string ID = 1;
+    Prefab Prefab = 2;
+    Vector2 position = 3;
+    float rotation = 4;
+    Vector2 velocity = 5;
+}
+
+message Velocity {
+    string ID = 1;
+    float x = 2;
+    float y = 3;
+}
+
+message Position {
+    string ID = 1;
+    float x = 2;
+    float y = 3;
+}
+
+message Force {
+    string ID = 1;
+    float x = 2;
+    float y = 3;
+    ForceMode forceMode = 4;
+    enum ForceMode {
+        Force = 0;
+        Impulse = 1;
+    }
+}
+
+message Vector2 {
+    float x = 1;
+    float y = 2;
+}
+
+message Header {
+    // this is a connection id that expires once the coordinator connection is
+    // lost
+    enum OpCode {
+        Invalid = 0;
+
+        // Bi-directionally inform a connection closure
+        ClientDisconnect = 100;
+        // Connection is established, not client asks to be accepted
+        ClientAppeal = 101;
+        // Server trusts client, so inform client
+        ClientTrust = 102;
+
+        ClientDatagramAddress = 104;
+
+        // Partial seat packet sent to simulation, complete packet sent in return to ALL player clients
+        ClientSeat = 103;
+
+        // Current context of simulated objects at a certain time
+        Context = 200;
+
+        // Object creation
+        GameObject = 300;
+        Rigidbody = 301;
+
+        // Object updates
+        Position = 400;
+        Rotation = 401;
+        Scale = 402;
+
+        Velocity = 403;
+        Force = 404;
+    }
+}
+
+enum Prefab {
+    Invalid = 0;
+    DemoBox = 1;
+}

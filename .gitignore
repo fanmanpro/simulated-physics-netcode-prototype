@@ -1,0 +1,12 @@
+/*
+/*/
+
+# root files
+!.gitignore
+!LICENCE
+!README.md
+
+# folders
+!/Assets/
+!/ProjectSettings/
+!/Packages/
