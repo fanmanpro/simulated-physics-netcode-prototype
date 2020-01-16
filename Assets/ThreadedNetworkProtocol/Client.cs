@@ -15,6 +15,7 @@ namespace ThreadedNetworkProtocol
 		public bool SimulationClient = false;
 
 		public SeatManager SeatManager;
+		public ContextManager ContextManager;
 		public string ClientID;
 
 		public int Port;
@@ -34,13 +35,10 @@ namespace ThreadedNetworkProtocol
 
 		private void Awake()
 		{
-			packetHandler = new PacketHandler(SeatManager, this);
+			packetHandler = new PacketHandler(SeatManager, ContextManager, this);
 			WSClientState = new ClientState();
-			WSClientState.SimulationClient = SimulationClient;
 			TCPClientState = new ClientState();
-			TCPClientState.SimulationClient = SimulationClient;
 			UDPClientState = new ClientState();
-			UDPClientState.SimulationClient = SimulationClient;
 			//WSTryConnect();
 
 			// somehow add this in the build command
@@ -66,7 +64,7 @@ namespace ThreadedNetworkProtocol
 				if (string.IsNullOrEmpty(ClientID))
 				{
 #if UNITY_EDITOR
-					ClientID = "simtest";
+					ClientID = "sim";
 #else
 					Debug.LogError("No +clientID command line argument provided for simulation client");
 					return;
@@ -95,7 +93,7 @@ namespace ThreadedNetworkProtocol
 			var err = TCPRemoteEndPoint.Initialize();
 			if (err != null) { Debug.LogError(err); return; }
 
-			tcpClient = new TCPClient(TCPRemoteEndPoint, TCPClientState, packetHandler);
+			tcpClient = new TCPClient(Port, TCPRemoteEndPoint, TCPClientState, packetHandler);
 			// this blocks but the main thread still goes on so Unity continues as normal
 			err = await tcpClient.Connect();
 			if (err != null) { Debug.LogError(err); return; }

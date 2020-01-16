@@ -21,9 +21,9 @@ public class TCPClient : IClient
 
 	private PacketHandler packetHandler;
 
-	public TCPClient(ClientEndPoint c, ClientState cs, PacketHandler p)
+	public TCPClient(int port, ClientEndPoint c, ClientState cs, PacketHandler p)
 	{
-		tcpClient = new TcpClient();
+		tcpClient = new TcpClient(new IPEndPoint(new IPAddress(0), port));
 		packetHandler = p;
 
 		remoteEndPoint = c;
@@ -134,7 +134,6 @@ public class TCPClient : IClient
 			clientState.Connecting = false;
 			clientState.Connected = false;
 			clientState.Listening = false;
-			Debug.LogError(n);
 			return new Error("[TCP] Client connection was forcibly closed.\n" + n.Message);
 		}
 		clientState.Listening = false;

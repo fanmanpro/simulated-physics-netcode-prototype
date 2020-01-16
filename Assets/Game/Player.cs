@@ -12,22 +12,22 @@ public class Player: MonoBehaviour
 
 	void FixedUpdate()
 	{
-		if (stop)
-		{
-			rb.Velocity = new Vector2 { x = 0, y = 0 };
-			stop = false;
-		}
-		else
-		{
-			if (up)
-			{
-				rb.Velocity = new Vector2 { x = 0, y = 3 };
-			}
-			else if (down)
-			{
-				rb.Velocity = new Vector2 { x = 0, y = -3 };
-			}
-		}
+		//if (stop)
+		//{
+		//	rb.Velocity = new Vector2 { x = 0, y = 0 };
+		//	stop = false;
+		//}
+		//else
+		//{
+		//	if (up)
+		//	{
+		//		rb.Velocity = new Vector2 { x = 0, y = 3 };
+		//	}
+		//	else if (down)
+		//	{
+		//		rb.Velocity = new Vector2 { x = 0, y = -3 };
+		//	}
+		//}
 	}
 
 	void Update()

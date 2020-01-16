@@ -113,12 +113,12 @@ public class UDPClient : IClient
 				//	}
 			}
 		}
-		catch
+		catch (Exception n)
 		{
 			clientState.Connecting = false;
 			clientState.Connected = false;
 			clientState.Listening = false;
-			return new Error("[UDP] Client connection was forcibly closed");
+			return new Error("[UDP] Client connection was forcibly closed: " + n);
 		}
 		clientState.Listening = false;
 		return null;

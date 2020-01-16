@@ -29,35 +29,35 @@ namespace Gamedata {
             "LkhlYWRlci5PcENvZGUSIgoEZGF0YRgCIAEoCzIULmdvb2dsZS5wcm90b2J1",
             "Zi5BbnkSCwoDY2lkGAMgASgJIikKCkNsaWVudFNlYXQSDQoFb3duZXIYASAB",
             "KAkSDAoEZ3VpZBgCIAEoCSJEChBHYW1lU2VydmVyT25saW5lEg4KBnNlY3Jl",
-            "dBgBIAEoCRIOCgZyZWdpb24YAiABKAkSEAoIY2FwYWNpdHkYAyABKAUiZQoP",
-            "U2ltdWxhdGlvblN0YXRlEigKCnRyYW5zZm9ybXMYASADKAsyFC5nYW1lZGF0",
-            "YS5HYW1lT2JqZWN0EigKC3JpZ2lkQm9kaWVzGAIgAygLMhMuZ2FtZWRhdGEu",
-            "UmlnaWRib2R5InEKCkdhbWVPYmplY3QSCgoCSUQYASABKAkSIAoGUHJlZmFi",
-            "GAIgASgOMhAuZ2FtZWRhdGEuUHJlZmFiEiMKCHBvc2l0aW9uGAMgASgLMhEu",
-            "Z2FtZWRhdGEuVmVjdG9yMhIQCghyb3RhdGlvbhgEIAEoAiKVAQoJUmlnaWRi",
-            "b2R5EgoKAklEGAEgASgJEiAKBlByZWZhYhgCIAEoDjIQLmdhbWVkYXRhLlBy",
-            "ZWZhYhIjCghwb3NpdGlvbhgDIAEoCzIRLmdhbWVkYXRhLlZlY3RvcjISEAoI",
-            "cm90YXRpb24YBCABKAISIwoIdmVsb2NpdHkYBSABKAsyES5nYW1lZGF0YS5W",
-            "ZWN0b3IyIiwKCFZlbG9jaXR5EgoKAklEGAEgASgJEgkKAXgYAiABKAISCQoB",
-            "eRgDIAEoAiIsCghQb3NpdGlvbhIKCgJJRBgBIAEoCRIJCgF4GAIgASgCEgkK",
-            "AXkYAyABKAIifAoFRm9yY2USCgoCSUQYASABKAkSCQoBeBgCIAEoAhIJCgF5",
-            "GAMgASgCEiwKCWZvcmNlTW9kZRgEIAEoDjIZLmdhbWVkYXRhLkZvcmNlLkZv",
-            "cmNlTW9kZSIjCglGb3JjZU1vZGUSCQoFRm9yY2UQABILCgdJbXB1bHNlEAEi",
-            "HwoHVmVjdG9yMhIJCgF4GAEgASgCEgkKAXkYAiABKAIi+AEKBkhlYWRlciLt",
-            "AQoGT3BDb2RlEgsKB0ludmFsaWQQABIUChBDbGllbnREaXNjb25uZWN0EGQS",
-            "EAoMQ2xpZW50QXBwZWFsEGUSDwoLQ2xpZW50VHJ1c3QQZhIZChVDbGllbnRE",
-            "YXRhZ3JhbUFkZHJlc3MQaBIOCgpDbGllbnRTZWF0EGcSDAoHQ29udGV4dBDI",
-            "ARIPCgpHYW1lT2JqZWN0EKwCEg4KCVJpZ2lkYm9keRCtAhINCghQb3NpdGlv",
-            "bhCQAxINCghSb3RhdGlvbhCRAxIKCgVTY2FsZRCSAxINCghWZWxvY2l0eRCT",
-            "AxIKCgVGb3JjZRCUAyoiCgZQcmVmYWISCwoHSW52YWxpZBAAEgsKB0RlbW9C",
-            "b3gQAWIGcHJvdG8z"));
+            "dBgBIAEoCRIOCgZyZWdpb24YAiABKAkSEAoIY2FwYWNpdHkYAyABKAUiXQoH",
+            "Q29udGV4dBIoCgp0cmFuc2Zvcm1zGAEgAygLMhQuZ2FtZWRhdGEuR2FtZU9i",
+            "amVjdBIoCgtyaWdpZEJvZGllcxgCIAMoCzITLmdhbWVkYXRhLlJpZ2lkYm9k",
+            "eSJxCgpHYW1lT2JqZWN0EgoKAklEGAEgASgJEiAKBlByZWZhYhgCIAEoDjIQ",
+            "LmdhbWVkYXRhLlByZWZhYhIjCghwb3NpdGlvbhgDIAEoCzIRLmdhbWVkYXRh",
+            "LlZlY3RvcjISEAoIcm90YXRpb24YBCABKAIilQEKCVJpZ2lkYm9keRIKCgJJ",
+            "RBgBIAEoCRIgCgZQcmVmYWIYAiABKA4yEC5nYW1lZGF0YS5QcmVmYWISIwoI",
+            "cG9zaXRpb24YAyABKAsyES5nYW1lZGF0YS5WZWN0b3IyEhAKCHJvdGF0aW9u",
+            "GAQgASgCEiMKCHZlbG9jaXR5GAUgASgLMhEuZ2FtZWRhdGEuVmVjdG9yMiIs",
+            "CghWZWxvY2l0eRIKCgJJRBgBIAEoCRIJCgF4GAIgASgCEgkKAXkYAyABKAIi",
+            "LAoIUG9zaXRpb24SCgoCSUQYASABKAkSCQoBeBgCIAEoAhIJCgF5GAMgASgC",
+            "InwKBUZvcmNlEgoKAklEGAEgASgJEgkKAXgYAiABKAISCQoBeRgDIAEoAhIs",
+            "Cglmb3JjZU1vZGUYBCABKA4yGS5nYW1lZGF0YS5Gb3JjZS5Gb3JjZU1vZGUi",
+            "IwoJRm9yY2VNb2RlEgkKBUZvcmNlEAASCwoHSW1wdWxzZRABIh8KB1ZlY3Rv",
+            "cjISCQoBeBgBIAEoAhIJCgF5GAIgASgCIvgBCgZIZWFkZXIi7QEKBk9wQ29k",
+            "ZRILCgdJbnZhbGlkEAASFAoQQ2xpZW50RGlzY29ubmVjdBBkEhAKDENsaWVu",
+            "dEFwcGVhbBBlEg8KC0NsaWVudFRydXN0EGYSGQoVQ2xpZW50RGF0YWdyYW1B",
+            "ZGRyZXNzEGgSDgoKQ2xpZW50U2VhdBBnEgwKB0NvbnRleHQQyAESDwoKR2Ft",
+            "ZU9iamVjdBCsAhIOCglSaWdpZGJvZHkQrQISDQoIUG9zaXRpb24QkAMSDQoI",
+            "Um90YXRpb24QkQMSCgoFU2NhbGUQkgMSDQoIVmVsb2NpdHkQkwMSCgoFRm9y",
+            "Y2UQlAMqIgoGUHJlZmFiEgsKB0ludmFsaWQQABILCgdEZW1vQm94EAFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Gamedata.Prefab), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Gamedata.Packet), global::Gamedata.Packet.Parser, new[]{ "OpCode", "Data", "Cid" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Gamedata.ClientSeat), global::Gamedata.ClientSeat.Parser, new[]{ "Owner", "Guid" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Gamedata.GameServerOnline), global::Gamedata.GameServerOnline.Parser, new[]{ "Secret", "Region", "Capacity" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Gamedata.SimulationState), global::Gamedata.SimulationState.Parser, new[]{ "Transforms", "RigidBodies" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Gamedata.Context), global::Gamedata.Context.Parser, new[]{ "Transforms", "RigidBodies" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Gamedata.GameObject), global::Gamedata.GameObject.Parser, new[]{ "ID", "Prefab", "Position", "Rotation" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Gamedata.Rigidbody), global::Gamedata.Rigidbody.Parser, new[]{ "ID", "Prefab", "Position", "Rotation", "Velocity" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Gamedata.Velocity), global::Gamedata.Velocity.Parser, new[]{ "ID", "X", "Y" }, null, null, null),
@@ -629,11 +629,11 @@ namespace Gamedata {
   ///    Prefab prefab = 2;
   ///}
   /// </summary>
-  public sealed partial class SimulationState : pb::IMessage<SimulationState> {
-    private static readonly pb::MessageParser<SimulationState> _parser = new pb::MessageParser<SimulationState>(() => new SimulationState());
+  public sealed partial class Context : pb::IMessage<Context> {
+    private static readonly pb::MessageParser<Context> _parser = new pb::MessageParser<Context>(() => new Context());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<SimulationState> Parser { get { return _parser; } }
+    public static pb::MessageParser<Context> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -646,22 +646,22 @@ namespace Gamedata {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public SimulationState() {
+    public Context() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public SimulationState(SimulationState other) : this() {
+    public Context(Context other) : this() {
       transforms_ = other.transforms_.Clone();
       rigidBodies_ = other.rigidBodies_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public SimulationState Clone() {
-      return new SimulationState(this);
+    public Context Clone() {
+      return new Context(this);
     }
 
     /// <summary>Field number for the "transforms" field.</summary>
@@ -686,11 +686,11 @@ namespace Gamedata {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as SimulationState);
+      return Equals(other as Context);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(SimulationState other) {
+    public bool Equals(Context other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -739,7 +739,7 @@ namespace Gamedata {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(SimulationState other) {
+    public void MergeFrom(Context other) {
       if (other == null) {
         return;
       }

@@ -665,6 +665,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &350744130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 350744132}
+  - component: {fileID: 350744131}
+  m_Layer: 0
+  m_Name: ContextManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &350744131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350744130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7564c3cef37679f4b86f6786650abe53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &350744132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350744130}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 8.526866, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &369231175
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,6 +804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c92ea2dfe0c1b4d813ba3d7297b84b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
 --- !u!114 &369231179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -802,7 +846,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369231175}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -2846,8 +2890,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimulationClient: 0
   SeatManager: {fileID: 643715295}
+  ContextManager: {fileID: 350744131}
   ClientID: abc
-  Port: 9999
+  Port: 9738
   WSRemoteEndPoint:
     IPAddress: 127.0.0.1
     Port: 1540
@@ -2858,25 +2903,25 @@ MonoBehaviour:
     IPAddress: 127.0.0.1
     Port: 1542
   WSClientState:
-    SimulationClient: 0
     Connecting: 0
     Connected: 0
+    Trusted: 0
     Listening: 0
     Transmitting: 0
     Disconnecting: 0
     Disconnected: 0
   TCPClientState:
-    SimulationClient: 0
     Connecting: 0
     Connected: 0
+    Trusted: 0
     Listening: 0
     Transmitting: 0
     Disconnecting: 0
     Disconnected: 0
   UDPClientState:
-    SimulationClient: 0
     Connecting: 0
     Connected: 0
+    Trusted: 0
     Listening: 0
     Transmitting: 0
     Disconnecting: 0

@@ -7,8 +7,6 @@ namespace ThreadedNetworkProtocol
 	[Serializable]
 	public class ClientState
 	{
-		public bool SimulationClient;
-
 		public bool Connecting;
 		public bool Connected;
 		public bool Trusted;

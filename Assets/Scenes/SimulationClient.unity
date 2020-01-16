@@ -293,6 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c92ea2dfe0c1b4d813ba3d7297b84b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidbody: {fileID: 0}
 --- !u!114 &369231179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -775,6 +776,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858580673}
   m_CullTransparentMesh: 0
+--- !u!1 &875783845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 875783847}
+  - component: {fileID: 875783846}
+  m_Layer: 0
+  m_Name: ContextBroadcaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &875783846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875783845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a71da40a967f14ea27efb2d8ac29fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  client: {fileID: 1335207352}
+  started: 1
+  MaxPacketSize: 32768
+  MaxObjects: 32
+  FullSimulationStatePacketSize: 768
+--- !u!4 &875783847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875783845}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 8.526866, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &964426154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,8 +1219,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimulationClient: 1
   SeatManager: {fileID: 643715295}
-  ClientID: abc
-  Port: 9998
+  ContextManager: {fileID: 0}
+  ClientID: 
+  Port: 9737
   WSRemoteEndPoint:
     IPAddress: 127.0.0.1
     Port: 1540
@@ -1180,27 +1230,27 @@ MonoBehaviour:
     Port: 1541
   UDPRemoteEndPoint:
     IPAddress: 127.0.0.1
-    Port: 1543
+    Port: 1541
   WSClientState:
-    SimulationClient: 0
     Connecting: 0
     Connected: 0
+    Trusted: 0
     Listening: 0
     Transmitting: 0
     Disconnecting: 0
     Disconnected: 0
   TCPClientState:
-    SimulationClient: 0
     Connecting: 0
     Connected: 0
+    Trusted: 0
     Listening: 0
     Transmitting: 0
     Disconnecting: 0
     Disconnected: 0
   UDPClientState:
-    SimulationClient: 0
     Connecting: 0
     Connected: 0
+    Trusted: 0
     Listening: 0
     Transmitting: 0
     Disconnecting: 0

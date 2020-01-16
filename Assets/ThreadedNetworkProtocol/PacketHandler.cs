@@ -8,6 +8,7 @@ namespace ThreadedNetworkProtocol
 		private Client client;
 
 		private SeatManager seatManager;
+		private ContextManager contextManager;
 
 		public delegate void ClientTrustHandler(Gamedata.Packet p);
 		public event ClientTrustHandler ClientTrust;
@@ -18,10 +19,11 @@ namespace ThreadedNetworkProtocol
 		public delegate void ContextHandler(Gamedata.Packet p);
 		public event ContextHandler Context;
 
-		public PacketHandler(SeatManager s, Client c)
+		public PacketHandler(SeatManager s, ContextManager cm, Client c)
 		{
 			client = c;
 			seatManager = s;
+			contextManager = cm;
 			ClientTrust += clientTrust;
 			ClientSeat += clientSeat;
 			Context += context;
@@ -58,7 +60,7 @@ namespace ThreadedNetworkProtocol
 				});
 				yield return new WaitForSeconds(1);
 				//if (client.UDPClientState.Trusted)
-					break;
+				break;
 			}
 		}
 
@@ -84,13 +86,48 @@ namespace ThreadedNetworkProtocol
 		private void context(Gamedata.Packet packet)
 		{
 			Debug.Log("[GAM] [Context]");
-			//Gamedata.Conte clientSeat;
-			//if (!packet.Data.TryUnpack(out clientSeat))
-			//{
-			//	Debug.Log("[GAM] [ClientSeat] Failed");
-			//	return;
-			//}
-			//seatManager.AssignSeatByGUID(clientSeat.Owner, clientSeat.Guid);
+			Gamedata.Context context;
+			if (!packet.Data.TryUnpack(out context))
+			{
+				Debug.Log("[GAM] [ClientSeat] Failed");
+				return;
+			}
+			foreach (Gamedata.Rigidbody rbMessage in context.RigidBodies)
+			{
+				NetSynced.Rigidbody2D rb;
+				if (contextManager.rigidbodiesByGUID.TryGetValue(rbMessage.ID, out rb))
+				{
+					rb.rigidbody.position = rbMessage.Position.ToUnityVector();
+					rb.rigidbody.velocity = rbMessage.Velocity.ToUnityVector();
+					rb.rigidbody.rotation = rbMessage.Rotation;
+			Debug.Log("[GAM] [Context] " + rb.rigidbody.position);
+				}
+				//if (!gameServer.GameObjectByGUID.TryGetValue(rbMessage.ID, out go))
+				//{
+				//	Debug.Log("Couldn't find object by GUID " + rbMessage.ID);
+				//	// or maybe it just doesn't exist yet. so create it?
+				//	//if (go == null)
+				//	//{
+				//	//	// create it first if it wasn't found
+				//	//	GameObject prefab = GameObjectFactory.GameObjectOfPrefab(forceMessage.Prefab);
+				//	//	go = Instantiate(prefab);
+				//	//	go.name = forceMessage.ID;
+				//	//}
+				//	return;
+				//}
+
+				////NetSynced.Rigidbody2D rb = go.GetComponent<NetSynced.Rigidbody2D>();
+				////rb.AddForce(new Vector2(forceMessage.X, forceMessage.Y), (ForceMode2D)(int)forceMessage.ForceMode, false);
+
+				////GameObject go = GameObject.Find(rbMessage.ID);
+				////if (go == null)
+				////{
+				////	// create it first
+				////	GameObject prefab = GameObjectFactory.GameObjectOfPrefab(rbMessage.Prefab);
+				////	go = Instantiate(prefab);
+				////	go.name = rbMessage.ID;
+				////}
+			}
 		}
 	}
 }
