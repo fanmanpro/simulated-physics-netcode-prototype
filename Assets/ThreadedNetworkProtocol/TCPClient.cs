@@ -15,11 +15,14 @@ using UnityEngine;
 public class TCPClient : IClient
 {
 	private TcpClient tcpClient;
+	private CancellationTokenSource cts;
 	private ClientEndPoint remoteEndPoint;
 
 	private ClientState clientState;
 
 	private PacketHandler packetHandler;
+
+	public bool Active => clientState.Connected && clientState.Trusted;
 
 	public TCPClient(int port, ClientEndPoint c, ClientState cs, PacketHandler p)
 	{
@@ -37,105 +40,98 @@ public class TCPClient : IClient
 		if (clientState.Connecting) return new Error("[TCP] Client already busy connecting");
 		//if (clientWebSocket.State == WebSocketState.Open) return new Error("[TCP] Client socket open but state not connected");
 
-		using (CancellationTokenSource cts = new CancellationTokenSource())
+		cts = new CancellationTokenSource();
+		clientState.Connecting = true;
+		try
 		{
-			clientState.Connecting = true;
-			try
-			{
-				await tcpClient.ConnectAsync(remoteEndPoint.IPEndPoint.Address, remoteEndPoint.IPEndPoint.Port);
-				clientState.Connecting = false;
-				if (!tcpClient.Connected) return new Error("[TCP] Client connected but weird that the socket state is stil not connected");
-				// all good
-				clientState.Connected = true;
-				return null;
-			}
-			catch
-			{
-				clientState.Connecting = false;
-				return new Error("[TCP] Client failed to connect to remote server");
-			}
+			await tcpClient.ConnectAsync(remoteEndPoint.IPEndPoint.Address, remoteEndPoint.IPEndPoint.Port);
+			clientState.Connecting = false;
+			if (!tcpClient.Connected) return new Error("[TCP] Client connected but weird that the socket state is stil not connected");
+			// all good
+			clientState.Connected = true;
+			return null;
+		}
+		catch (Exception n)
+		{
+			clientState.Connecting = false;
+			return new Error("[TCP] Client failed to connect to remote server: " + n);
 		}
 	}
 
 	public Error Disconnect()
 	{
-		throw new System.NotImplementedException();
+		if (!tcpClient.Connected) return new Error("[TCP] Client tried to disconnect but connection was already closed.");
+		
+		clientState.Connected = false;
+		clientState.Connecting = false;
+		clientState.Disconnected = false;
+		clientState.Disconnecting = false;
+		clientState.Listening = false;
+		clientState.Transmitting = false;
+		clientState.Trusted = false;
+
+		//tcpClient.Close();
+		cts.Cancel();
+		//tcpClient.Dispose();
+		//tcpClient.Dispose();
+
+		return null;
 	}
 
 	public async Task<Error> Send(Gamedata.Packet packet)
 	{
-		using (CancellationTokenSource cts = new CancellationTokenSource())
+		try
 		{
-			try
-			{
-				SocketAsyncEventArgs e = new SocketAsyncEventArgs();
-				byte[] p = packet.ToByteArray();
-				e.SetBuffer(p, 0, p.Length);
-				e.Completed += new EventHandler<SocketAsyncEventArgs>(SendCallback);
+			SocketAsyncEventArgs e = new SocketAsyncEventArgs();
+			byte[] p = packet.ToByteArray();
+			e.SetBuffer(p, 0, p.Length);
 
-				if (tcpClient.Client.SendAsync(e))
-				{
-					Debug.LogFormat("[TCP] Wrote {0} bytes for {1}", p.Length, tcpClient.Client.RemoteEndPoint.ToString());
-					return null;
-				}
-				else
-				{
-					return new Error("[TCP] Client failed to send packet");
-				}
+			if (tcpClient.Client.SendAsync(e))
+			{
+				Debug.LogFormat("[TCP] Wrote {0} bytes for {1}", p.Length, tcpClient.Client.RemoteEndPoint.ToString());
+				return null;
 			}
-			catch
+			else
 			{
 				return new Error("[TCP] Client failed to send packet");
 			}
 		}
-	}
-
-	private void SendCallback(object sender, SocketAsyncEventArgs e)
-	{
-		if (e.SocketError == SocketError.Success)
+		catch
 		{
-			// You may need to specify some type of state and 
-			// pass it into the BeginSend method so you don't start
-			// sending from scratch
-			//BeginSend();
-		}
-		else
-		{
-			//Console.WriteLine("Socket Error: {0} when sending to {1}",
-			//	   e.SocketError,
-			//	   _asyncTask.Host);
+			return new Error("[TCP] Client failed to send packet");
 		}
 	}
 
 	public async Task<Error> Listen()
 	{
-		try
+		//try
+		//{
+		NetworkStream stream = tcpClient.GetStream();
+
+		while (!cts.IsCancellationRequested)
 		{
-			using (NetworkStream stream = tcpClient.GetStream())
+			byte[] buffer = new byte[1024];
+			int read = await stream?.ReadAsync(buffer, 0, buffer.Length);
+			if (read > 0)
 			{
-				while (tcpClient.Connected)
+				Gamedata.Packet packet = Gamedata.Packet.Parser.ParseFrom(buffer.Take(read).ToArray());
+				if (packet.OpCode != Gamedata.Header.Types.OpCode.Invalid)
 				{
-					byte[] buffer = new byte[1024];
-					int read = await stream.ReadAsync(buffer, 0, buffer.Length);
-					if (read > 0)
-					{
-						Gamedata.Packet packet = Gamedata.Packet.Parser.ParseFrom(buffer.Take(read).ToArray());
-						if (packet.OpCode != Gamedata.Header.Types.OpCode.Invalid) {
-							packetHandler.Handle(packet);
-						}
-						//Debug.Log(packet.OpCode);
-						// you have received a message, do something with it
-					}
+					packetHandler.Handle(packet);
 				}
+				//Debug.Log(packet.OpCode);
+				// you have received a message, do something with it
 			}
 		}
-		catch (Exception n)
-		{
-			clientState.Connecting = false;
-			clientState.Connected = false;
-			clientState.Listening = false;
-			return new Error("[TCP] Client connection was forcibly closed.\n" + n.Message);
-		}
+
+		//}
+		//catch (Exception n)
+		//{
+		//	clientState.Connecting = false;
+		//	clientState.Connected = false;
+		//	clientState.Listening = false;
+		//	return new Error("[TCP] Client connection was forcibly closed.\n" + n.Message);
+		//}
 		clientState.Listening = false;
 		return null;
 	}

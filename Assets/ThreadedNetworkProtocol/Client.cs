@@ -131,6 +131,10 @@ namespace ThreadedNetworkProtocol
 				break;
 				case PacketType.Important:
 				{
+					if (!tcpClient.Active)
+					{
+						return;
+					}
 					packet.Cid = ClientID;
 					await tcpClient.Send(packet);
 					Debug.Log("[TCP] Sent packet");
@@ -138,9 +142,13 @@ namespace ThreadedNetworkProtocol
 				break;
 				case PacketType.Unreliable:
 				{
+					if (udpClient?.Active ?? true)
+					{
+						return;
+					}
 					packet.Cid = ClientID;
 					await udpClient.Send(packet);
-					Debug.Log("[UDP] Sent packet");
+					//Debug.Log("[UDP] Sent packet");
 					//Debug.Log("[UDP] TODO TODO TODO TODO Sent test packet");
 				}
 				break;
@@ -171,6 +179,13 @@ namespace ThreadedNetworkProtocol
 				}
 				break;
 			}
+		}
+
+		private void OnDestroy()
+		{
+			if (TCPClientState.Connected) tcpClient.Disconnect();
+			if (UDPClientState.Connected) udpClient.Disconnect();
+			if (WSClientState.Connected) wsClient.Disconnect();
 		}
 	}
 	[Serializable]

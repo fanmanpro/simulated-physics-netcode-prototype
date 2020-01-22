@@ -31,18 +31,16 @@ namespace ThreadedNetworkProtocol
 				{
 					seatsByCID.Add(cid, seat);
 					seat.Assigned = true;
-					if (client.SimulationClient)
+					client.Send(PacketType.Important, new Gamedata.Packet
 					{
-						client.Send(PacketType.Important, new Gamedata.Packet
+						OpCode = Gamedata.Header.Types.OpCode.ClientSeat,
+						Data = Any.Pack(new Gamedata.ClientSeat
 						{
-							OpCode = Gamedata.Header.Types.OpCode.ClientSeat,
-							Data = Any.Pack(new Gamedata.ClientSeat
-							{
-								Owner = cid,
-								Guid = seat.GUID,
-							})
-						});
-					}
+							Owner = cid,
+							Guid = seat.GUID,
+						})
+					});
+					return;
 				}
 			}
 		}
@@ -59,23 +57,26 @@ namespace ThreadedNetworkProtocol
 			{
 				seatsByCID.Add(cid, seat);
 				seat.Assigned = true;
-#if SIMULATION
-				client.Send(PacketType.Important, new Gamedata.Packet
+				if (client.SimulationClient)
 				{
-					OpCode = Gamedata.Header.Types.OpCode.ClientSeat,
-					Data = Any.Pack(new Gamedata.ClientSeat
+					client.Send(PacketType.Important, new Gamedata.Packet
 					{
-						Owner = cid,
-						Guid = guid,
-					})
-				});
-#else
-				if (client.ClientID == cid)
-				{
-					seat.gameObject.AddComponent(seat.LocalPlayerComponent);
-					//seat.AddComponent<client.Local
+						OpCode = Gamedata.Header.Types.OpCode.ClientSeat,
+						Data = Any.Pack(new Gamedata.ClientSeat
+						{
+							Owner = cid,
+							Guid = guid,
+						})
+					});
 				}
-#endif
+				else
+				{
+					if (client.ClientID == cid)
+					{
+						seat.gameObject.AddComponent(seat.LocalPlayerComponent);
+						//seat.AddComponent<client.Local
+					}
+				}
 			};
 		}
 	}

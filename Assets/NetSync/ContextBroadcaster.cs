@@ -1,16 +1,14 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using System.Collections;
-using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using ThreadedNetworkProtocol;
 
 public class ContextBroadcaster : MonoBehaviour
 {
 	public Client client;
 	private List<NetSynced.Rigidbody2D> rigidbodies;
-	public bool started = false;
+	public bool Started = false;
 
 	// these are in bytes, and 32768 is 32KiB
 	public float MaxPacketSize = 32768;
@@ -22,11 +20,12 @@ public class ContextBroadcaster : MonoBehaviour
 	public float FullSimulationStatePacketSize = 768;
 	void FixedUpdate()
 	{
-
+		prepareContext();
 	}
 
 	void Start()
 	{
+		Application.targetFrameRate = 60;
 		rigidbodies = new List<NetSynced.Rigidbody2D>();
 		foreach (GameObject rootGameObject in gameObject.scene.GetRootGameObjects())
 		{
@@ -37,8 +36,8 @@ public class ContextBroadcaster : MonoBehaviour
 
 	IEnumerator awaitStart()
 	{
-		yield return new WaitUntil(() => { return started; });
-		InvokeRepeating("prepareContext", 0, 0.0156f);
+		yield return new WaitUntil(() => { return Started; });
+		//InvokeRepeating("prepareContext", 0, 0.3333f);
 	}
 
 	void prepareContext()

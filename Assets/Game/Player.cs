@@ -2,7 +2,6 @@
 
 public class Player: MonoBehaviour
 {
-#if !UNITY_HEADLESS
 	private NetSynced.Rigidbody2D rb;
 	private bool up = false, down = false, stop = false;
 	void Start()
@@ -54,5 +53,4 @@ public class Player: MonoBehaviour
 			stop = true;
 		}
 	}
-#endif
 }

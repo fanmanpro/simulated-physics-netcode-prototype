@@ -68,7 +68,7 @@ namespace ThreadedNetworkProtocol
 		{
 			if (client.SimulationClient)
 			{
-				Debug.Log("[SIM] [ClientSeat]");
+				Debug.LogFormat("[SIM] [ClientSeat] [{0}]", packet.Cid);
 				seatManager.AssignSeatByAvailability(packet.Cid);
 			}
 			else
@@ -85,7 +85,7 @@ namespace ThreadedNetworkProtocol
 		}
 		private void context(Gamedata.Packet packet)
 		{
-			Debug.Log("[GAM] [Context]");
+			//Debug.Log("[GAM] [Context]");
 			Gamedata.Context context;
 			if (!packet.Data.TryUnpack(out context))
 			{
@@ -100,33 +100,8 @@ namespace ThreadedNetworkProtocol
 					rb.rigidbody.position = rbMessage.Position.ToUnityVector();
 					rb.rigidbody.velocity = rbMessage.Velocity.ToUnityVector();
 					rb.rigidbody.rotation = rbMessage.Rotation;
-			Debug.Log("[GAM] [Context] " + rb.rigidbody.position);
+					//Debug.Log("[GAM] [Context] " + rb.rigidbody.position);
 				}
-				//if (!gameServer.GameObjectByGUID.TryGetValue(rbMessage.ID, out go))
-				//{
-				//	Debug.Log("Couldn't find object by GUID " + rbMessage.ID);
-				//	// or maybe it just doesn't exist yet. so create it?
-				//	//if (go == null)
-				//	//{
-				//	//	// create it first if it wasn't found
-				//	//	GameObject prefab = GameObjectFactory.GameObjectOfPrefab(forceMessage.Prefab);
-				//	//	go = Instantiate(prefab);
-				//	//	go.name = forceMessage.ID;
-				//	//}
-				//	return;
-				//}
-
-				////NetSynced.Rigidbody2D rb = go.GetComponent<NetSynced.Rigidbody2D>();
-				////rb.AddForce(new Vector2(forceMessage.X, forceMessage.Y), (ForceMode2D)(int)forceMessage.ForceMode, false);
-
-				////GameObject go = GameObject.Find(rbMessage.ID);
-				////if (go == null)
-				////{
-				////	// create it first
-				////	GameObject prefab = GameObjectFactory.GameObjectOfPrefab(rbMessage.Prefab);
-				////	go = Instantiate(prefab);
-				////	go.name = rbMessage.ID;
-				////}
 			}
 		}
 	}

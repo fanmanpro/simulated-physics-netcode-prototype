@@ -12,6 +12,8 @@ public class PlayerSeat : MonoBehaviour
 
 	private string guid;
 	public string GUID { get => guid; private set => guid = value; }
+	
+	public List<NetSync> ownerOf;
 
 	void Awake()
 	{

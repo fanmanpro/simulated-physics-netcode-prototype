@@ -21,6 +21,8 @@ public class UDPClient : IClient
 
 	private PacketHandler packetHandler;
 
+	public bool Active => clientState.Connected && clientState.Trusted;
+
 	public UDPClient(int port, ClientEndPoint c, ClientState cs, PacketHandler p)
 	{
 		udpClient = new UdpClient(port);
@@ -52,7 +54,16 @@ public class UDPClient : IClient
 
 	public Error Disconnect()
 	{
-		throw new System.NotImplementedException();
+		clientState.Connected = false;
+		clientState.Connecting = false;
+		clientState.Disconnected = false;
+		clientState.Disconnecting = false;
+		clientState.Listening = false;
+		clientState.Transmitting = false;
+		clientState.Trusted = false;
+
+		udpClient.Close();
+		return null;
 	}
 
 	//public async Error Send(Packet packet)
@@ -90,6 +101,7 @@ public class UDPClient : IClient
 				Gamedata.Packet packet = Gamedata.Packet.Parser.ParseFrom(receiveBytes.Buffer);
 				if (packet.OpCode != Gamedata.Header.Types.OpCode.Invalid)
 				{
+					clientState.Trusted = true;
 					packetHandler.Handle(packet);
 				}
 				//	clientState.Listening = true;
