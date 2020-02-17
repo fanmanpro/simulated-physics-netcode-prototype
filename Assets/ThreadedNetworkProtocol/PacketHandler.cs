@@ -45,6 +45,7 @@ namespace ThreadedNetworkProtocol
 				Debug.Log("[SIM] [ClientTrust]");
 			else
 				Debug.Log("[GAM] [ClientTrust]");
+
 			client.TCPClientState.Trusted = true;
 			client.UDPTryConnect();
 			client.StartCoroutine(awaitClientDatagramAddressRetry());
@@ -59,7 +60,6 @@ namespace ThreadedNetworkProtocol
 					OpCode = Gamedata.Header.Types.OpCode.ClientDatagramAddress
 				});
 				yield return new WaitForSeconds(1);
-				//if (client.UDPClientState.Trusted)
 				break;
 			}
 		}
@@ -95,7 +95,7 @@ namespace ThreadedNetworkProtocol
 			foreach (Gamedata.Rigidbody rbMessage in context.RigidBodies)
 			{
 				NetSynced.Rigidbody2D rb;
-				if (contextManager.rigidbodiesByGUID.TryGetValue(rbMessage.ID, out rb))
+				if (contextManager.worldOwnedRigidbodiesByGUID.TryGetValue(rbMessage.ID, out rb))
 				{
 					rb.rigidbody.position = rbMessage.Position.ToUnityVector();
 					rb.rigidbody.velocity = rbMessage.Velocity.ToUnityVector();

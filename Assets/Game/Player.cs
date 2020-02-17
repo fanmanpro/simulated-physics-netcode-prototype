@@ -1,56 +1,29 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
-public class Player: MonoBehaviour
+public class Player : MonoBehaviour
 {
-	private NetSynced.Rigidbody2D rb;
+	private PlayerSeat seat;
 	private bool up = false, down = false, stop = false;
 	void Start()
 	{
-		rb = GetComponent<NetSynced.Rigidbody2D>();
-	}
-
-	void FixedUpdate()
-	{
-		//if (stop)
-		//{
-		//	rb.Velocity = new Vector2 { x = 0, y = 0 };
-		//	stop = false;
-		//}
-		//else
-		//{
-		//	if (up)
-		//	{
-		//		rb.Velocity = new Vector2 { x = 0, y = 3 };
-		//	}
-		//	else if (down)
-		//	{
-		//		rb.Velocity = new Vector2 { x = 0, y = -3 };
-		//	}
-		//}
-	}
-
-	void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.UpArrow) && !up)
+		ContextManager context = null;
+		foreach (GameObject rootGameObject in gameObject.scene.GetRootGameObjects())
 		{
-			if (down)
+			context = rootGameObject.GetComponentInChildren<ContextManager>();
+			if (context != null)
 			{
-				down = false;
+				break;
 			}
-			up = true;
 		}
-		if (Input.GetKeyDown(KeyCode.DownArrow) && !down)
+		if (context == null)
+			return;
+
+		seat = GetComponent<PlayerSeat>();
+		foreach (NetSync g in seat.ownerOf)
 		{
-			if (up)
-			{
-				up = false;
-			}
-			down = true;
-		}
-		if ((Input.GetKeyUp(KeyCode.DownArrow) && down) || (Input.GetKeyUp(KeyCode.UpArrow) && up))
-		{
-			down = up = false;
-			stop = true;
+			g.gameObject.AddComponent<PlayerController>();
+			context.RegisterPlayerOwned(g.GUID);
 		}
 	}
 }

@@ -18,7 +18,8 @@ public class PlayerBroadcaster : MonoBehaviour
 		enabled = false;
 	}
 
-	public void AddRigidbody(NetSynced.Rigidbody2D rigidbody) {
+	public void AddRigidbody(NetSynced.Rigidbody2D rigidbody)
+	{
 		rigidbodies.Add(rigidbody);
 		enabled = true;
 	}

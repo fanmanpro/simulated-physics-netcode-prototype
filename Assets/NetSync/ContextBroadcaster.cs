@@ -18,6 +18,7 @@ public class ContextBroadcaster : MonoBehaviour
 	public float MaxObjects = 32;
 
 	public float FullSimulationStatePacketSize = 768;
+
 	void FixedUpdate()
 	{
 		prepareContext();
@@ -25,20 +26,19 @@ public class ContextBroadcaster : MonoBehaviour
 
 	void Start()
 	{
-		Application.targetFrameRate = 60;
 		rigidbodies = new List<NetSynced.Rigidbody2D>();
 		foreach (GameObject rootGameObject in gameObject.scene.GetRootGameObjects())
 		{
 			rigidbodies.AddRange(rootGameObject.GetComponentsInChildren<NetSynced.Rigidbody2D>());
 		}
-		StartCoroutine(awaitStart());
+		//StartCoroutine(awaitStart());
 	}
 
-	IEnumerator awaitStart()
-	{
-		yield return new WaitUntil(() => { return Started; });
-		//InvokeRepeating("prepareContext", 0, 0.3333f);
-	}
+	//IEnumerator awaitStart()
+	//{
+	//	yield return new WaitUntil(() => { return Started; });
+	//InvokeRepeating("prepareContext", 0, 0.3333f);
+	//}
 
 	void prepareContext()
 	{
