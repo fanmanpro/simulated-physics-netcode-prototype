@@ -695,7 +695,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   client: {fileID: 1335207352}
-  guids: []
+  worldOwnedGuids: []
+  playerOwnedGuids: []
 --- !u!4 &350744132
 Transform:
   m_ObjectHideFlags: 0
@@ -3032,8 +3033,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SimulationClient: 0
-  SeatManager: {fileID: 643715295}
-  ContextManager: {fileID: 350744131}
+  SeatManager: {fileID: 0}
+  ContextManager: {fileID: 0}
   ClientID: abc
   Port: 9738
   WSRemoteEndPoint:
