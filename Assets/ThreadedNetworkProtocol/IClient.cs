@@ -5,6 +5,6 @@ public interface IClient
 {
 	Task<Error> Connect();
 	Error Disconnect();
-	Task<Error> Send(Gamedata.Packet p);
+	Task<Error> Send(Serializable.Context p);
 	Task<Error> Listen();
 }

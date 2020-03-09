@@ -43,11 +43,11 @@ public class ContextManager : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		Gamedata.Context context = new Gamedata.Context
-		{
-			RigidBodies = { playerOwnedRigidbodiesByGUID.Select(r => r.Value.Export()) },
-		};
-		Debug.Log(context.RigidBodies.Count);
-		client.Send(PacketType.Unreliable, new Gamedata.Packet { OpCode = Gamedata.Header.Types.OpCode.Context, Data = Any.Pack(context) });
+		//Gamedata.Context context = new Gamedata.Context
+		//{
+		//	RigidBodies = { playerOwnedRigidbodiesByGUID.Select(r => r.Value.Export()) },
+		//};
+		//Debug.Log(context.RigidBodies.Count);
+		//client.Send(PacketType.Unreliable, new Gamedata.Packet { OpCode = Gamedata.Header.Types.OpCode.Context, Data = Any.Pack(context) });
 	}
 }

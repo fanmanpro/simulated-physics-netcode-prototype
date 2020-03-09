@@ -31,15 +31,15 @@ namespace ThreadedNetworkProtocol
 				{
 					seatsByCID.Add(cid, seat);
 					seat.Assigned = true;
-					client.Send(PacketType.Important, new Gamedata.Packet
-					{
-						OpCode = Gamedata.Header.Types.OpCode.ClientSeat,
-						Data = Any.Pack(new Gamedata.ClientSeat
-						{
-							Owner = cid,
-							Guid = seat.GUID,
-						})
-					});
+					//client.Send(PacketType.Important, new Gamedata.Packet
+					//{
+					//	OpCode = Gamedata.Header.Types.OpCode.ClientSeat,
+					//	Data = Any.Pack(new Gamedata.ClientSeat
+					//	{
+					//		Owner = cid,
+					//		Guid = seat.GUID,
+					//	})
+					//});
 					return;
 				}
 			}
@@ -59,15 +59,15 @@ namespace ThreadedNetworkProtocol
 				seat.Assigned = true;
 				if (client.SimulationClient)
 				{
-					client.Send(PacketType.Important, new Gamedata.Packet
-					{
-						OpCode = Gamedata.Header.Types.OpCode.ClientSeat,
-						Data = Any.Pack(new Gamedata.ClientSeat
-						{
-							Owner = cid,
-							Guid = guid,
-						})
-					});
+					//client.Send(PacketType.Important, new Gamedata.Packet
+					//{
+					//	OpCode = Gamedata.Header.Types.OpCode.ClientSeat,
+					//	Data = Any.Pack(new Gamedata.ClientSeat
+					//	{
+					//		Owner = cid,
+					//		Guid = guid,
+					//	})
+					//});
 				}
 				else
 				{

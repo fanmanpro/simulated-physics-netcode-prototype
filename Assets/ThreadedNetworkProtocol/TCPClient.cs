@@ -74,7 +74,7 @@ public class TCPClient : IClient
 		return null;
 	}
 
-	public async Task<Error> Send(Gamedata.Packet packet)
+	public async Task<Error> Send(Serializable.Context packet)
 	{
 		try
 		{
@@ -110,11 +110,11 @@ public class TCPClient : IClient
 			int read = await stream?.ReadAsync(buffer, 0, buffer.Length);
 			if (read > 0)
 			{
-				Gamedata.Packet packet = Gamedata.Packet.Parser.ParseFrom(buffer.Take(read).ToArray());
-				if (packet.OpCode != Gamedata.Header.Types.OpCode.Invalid)
-				{
-					packetHandler.Handle(packet);
-				}
+				Serializable.Context packet = Serializable.Context.Parser.ParseFrom(buffer.Take(read).ToArray());
+				//if (packet.OpCode != Gamedata.Header.Types.OpCode.Invalid)
+				//{
+				//	packetHandler.Handle(packet);
+				//}
 				//Debug.Log(packet.OpCode);
 				// you have received a message, do something with it
 			}

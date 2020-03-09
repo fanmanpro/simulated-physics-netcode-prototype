@@ -76,24 +76,24 @@ namespace NetSynced
 		//	rigidbody.AddForce(f, mode);
 		//}
 
-		public Gamedata.Rigidbody Export()
+		public Serializable.Transform Export()
 		{
 			//if (!rigidbody.IsAwake()) return null;
-			return new Gamedata.Rigidbody
+			return new Serializable.Transform
 			{
-				ID = netSync.GUID,
-				Prefab = Gamedata.Prefab.DemoBox,
-				Position = new Gamedata.Vector2
+				//ID = netSync.GUID,
+				//Prefab = Gamedata.Prefab.DemoBox,
+				Position = new Serializable.Vector2
 				{
 					X = rigidbody.position.x,
 					Y = rigidbody.position.y,
 				},
-				Rotation = rigidbody.rotation,
-				Velocity = new Gamedata.Vector2
-				{
-					X = rigidbody.velocity.x,
-					Y = rigidbody.velocity.y,
-				},
+				//Rotation = rigidbody.rotation,
+				//Velocity = new Gamedata.Vector2
+				//{
+				//	X = rigidbody.velocity.x,
+				//	Y = rigidbody.velocity.y,
+				//},
 			};
 		}
 	}

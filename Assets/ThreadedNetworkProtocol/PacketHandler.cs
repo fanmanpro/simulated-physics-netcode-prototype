@@ -11,125 +11,125 @@ namespace ThreadedNetworkProtocol
 
         private ContextManager contextManager;
 
-        private ContextBroadcaster contextBroadcaster;
+        private SimulationContextHandler contextBroadcaster;
 
-        public delegate void ClientTrustHandler(Gamedata.Packet p);
+        //public delegate void ClientTrustHandler(Gamedata.Packet p);
 
-        public event ClientTrustHandler ClientTrust;
+        //public event ClientTrustHandler ClientTrust;
 
-        public delegate void ClientSeatHandler(Gamedata.Packet p);
+        //public delegate void ClientSeatHandler(Gamedata.Packet p);
 
-        public event ClientSeatHandler ClientSeat;
+        //public event ClientSeatHandler ClientSeat;
 
-        public delegate void ContextHandler(Gamedata.Packet p);
+        //public delegate void ContextHandler(Gamedata.Packet p);
 
-        public event ContextHandler Context;
+        //public event ContextHandler Context;
 
-        public PacketHandler(
-            SeatManager s,
-            ContextManager cm,
-            ContextBroadcaster cb,
-            Client c
-        )
-        {
-            seatManager = s;
-            contextManager = cm;
-            contextBroadcaster = cb;
-            client = c;
-            ClientTrust += clientTrust;
-            ClientSeat += clientSeat;
-            Context += context;
-        }
+        //public PacketHandler(
+        //    SeatManager s,
+        //    ContextManager cm,
+        //    ContextBroadcaster cb,
+        //    Client c
+        //)
+        //{
+        //    seatManager = s;
+        //    contextManager = cm;
+        //    contextBroadcaster = cb;
+        //    client = c;
+        //    ClientTrust += clientTrust;
+        //    ClientSeat += clientSeat;
+        //    Context += context;
+        //}
 
-        public void Handle(Gamedata.Packet p)
-        {
-            contextBroadcaster.PrepareContext();
-            return;
-            switch (p.OpCode)
-            {
-                case Gamedata.Header.Types.OpCode.ClientTrust:
-                    ClientTrust?.Invoke(p);
-                    return;
-                case Gamedata.Header.Types.OpCode.ClientSeat:
-                    ClientSeat?.Invoke(p);
-                    return;
-                case Gamedata.Header.Types.OpCode.Context:
-                    Context?.Invoke(p);
-                    return;
-            }
-        }
+        //public void Handle(Gamedata.Packet p)
+        //{
+        //    contextBroadcaster.PrepareContext();
+        //    return;
+        //    switch (p.OpCode)
+        //    {
+        //        case Gamedata.Header.Types.OpCode.ClientTrust:
+        //            ClientTrust?.Invoke(p);
+        //            return;
+        //        case Gamedata.Header.Types.OpCode.ClientSeat:
+        //            ClientSeat?.Invoke(p);
+        //            return;
+        //        case Gamedata.Header.Types.OpCode.Context:
+        //            Context?.Invoke(p);
+        //            return;
+        //    }
+        //}
 
-        private void clientTrust(Gamedata.Packet packet)
-        {
-            if (client.SimulationClient)
-                Debug.Log("[SIM] [ClientTrust]");
-            else
-                Debug.Log("[GAM] [ClientTrust]");
+        //private void clientTrust(Gamedata.Packet packet)
+        //{
+        //    if (client.SimulationClient)
+        //        Debug.Log("[SIM] [ClientTrust]");
+        //    else
+        //        Debug.Log("[GAM] [ClientTrust]");
 
-            client.TCPClientState.Trusted = true;
-            client.UDPTryConnect();
-            client.StartCoroutine(awaitClientDatagramAddressRetry());
-        }
+        //    client.TCPClientState.Trusted = true;
+        //    client.UDPTryConnect();
+        //    client.StartCoroutine(awaitClientDatagramAddressRetry());
+        //}
 
-        private IEnumerator awaitClientDatagramAddressRetry()
-        {
-            while (true)
-            {
-                client
-                    .Send(PacketType.Unreliable,
-                    new Gamedata.Packet {
-                        OpCode =
-                            Gamedata.Header.Types.OpCode.ClientDatagramAddress
-                    });
-                yield return new WaitForSeconds(1);
-                break;
-            }
-        }
+        //private IEnumerator awaitClientDatagramAddressRetry()
+        //{
+        //    while (true)
+        //    {
+        //        client
+        //            .Send(PacketType.Unreliable,
+        //            new Gamedata.Packet {
+        //                OpCode =
+        //                    Gamedata.Header.Types.OpCode.ClientDatagramAddress
+        //            });
+        //        yield return new WaitForSeconds(1);
+        //        break;
+        //    }
+        //}
 
-        private void clientSeat(Gamedata.Packet packet)
-        {
-            if (client.SimulationClient)
-            {
-                Debug.LogFormat("[SIM] [ClientSeat] [{0}]", packet.Cid);
-                seatManager.AssignSeatByAvailability(packet.Cid);
-            }
-            else
-            {
-                Debug.Log("[GAM] [ClientSeat]");
-                Gamedata.ClientSeat clientSeat;
-                if (!packet.Data.TryUnpack(out clientSeat))
-                {
-                    Debug.Log("[GAM] [ClientSeat] Failed");
-                    return;
-                }
-                seatManager.AssignSeatByGUID(clientSeat.Owner, clientSeat.Guid);
-            }
-        }
+        //private void clientSeat(Gamedata.Packet packet)
+        //{
+        //    if (client.SimulationClient)
+        //    {
+        //        Debug.LogFormat("[SIM] [ClientSeat] [{0}]", packet.Cid);
+        //        seatManager.AssignSeatByAvailability(packet.Cid);
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("[GAM] [ClientSeat]");
+        //        Gamedata.ClientSeat clientSeat;
+        //        if (!packet.Data.TryUnpack(out clientSeat))
+        //        {
+        //            Debug.Log("[GAM] [ClientSeat] Failed");
+        //            return;
+        //        }
+        //        seatManager.AssignSeatByGUID(clientSeat.Owner, clientSeat.Guid);
+        //    }
+        //}
 
-        private void context(Gamedata.Packet packet)
-        {
-            //Debug.Log("[GAM] [Context]");
-            Gamedata.Context context;
-            if (!packet.Data.TryUnpack(out context))
-            {
-                Debug.Log("[GAM] [ClientSeat] Failed");
-                return;
-            }
-            foreach (Gamedata.Rigidbody rbMessage in context.RigidBodies)
-            {
-                NetSynced.Rigidbody2D rb;
-                if (
-                    contextManager
-                        .worldOwnedRigidbodiesByGUID
-                        .TryGetValue(rbMessage.ID, out rb)
-                )
-                {
-                    rb.rigidbody.position = rbMessage.Position.ToUnityVector();
-                    rb.rigidbody.velocity = rbMessage.Velocity.ToUnityVector();
-                    rb.rigidbody.rotation = rbMessage.Rotation;
-                    //Debug.Log("[GAM] [Context] " + rb.rigidbody.position);
-                }
-            }
-        }
+        //private void context(Gamedata.Packet packet)
+        //{
+        //    //Debug.Log("[GAM] [Context]");
+        //    Gamedata.Context context;
+        //    if (!packet.Data.TryUnpack(out context))
+        //    {
+        //        Debug.Log("[GAM] [ClientSeat] Failed");
+        //        return;
+        //    }
+        //    foreach (Gamedata.Rigidbody rbMessage in context.RigidBodies)
+        //    {
+        //        NetSynced.Rigidbody2D rb;
+        //        if (
+        //            contextManager
+        //                .worldOwnedRigidbodiesByGUID
+        //                .TryGetValue(rbMessage.ID, out rb)
+        //        )
+        //        {
+        //            rb.rigidbody.position = rbMessage.Position.ToUnityVector();
+        //            rb.rigidbody.velocity = rbMessage.Velocity.ToUnityVector();
+        //            rb.rigidbody.rotation = rbMessage.Rotation;
+        //            //Debug.Log("[GAM] [Context] " + rb.rigidbody.position);
+        //        }
+        //    }
+        //}
     }
 }
