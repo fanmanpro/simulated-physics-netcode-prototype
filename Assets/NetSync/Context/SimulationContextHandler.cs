@@ -7,6 +7,7 @@ public class SimulationContextHandler : MonoBehaviour, IContextHandler
 	public Client client;
 
 	public List<NetSynced.Rigidbody2D> rigidbodies;
+	public List<NetSynced.Transform> transforms;
 
 	// these are in bytes, and 32768 is 32KiB
 	public float MaxPacketSize = 32768;
@@ -24,11 +25,17 @@ public class SimulationContextHandler : MonoBehaviour, IContextHandler
 		{
 			rigidbodies.AddRange(rootGameObject.GetComponentsInChildren<NetSynced.Rigidbody2D>());
 		}
+
+		transforms = new List<NetSynced.Transform>();
+		foreach (GameObject rootGameObject in gameObject.scene.GetRootGameObjects())
+		{
+			transforms.AddRange(rootGameObject.GetComponentsInChildren<NetSynced.Transform>());
+		}
 	}
 
 	public void HandleContext(Serializable.Context context)
 	{
-		List<Serializable.Transform> transforms = new List<Serializable.Transform>();
+		List<Serializable.Rigidbody> _rigidbodies = new List<Serializable.Rigidbody>();
 		int offset = 0;
 
 		int r = 0;
@@ -36,19 +43,19 @@ public class SimulationContextHandler : MonoBehaviour, IContextHandler
 		{
 			if ((r - offset + 1) * 30 > FullSimulationStatePacketSize)
 			{
-				client.Send(PacketType.Unreliable, new Serializable.Context { Tick = context.Tick, Transforms = { transforms } });
-				transforms.Clear();
+				client.Send(PacketType.Unreliable, new Serializable.Context { Tick = context.Tick, RigidBodies = { _rigidbodies } });
+				_rigidbodies.Clear();
 				offset = r;
 			}
 
 			//if (!rigidbody.IsAwake()) continue;
-			transforms.Add(rb.Export());
+			_rigidbodies.Add(rb.Export());
 			r++;
 		}
-		if (transforms.Count > 0)
+		if (_rigidbodies.Count > 0)
 		{
-			client.Send(PacketType.Unreliable, new Serializable.Context { Tick = context.Tick, Transforms = { transforms } });
-			transforms.Clear();
+			client.Send(PacketType.Unreliable, new Serializable.Context { Tick = context.Tick, RigidBodies = { _rigidbodies } });
+			_rigidbodies.Clear();
 		}
 	}
 }

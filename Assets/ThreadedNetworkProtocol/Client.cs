@@ -216,7 +216,7 @@ namespace ThreadedNetworkProtocol
 							Debug.Log("[UDP] Sending packet failed. UDP client not active.");
 							return;
 						}
-						Debug.Log("[UDP] Sent packet");
+						Debug.Log("[UDP] Sent packet (" + context.RigidBodies.Count + ")");
 						await udpClient.Send(context);
 						//Debug.Log("[UDP] TODO TODO TODO TODO Sent test packet");
 					}

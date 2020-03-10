@@ -7,6 +7,7 @@ using UnityEngine;
 public class ClientContextHandler : MonoBehaviour, IContextHandler
 {
 	public Client client;
+	public ContextManager ContextManager;
 
 	public List<NetSynced.Rigidbody2D> rigidbodies;
 
@@ -32,12 +33,34 @@ public class ClientContextHandler : MonoBehaviour, IContextHandler
 	{
 		foreach (Serializable.Transform st in context.Transforms)
 		{
-			Transform t;
-			if (contextManager.worldOwnedRigidbodiesByGUID.TryGetValue(st.ID, out t))
+			NetSynced.Transform t;
+			if (ContextManager.worldOwnedTransformsByGUID.TryGetValue(st.ID, out t))
 			{
-				 hendrik you are here, busy reading a context for a client based on what they know of object ownership using contextmanager
+				t.transform.position = st.Position.ToUnityVector();
+				//t.transform.rotation = st.Rotation;
+				//hendrik you are here, busy reading a context for a client based on what they know of object ownership using contextmanager
 
-			//t.position = rbMessage.Position.ToUnityVector();
+				//t.position = rbMessage.Position.ToUnityVector();
+				//rb.rigidbody.velocity = rbMessage.Velocity.ToUnityVector();
+				//rb.rigidbody.rotation = rbMessage.Rotation;
+				//Debug.Log("[GAM] [Context] " + rb.rigidbody.position);
+			}
+		}
+		foreach (Serializable.Rigidbody sr in context.RigidBodies)
+		{
+			NetSynced.Rigidbody2D r;
+			if (ContextManager.worldOwnedRigidbodiesByGUID.TryGetValue(sr.ID, out r))
+			{
+				//Vector2 currentPosition = r.rigidbody.position;
+				//Vector2 endPosition = 
+
+				r.Sync(sr.Position.ToUnityVector(), sr.Velocity.ToUnityVector());
+
+				//r.Set.rigidbody.position = Vector3.Lerp(currentPosition, endPosition, syncTime / syncDelay);
+
+				//hendrik you are here, busy reading a context for a client based on what they know of object ownership using contextmanager
+
+				//t.position = rbMessage.Position.ToUnityVector();
 				//rb.rigidbody.velocity = rbMessage.Velocity.ToUnityVector();
 				//rb.rigidbody.rotation = rbMessage.Rotation;
 				//Debug.Log("[GAM] [Context] " + rb.rigidbody.position);

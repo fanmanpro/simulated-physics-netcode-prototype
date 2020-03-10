@@ -808,6 +808,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 0}
+  syncDelay: 0
+  syncTime: 0
+  updatesBetweenSyncs: 0
 --- !u!114 &369231179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -829,7 +832,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369231175}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2876,7 +2879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &1267861506
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2955,6 +2958,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 0}
+  syncDelay: 0
+  syncTime: 0
+  updatesBetweenSyncs: 0
 --- !u!114 &1267861509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2976,7 +2982,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267861505}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -3488,7 +3494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &1575317175
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3567,6 +3573,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 0}
+  syncDelay: 0
+  syncTime: 0
+  updatesBetweenSyncs: 0
 --- !u!114 &1575317178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3588,7 +3597,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575317174}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -3645,6 +3654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   client: {fileID: 1335207352}
+  ContextManager: {fileID: 350744131}
   rigidbodies: []
   MaxPacketSize: 32768
   MaxObjects: 32

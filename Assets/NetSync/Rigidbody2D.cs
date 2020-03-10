@@ -13,17 +13,19 @@ namespace NetSynced
 		private NetSync netSync;
 		public string GUID => netSync.GUID;
 
+		private float lastSynchronizationTime = 0f;
+		public float syncDelay = 0f;
+		public float syncTime = 0f;
+		//private Vector3 syncStartPosition = Vector3.zero;
+		private Vector3 syncEndPosition = Vector3.zero;
+
 		// copies of Rigidbody2D
-		//private Vector2 velocity;
-		//public Vector2 Velocity { get => velocity; set => SetVelocity(value); }
-		//private Vector2 position;
-		//public Vector2 Position { get => position; set => setPosition(value); }
+		private Vector2 syncStartPosition = Vector3.zero;
+		//public Vector2 Position { get => syncStartPosition; set => setPosition(value); }
+
+		private bool doUpdate = false;
 
 		// storage objects to avoid constant memory allocation and deallocation. e.g. "new" keyword abuse.
-		//private Gamedata.Velocity velocityStorage;
-		//private Gamedata.Force forceStorage;
-
-		//private string guid;
 
 		void Awake()
 		{
@@ -34,66 +36,62 @@ namespace NetSynced
 				enabled = false;
 				return;
 			}
-			//velocityStorage = new Gamedata.Velocity { ID = netSync.GUID, X = 0, Y = 0 };
-			//forceStorage = new Gamedata.Force { ID = netSync.GUID, X = 0, Y = 0 };
+
+			lastSynchronizationTime = Time.time;
+			doUpdate = false;
 
 			rigidbody = GetComponent<UnityEngine.Rigidbody2D>();
-			//GameServer.AddRigidbody(netSync.GUID, this);
 		}
 
-
-		//public void SetVelocity(Vector2 v, bool sync = true)
-		//{
-		//	if (sync)
-		//	{
-		//		velocityStorage.X = v.x;
-		//		velocityStorage.Y = v.y;
-		//		//GameServer.Sync(velocityStorage);
-		//	}
-		//	//if (sync) UDPConnection.Send(Gamedata.Header.Types.OpCode.Velocity, new Gamedata.Velocity { ID = Guid, X = v.x, Y = v.y });
-		//	velocity = v;
-		//	rigidbody.velocity = v;
-		//}
-
-		//// using this is never really good for multiplayer games because it means sending too many packets.
-		//private void setPosition(Vector2 p, bool sync = true)
-		//{
-		//	//if (sync) UDPConnection.Send(Gamedata.Header.Types.OpCode.Position, new Gamedata.Position { ID = Guid, X = p.x, Y = p.y });
-		//	position = p;
-		//	rigidbody.position = p;
-		//}
-
-		//public void AddForce(Vector2 f, ForceMode2D mode = ForceMode2D.Force, bool sync = true)
-		//{
-		//	if (sync)
-		//	{
-		//		forceStorage.X = f.x;
-		//		forceStorage.Y = f.y;
-		//		forceStorage.ForceMode = (Gamedata.Force.Types.ForceMode)(int)mode;
-		//		//GameServer.Sync(forceStorage);
-		//	}
-		//	//if (sync) UDPConnection.Send(Gamedata.Header.Types.OpCode.Force, new Gamedata.Force { ID = Guid, X = f.x, Y = f.y, ForceMode = (Gamedata.Force.Types.ForceMode)(int)mode });
-		//	rigidbody.AddForce(f, mode);
-		//}
-
-		public Serializable.Transform Export()
+		// using this is never really good for multiplayer games because it means sending too many packets.
+		public void Sync(Vector2 p, Vector2 v)
 		{
-			//if (!rigidbody.IsAwake()) return null;
-			return new Serializable.Transform
+			doUpdate = true;
+
+			syncTime = 0f;
+			//syncDelay = Time.time - lastSynchronizationTime;
+			syncDelay = 0.5f;
+			lastSynchronizationTime = Time.time;
+
+			syncEndPosition = p * syncDelay;
+			syncStartPosition = rigidbody.position;
+			Debug.Log(updatesBetweenSyncs);
+			updatesBetweenSyncs = 0;
+		}
+
+		public float updatesBetweenSyncs = 0;
+		private void Update()
+		{
+			if (!doUpdate) return;
+			// Time.deltaTime = 0.01f
+			// syncDelay = 0.5f
+			// 
+			updatesBetweenSyncs += (1 );
+
+
+// 
+
+
+			//syncTime += Time.deltaTime;
+			//Debug.Log(updatesBetweenSyncs / Time.deltaTime);
+			rigidbody.position = Vector3.Lerp(syncStartPosition, syncEndPosition, 1);
+		}
+
+		public Serializable.Rigidbody Export()
+		{
+			return new Serializable.Rigidbody
 			{
-				//ID = netSync.GUID,
-				//Prefab = Gamedata.Prefab.DemoBox,
-				Position = new Serializable.Vector2
+				ID = netSync.GUID,
+				Position = new Serializable.Vector3
 				{
 					X = rigidbody.position.x,
 					Y = rigidbody.position.y,
 				},
-				//Rotation = rigidbody.rotation,
-				//Velocity = new Gamedata.Vector2
-				//{
-				//	X = rigidbody.velocity.x,
-				//	Y = rigidbody.velocity.y,
-				//},
+				Velocity = new Serializable.Vector2
+				{
+					X = rigidbody.velocity.x,
+					Y = rigidbody.velocity.y,
+				},
 			};
 		}
 	}

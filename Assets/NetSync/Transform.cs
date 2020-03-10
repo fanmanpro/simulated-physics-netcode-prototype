@@ -8,7 +8,7 @@ namespace NetSynced
 	{
 		//public UDPConnection UDPConnection;
 
-		public string Guid;
+		public string GUID;
 
 		// copies of transform
 		private Vector2 position;

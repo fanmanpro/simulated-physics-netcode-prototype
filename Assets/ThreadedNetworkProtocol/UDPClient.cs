@@ -112,9 +112,9 @@ public class UDPClient : IClient
 				UdpReceiveResult receiveBytes = await udpClient.ReceiveAsync();
 
 				Serializable.Context context = Serializable.Context.Parser.ParseFrom(receiveBytes.Buffer);
-				Debug.Log("[" + remoteEndPoint.Port + "] Reading: " + context.Tick);
+				//Debug.Log("[" + remoteEndPoint.Port + "] Reading: " + context.Tick);
 				//lastTick = context.Tick;
-				contextBroadcaster?.HandleContext(context);
+				contextBroadcaster.HandleContext(context);
 				//contextBroadcaster?.PrepareContext(context.Tick);
 				//if (packet.OpCode != Gamedata.Header.Types.OpCode.Invalid)
 				//{
