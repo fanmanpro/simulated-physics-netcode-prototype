@@ -808,9 +808,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 0}
-  syncDelay: 0
-  syncTime: 0
-  updatesBetweenSyncs: 0
 --- !u!114 &369231179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2879,7 +2876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!58 &1267861506
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2958,9 +2955,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 0}
-  syncDelay: 0
-  syncTime: 0
-  updatesBetweenSyncs: 0
 --- !u!114 &1267861509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3494,7 +3488,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!58 &1575317175
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3573,9 +3567,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 0}
-  syncDelay: 0
-  syncTime: 0
-  updatesBetweenSyncs: 0
 --- !u!114 &1575317178
 MonoBehaviour:
   m_ObjectHideFlags: 0

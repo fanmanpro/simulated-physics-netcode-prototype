@@ -13,15 +13,15 @@ namespace NetSynced
 		private NetSync netSync;
 		public string GUID => netSync.GUID;
 
-		private float lastSynchronizationTime = 0f;
-		public float syncDelay = 0f;
-		public float syncTime = 0f;
 		//private Vector3 syncStartPosition = Vector3.zero;
 		private Vector3 syncEndPosition = Vector3.zero;
 
 		// copies of Rigidbody2D
 		private Vector2 syncStartPosition = Vector3.zero;
 		//public Vector2 Position { get => syncStartPosition; set => setPosition(value); }
+		float t;
+		const float serverTicksPerSecond = 20;
+		float timeToReachTarget = 1.0f / serverTicksPerSecond;
 
 		private bool doUpdate = false;
 
@@ -37,8 +37,8 @@ namespace NetSynced
 				return;
 			}
 
-			lastSynchronizationTime = Time.time;
 			doUpdate = false;
+			syncEndPosition = transform.position;
 
 			rigidbody = GetComponent<UnityEngine.Rigidbody2D>();
 		}
@@ -48,33 +48,18 @@ namespace NetSynced
 		{
 			doUpdate = true;
 
-			syncTime = 0f;
-			//syncDelay = Time.time - lastSynchronizationTime;
-			syncDelay = 0.5f;
-			lastSynchronizationTime = Time.time;
-
-			syncEndPosition = p * syncDelay;
+			t = 0;
 			syncStartPosition = rigidbody.position;
-			Debug.Log(updatesBetweenSyncs);
-			updatesBetweenSyncs = 0;
+			syncEndPosition = p;
 		}
 
-		public float updatesBetweenSyncs = 0;
-		private void Update()
+		private void FixedUpdate()
 		{
 			if (!doUpdate) return;
-			// Time.deltaTime = 0.01f
-			// syncDelay = 0.5f
-			// 
-			updatesBetweenSyncs += (1 );
 
+			t += Time.deltaTime / timeToReachTarget;
 
-// 
-
-
-			//syncTime += Time.deltaTime;
-			//Debug.Log(updatesBetweenSyncs / Time.deltaTime);
-			rigidbody.position = Vector3.Lerp(syncStartPosition, syncEndPosition, 1);
+			rigidbody.position = Vector3.Lerp(syncStartPosition, syncEndPosition, t);
 		}
 
 		public Serializable.Rigidbody Export()
