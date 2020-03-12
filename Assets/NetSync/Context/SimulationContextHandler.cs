@@ -6,7 +6,7 @@ public class SimulationContextHandler : MonoBehaviour, IContextHandler
 {
 	public Client client;
 
-	public List<NetSynced.Rigidbody2D> rigidbodies;
+	public List<NetSynced.Rigidbody3D> rigidbodies;
 	public List<NetSynced.Transform> transforms;
 
 	// these are in bytes, and 32768 is 32KiB
@@ -20,10 +20,10 @@ public class SimulationContextHandler : MonoBehaviour, IContextHandler
 
 	void Start()
 	{
-		rigidbodies = new List<NetSynced.Rigidbody2D>();
+		rigidbodies = new List<NetSynced.Rigidbody3D>();
 		foreach (GameObject rootGameObject in gameObject.scene.GetRootGameObjects())
 		{
-			rigidbodies.AddRange(rootGameObject.GetComponentsInChildren<NetSynced.Rigidbody2D>());
+			rigidbodies.AddRange(rootGameObject.GetComponentsInChildren<NetSynced.Rigidbody3D>());
 		}
 
 		transforms = new List<NetSynced.Transform>();
@@ -33,17 +33,17 @@ public class SimulationContextHandler : MonoBehaviour, IContextHandler
 		}
 	}
 
-	public void HandleContext(Serializable.Context context)
+	public void HandleContext(Serializable.Context3D context)
 	{
-		List<Serializable.Rigidbody> _rigidbodies = new List<Serializable.Rigidbody>();
+		List<Serializable.Rigidbody3D> _rigidbodies = new List<Serializable.Rigidbody3D>();
 		int offset = 0;
 
 		int r = 0;
-		foreach (NetSynced.Rigidbody2D rb in rigidbodies)
+		foreach (NetSynced.Rigidbody3D rb in rigidbodies)
 		{
 			if ((r - offset + 1) * 30 > FullSimulationStatePacketSize)
 			{
-				client.Send(PacketType.Unreliable, new Serializable.Context { Tick = context.Tick, RigidBodies = { _rigidbodies } });
+				client.Send(PacketType.Unreliable, new Serializable.Context3D { Tick = context.Tick, RigidBodies = { _rigidbodies } });
 				_rigidbodies.Clear();
 				offset = r;
 			}
@@ -54,7 +54,7 @@ public class SimulationContextHandler : MonoBehaviour, IContextHandler
 		}
 		if (_rigidbodies.Count > 0)
 		{
-			client.Send(PacketType.Unreliable, new Serializable.Context { Tick = context.Tick, RigidBodies = { _rigidbodies } });
+			client.Send(PacketType.Unreliable, new Serializable.Context3D { Tick = context.Tick, RigidBodies = { _rigidbodies } });
 			_rigidbodies.Clear();
 		}
 	}

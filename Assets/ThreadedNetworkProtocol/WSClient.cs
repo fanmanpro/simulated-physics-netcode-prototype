@@ -59,7 +59,7 @@ public class WSClient : IClient
 	}
 
 	//public async Error Send(Packet packet)
-	public async Task<Error> Send(Serializable.Context packet)
+	public async Task<Error> Send(Serializable.Context3D packet)
 	{
 		ArraySegment<byte> sendBuffer = new ArraySegment<byte>(packet.ToByteArray());
 		//if (debug) Debug.Log(string.Format("WS - {0} {1}", "Sending packet", packet.Header.OpCode));

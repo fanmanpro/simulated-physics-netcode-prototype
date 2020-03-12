@@ -74,7 +74,7 @@ public class TCPClient : IClient
 		return null;
 	}
 
-	public async Task<Error> Send(Serializable.Context packet)
+	public async Task<Error> Send(Serializable.Context3D packet)
 	{
 		try
 		{
@@ -110,7 +110,7 @@ public class TCPClient : IClient
 			int read = await stream?.ReadAsync(buffer, 0, buffer.Length);
 			if (read > 0)
 			{
-				Serializable.Context packet = Serializable.Context.Parser.ParseFrom(buffer.Take(read).ToArray());
+				Serializable.Context3D packet = Serializable.Context3D.Parser.ParseFrom(buffer.Take(read).ToArray());
 				//if (packet.OpCode != Gamedata.Header.Types.OpCode.Invalid)
 				//{
 				//	packetHandler.Handle(packet);

@@ -1,4 +1,4 @@
 ﻿public interface IContextHandler
 {
-	void HandleContext(Serializable.Context c);
+	void HandleContext(Serializable.Context3D c);
 }

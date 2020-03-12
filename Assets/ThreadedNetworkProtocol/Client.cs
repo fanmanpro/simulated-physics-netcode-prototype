@@ -187,7 +187,7 @@ namespace ThreadedNetworkProtocol
 			}
 		}
 
-		public async void Send(PacketType type, Serializable.Context context)
+		public async void Send(PacketType type, Serializable.Context3D context)
 		{
 			switch (type)
 			{
@@ -255,7 +255,7 @@ namespace ThreadedNetworkProtocol
 				case PacketType.Unreliable:
 					{
 						await udpClient
-								.Send(new Serializable.Context
+								.Send(new Serializable.Context3D
 								{
 									//OpCode = Gamedata.Header.Types.OpCode.Context
 								});

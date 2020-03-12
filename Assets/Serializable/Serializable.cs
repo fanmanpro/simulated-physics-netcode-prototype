@@ -25,41 +25,49 @@ namespace Serializable {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChJzZXJpYWxpemFibGUucHJvdG8SDHNlcmlhbGl6YWJsZRoZZ29vZ2xlL3By",
-            "b3RvYnVmL2FueS5wcm90byJyCgdDb250ZXh0EgwKBHRpY2sYASABKAUSKwoK",
-            "dHJhbnNmb3JtcxgCIAMoCzIXLnNlcmlhbGl6YWJsZS5UcmFuc2Zvcm0SLAoL",
-            "cmlnaWRCb2RpZXMYAyADKAsyFy5zZXJpYWxpemFibGUuUmlnaWRib2R5IlIK",
-            "CVRyYW5zZm9ybRIKCgJJRBgBIAEoCRInCghwb3NpdGlvbhgCIAEoCzIVLnNl",
-            "cmlhbGl6YWJsZS5WZWN0b3IzEhAKCHJvdGF0aW9uGAMgASgCInsKCVJpZ2lk",
-            "Ym9keRIKCgJJRBgBIAEoCRInCghwb3NpdGlvbhgCIAEoCzIVLnNlcmlhbGl6",
-            "YWJsZS5WZWN0b3IzEhAKCHJvdGF0aW9uGAMgASgCEicKCHZlbG9jaXR5GAQg",
-            "ASgLMhUuc2VyaWFsaXphYmxlLlZlY3RvcjIiaQoJT2xkUGFja2V0EisKBm9w",
-            "Q29kZRgBIAEoDjIbLnNlcmlhbGl6YWJsZS5IZWFkZXIuT3BDb2RlEiIKBGRh",
-            "dGEYAiABKAsyFC5nb29nbGUucHJvdG9idWYuQW55EgsKA2NpZBgDIAEoCSIp",
-            "CgpDbGllbnRTZWF0Eg0KBW93bmVyGAEgASgJEgwKBGd1aWQYAiABKAkiRAoQ",
-            "R2FtZVNlcnZlck9ubGluZRIOCgZzZWNyZXQYASABKAkSDgoGcmVnaW9uGAIg",
-            "ASgJEhAKCGNhcGFjaXR5GAMgASgFInkKCkdhbWVPYmplY3QSCgoCSUQYASAB",
-            "KAkSJAoGUHJlZmFiGAIgASgOMhQuc2VyaWFsaXphYmxlLlByZWZhYhInCghw",
-            "b3NpdGlvbhgDIAEoCzIVLnNlcmlhbGl6YWJsZS5WZWN0b3IyEhAKCHJvdGF0",
-            "aW9uGAQgASgCIiwKCFZlbG9jaXR5EgoKAklEGAEgASgJEgkKAXgYAiABKAIS",
-            "CQoBeRgDIAEoAiIsCghQb3NpdGlvbhIKCgJJRBgBIAEoCRIJCgF4GAIgASgC",
-            "EgkKAXkYAyABKAIigAEKBUZvcmNlEgoKAklEGAEgASgJEgkKAXgYAiABKAIS",
-            "CQoBeRgDIAEoAhIwCglmb3JjZU1vZGUYBCABKA4yHS5zZXJpYWxpemFibGUu",
-            "Rm9yY2UuRm9yY2VNb2RlIiMKCUZvcmNlTW9kZRIJCgVGb3JjZRAAEgsKB0lt",
-            "cHVsc2UQASIfCgdWZWN0b3IyEgkKAXgYASABKAISCQoBeRgCIAEoAiIqCgdW",
-            "ZWN0b3IzEgkKAXgYASABKAISCQoBeRgCIAEoAhIJCgF6GAMgASgCIvgBCgZI",
-            "ZWFkZXIi7QEKBk9wQ29kZRILCgdJbnZhbGlkEAASFAoQQ2xpZW50RGlzY29u",
-            "bmVjdBBkEhAKDENsaWVudEFwcGVhbBBlEg8KC0NsaWVudFRydXN0EGYSGQoV",
-            "Q2xpZW50RGF0YWdyYW1BZGRyZXNzEGgSDgoKQ2xpZW50U2VhdBBnEgwKB0Nv",
-            "bnRleHQQyAESDwoKR2FtZU9iamVjdBCsAhIOCglSaWdpZGJvZHkQrQISDQoI",
-            "UG9zaXRpb24QkAMSDQoIUm90YXRpb24QkQMSCgoFU2NhbGUQkgMSDQoIVmVs",
-            "b2NpdHkQkwMSCgoFRm9yY2UQlAMqIgoGUHJlZmFiEgsKB0ludmFsaWQQABIL",
-            "CgdEZW1vQm94EAFiBnByb3RvMw=="));
+            "b3RvYnVmL2FueS5wcm90byJ2CglDb250ZXh0M0QSDAoEdGljaxgBIAEoBRIr",
+            "Cgp0cmFuc2Zvcm1zGAIgAygLMhcuc2VyaWFsaXphYmxlLlRyYW5zZm9ybRIu",
+            "CgtyaWdpZEJvZGllcxgDIAMoCzIZLnNlcmlhbGl6YWJsZS5SaWdpZGJvZHkz",
+            "RCJ2CglDb250ZXh0MkQSDAoEdGljaxgBIAEoBRIrCgp0cmFuc2Zvcm1zGAIg",
+            "AygLMhcuc2VyaWFsaXphYmxlLlRyYW5zZm9ybRIuCgtyaWdpZEJvZGllcxgD",
+            "IAMoCzIZLnNlcmlhbGl6YWJsZS5SaWdpZGJvZHkyRCJSCglUcmFuc2Zvcm0S",
+            "CgoCSUQYASABKAkSJwoIcG9zaXRpb24YAiABKAsyFS5zZXJpYWxpemFibGUu",
+            "VmVjdG9yMxIQCghyb3RhdGlvbhgDIAEoAiJ9CgtSaWdpZGJvZHkyRBIKCgJJ",
+            "RBgBIAEoCRInCghwb3NpdGlvbhgCIAEoCzIVLnNlcmlhbGl6YWJsZS5WZWN0",
+            "b3IyEhAKCHJvdGF0aW9uGAMgASgCEicKCHZlbG9jaXR5GAQgASgLMhUuc2Vy",
+            "aWFsaXphYmxlLlZlY3RvcjIifQoLUmlnaWRib2R5M0QSCgoCSUQYASABKAkS",
+            "JwoIcG9zaXRpb24YAiABKAsyFS5zZXJpYWxpemFibGUuVmVjdG9yMxIQCghy",
+            "b3RhdGlvbhgDIAEoAhInCgh2ZWxvY2l0eRgEIAEoCzIVLnNlcmlhbGl6YWJs",
+            "ZS5WZWN0b3IzImkKCU9sZFBhY2tldBIrCgZvcENvZGUYASABKA4yGy5zZXJp",
+            "YWxpemFibGUuSGVhZGVyLk9wQ29kZRIiCgRkYXRhGAIgASgLMhQuZ29vZ2xl",
+            "LnByb3RvYnVmLkFueRILCgNjaWQYAyABKAkiKQoKQ2xpZW50U2VhdBINCgVv",
+            "d25lchgBIAEoCRIMCgRndWlkGAIgASgJIkQKEEdhbWVTZXJ2ZXJPbmxpbmUS",
+            "DgoGc2VjcmV0GAEgASgJEg4KBnJlZ2lvbhgCIAEoCRIQCghjYXBhY2l0eRgD",
+            "IAEoBSJ5CgpHYW1lT2JqZWN0EgoKAklEGAEgASgJEiQKBlByZWZhYhgCIAEo",
+            "DjIULnNlcmlhbGl6YWJsZS5QcmVmYWISJwoIcG9zaXRpb24YAyABKAsyFS5z",
+            "ZXJpYWxpemFibGUuVmVjdG9yMhIQCghyb3RhdGlvbhgEIAEoAiIsCghWZWxv",
+            "Y2l0eRIKCgJJRBgBIAEoCRIJCgF4GAIgASgCEgkKAXkYAyABKAIiLAoIUG9z",
+            "aXRpb24SCgoCSUQYASABKAkSCQoBeBgCIAEoAhIJCgF5GAMgASgCIoABCgVG",
+            "b3JjZRIKCgJJRBgBIAEoCRIJCgF4GAIgASgCEgkKAXkYAyABKAISMAoJZm9y",
+            "Y2VNb2RlGAQgASgOMh0uc2VyaWFsaXphYmxlLkZvcmNlLkZvcmNlTW9kZSIj",
+            "CglGb3JjZU1vZGUSCQoFRm9yY2UQABILCgdJbXB1bHNlEAEiHwoHVmVjdG9y",
+            "MhIJCgF4GAEgASgCEgkKAXkYAiABKAIiKgoHVmVjdG9yMxIJCgF4GAEgASgC",
+            "EgkKAXkYAiABKAISCQoBehgDIAEoAiL4AQoGSGVhZGVyIu0BCgZPcENvZGUS",
+            "CwoHSW52YWxpZBAAEhQKEENsaWVudERpc2Nvbm5lY3QQZBIQCgxDbGllbnRB",
+            "cHBlYWwQZRIPCgtDbGllbnRUcnVzdBBmEhkKFUNsaWVudERhdGFncmFtQWRk",
+            "cmVzcxBoEg4KCkNsaWVudFNlYXQQZxIMCgdDb250ZXh0EMgBEg8KCkdhbWVP",
+            "YmplY3QQrAISDgoJUmlnaWRib2R5EK0CEg0KCFBvc2l0aW9uEJADEg0KCFJv",
+            "dGF0aW9uEJEDEgoKBVNjYWxlEJIDEg0KCFZlbG9jaXR5EJMDEgoKBUZvcmNl",
+            "EJQDKiIKBlByZWZhYhILCgdJbnZhbGlkEAASCwoHRGVtb0JveBABYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Serializable.Prefab), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Context), global::Serializable.Context.Parser, new[]{ "Tick", "Transforms", "RigidBodies" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Context3D), global::Serializable.Context3D.Parser, new[]{ "Tick", "Transforms", "RigidBodies" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Context2D), global::Serializable.Context2D.Parser, new[]{ "Tick", "Transforms", "RigidBodies" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Transform), global::Serializable.Transform.Parser, new[]{ "ID", "Position", "Rotation" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Rigidbody), global::Serializable.Rigidbody.Parser, new[]{ "ID", "Position", "Rotation", "Velocity" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Rigidbody2D), global::Serializable.Rigidbody2D.Parser, new[]{ "ID", "Position", "Rotation", "Velocity" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Rigidbody3D), global::Serializable.Rigidbody3D.Parser, new[]{ "ID", "Position", "Rotation", "Velocity" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.OldPacket), global::Serializable.OldPacket.Parser, new[]{ "OpCode", "Data", "Cid" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.ClientSeat), global::Serializable.ClientSeat.Parser, new[]{ "Owner", "Guid" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.GameServerOnline), global::Serializable.GameServerOnline.Parser, new[]{ "Secret", "Region", "Capacity" }, null, null, null),
@@ -84,11 +92,11 @@ namespace Serializable {
   #endregion
 
   #region Messages
-  public sealed partial class Context : pb::IMessage<Context> {
-    private static readonly pb::MessageParser<Context> _parser = new pb::MessageParser<Context>(() => new Context());
+  public sealed partial class Context3D : pb::IMessage<Context3D> {
+    private static readonly pb::MessageParser<Context3D> _parser = new pb::MessageParser<Context3D>(() => new Context3D());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Context> Parser { get { return _parser; } }
+    public static pb::MessageParser<Context3D> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -101,14 +109,14 @@ namespace Serializable {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Context() {
+    public Context3D() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Context(Context other) : this() {
+    public Context3D(Context3D other) : this() {
       tick_ = other.tick_;
       transforms_ = other.transforms_.Clone();
       rigidBodies_ = other.rigidBodies_.Clone();
@@ -116,8 +124,8 @@ namespace Serializable {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Context Clone() {
-      return new Context(this);
+    public Context3D Clone() {
+      return new Context3D(this);
     }
 
     /// <summary>Field number for the "tick" field.</summary>
@@ -143,21 +151,21 @@ namespace Serializable {
 
     /// <summary>Field number for the "rigidBodies" field.</summary>
     public const int RigidBodiesFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Serializable.Rigidbody> _repeated_rigidBodies_codec
-        = pb::FieldCodec.ForMessage(26, global::Serializable.Rigidbody.Parser);
-    private readonly pbc::RepeatedField<global::Serializable.Rigidbody> rigidBodies_ = new pbc::RepeatedField<global::Serializable.Rigidbody>();
+    private static readonly pb::FieldCodec<global::Serializable.Rigidbody3D> _repeated_rigidBodies_codec
+        = pb::FieldCodec.ForMessage(26, global::Serializable.Rigidbody3D.Parser);
+    private readonly pbc::RepeatedField<global::Serializable.Rigidbody3D> rigidBodies_ = new pbc::RepeatedField<global::Serializable.Rigidbody3D>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Serializable.Rigidbody> RigidBodies {
+    public pbc::RepeatedField<global::Serializable.Rigidbody3D> RigidBodies {
       get { return rigidBodies_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as Context);
+      return Equals(other as Context3D);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Context other) {
+    public bool Equals(Context3D other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -215,7 +223,176 @@ namespace Serializable {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Context other) {
+    public void MergeFrom(Context3D other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Tick != 0) {
+        Tick = other.Tick;
+      }
+      transforms_.Add(other.transforms_);
+      rigidBodies_.Add(other.rigidBodies_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Tick = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            transforms_.AddEntriesFrom(input, _repeated_transforms_codec);
+            break;
+          }
+          case 26: {
+            rigidBodies_.AddEntriesFrom(input, _repeated_rigidBodies_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Context2D : pb::IMessage<Context2D> {
+    private static readonly pb::MessageParser<Context2D> _parser = new pb::MessageParser<Context2D>(() => new Context2D());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Context2D> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Context2D() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Context2D(Context2D other) : this() {
+      tick_ = other.tick_;
+      transforms_ = other.transforms_.Clone();
+      rigidBodies_ = other.rigidBodies_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Context2D Clone() {
+      return new Context2D(this);
+    }
+
+    /// <summary>Field number for the "tick" field.</summary>
+    public const int TickFieldNumber = 1;
+    private int tick_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Tick {
+      get { return tick_; }
+      set {
+        tick_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "transforms" field.</summary>
+    public const int TransformsFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Serializable.Transform> _repeated_transforms_codec
+        = pb::FieldCodec.ForMessage(18, global::Serializable.Transform.Parser);
+    private readonly pbc::RepeatedField<global::Serializable.Transform> transforms_ = new pbc::RepeatedField<global::Serializable.Transform>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Serializable.Transform> Transforms {
+      get { return transforms_; }
+    }
+
+    /// <summary>Field number for the "rigidBodies" field.</summary>
+    public const int RigidBodiesFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::Serializable.Rigidbody2D> _repeated_rigidBodies_codec
+        = pb::FieldCodec.ForMessage(26, global::Serializable.Rigidbody2D.Parser);
+    private readonly pbc::RepeatedField<global::Serializable.Rigidbody2D> rigidBodies_ = new pbc::RepeatedField<global::Serializable.Rigidbody2D>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Serializable.Rigidbody2D> RigidBodies {
+      get { return rigidBodies_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Context2D);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Context2D other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Tick != other.Tick) return false;
+      if(!transforms_.Equals(other.transforms_)) return false;
+      if(!rigidBodies_.Equals(other.rigidBodies_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Tick != 0) hash ^= Tick.GetHashCode();
+      hash ^= transforms_.GetHashCode();
+      hash ^= rigidBodies_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Tick != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Tick);
+      }
+      transforms_.WriteTo(output, _repeated_transforms_codec);
+      rigidBodies_.WriteTo(output, _repeated_rigidBodies_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Tick != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Tick);
+      }
+      size += transforms_.CalculateSize(_repeated_transforms_codec);
+      size += rigidBodies_.CalculateSize(_repeated_rigidBodies_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Context2D other) {
       if (other == null) {
         return;
       }
@@ -261,7 +438,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -447,15 +624,15 @@ namespace Serializable {
 
   }
 
-  public sealed partial class Rigidbody : pb::IMessage<Rigidbody> {
-    private static readonly pb::MessageParser<Rigidbody> _parser = new pb::MessageParser<Rigidbody>(() => new Rigidbody());
+  public sealed partial class Rigidbody2D : pb::IMessage<Rigidbody2D> {
+    private static readonly pb::MessageParser<Rigidbody2D> _parser = new pb::MessageParser<Rigidbody2D>(() => new Rigidbody2D());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Rigidbody> Parser { get { return _parser; } }
+    public static pb::MessageParser<Rigidbody2D> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -464,14 +641,14 @@ namespace Serializable {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Rigidbody() {
+    public Rigidbody2D() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Rigidbody(Rigidbody other) : this() {
+    public Rigidbody2D(Rigidbody2D other) : this() {
       iD_ = other.iD_;
       position_ = other.position_ != null ? other.position_.Clone() : null;
       rotation_ = other.rotation_;
@@ -480,8 +657,8 @@ namespace Serializable {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Rigidbody Clone() {
-      return new Rigidbody(this);
+    public Rigidbody2D Clone() {
+      return new Rigidbody2D(this);
     }
 
     /// <summary>Field number for the "ID" field.</summary>
@@ -497,9 +674,9 @@ namespace Serializable {
 
     /// <summary>Field number for the "position" field.</summary>
     public const int PositionFieldNumber = 2;
-    private global::Serializable.Vector3 position_;
+    private global::Serializable.Vector2 position_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Serializable.Vector3 Position {
+    public global::Serializable.Vector2 Position {
       get { return position_; }
       set {
         position_ = value;
@@ -530,11 +707,11 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as Rigidbody);
+      return Equals(other as Rigidbody2D);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Rigidbody other) {
+    public bool Equals(Rigidbody2D other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -611,7 +788,232 @@ namespace Serializable {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Rigidbody other) {
+    public void MergeFrom(Rigidbody2D other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ID.Length != 0) {
+        ID = other.ID;
+      }
+      if (other.position_ != null) {
+        if (position_ == null) {
+          position_ = new global::Serializable.Vector2();
+        }
+        Position.MergeFrom(other.Position);
+      }
+      if (other.Rotation != 0F) {
+        Rotation = other.Rotation;
+      }
+      if (other.velocity_ != null) {
+        if (velocity_ == null) {
+          velocity_ = new global::Serializable.Vector2();
+        }
+        Velocity.MergeFrom(other.Velocity);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            ID = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (position_ == null) {
+              position_ = new global::Serializable.Vector2();
+            }
+            input.ReadMessage(position_);
+            break;
+          }
+          case 29: {
+            Rotation = input.ReadFloat();
+            break;
+          }
+          case 34: {
+            if (velocity_ == null) {
+              velocity_ = new global::Serializable.Vector2();
+            }
+            input.ReadMessage(velocity_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Rigidbody3D : pb::IMessage<Rigidbody3D> {
+    private static readonly pb::MessageParser<Rigidbody3D> _parser = new pb::MessageParser<Rigidbody3D>(() => new Rigidbody3D());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Rigidbody3D> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Rigidbody3D() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Rigidbody3D(Rigidbody3D other) : this() {
+      iD_ = other.iD_;
+      position_ = other.position_ != null ? other.position_.Clone() : null;
+      rotation_ = other.rotation_;
+      velocity_ = other.velocity_ != null ? other.velocity_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Rigidbody3D Clone() {
+      return new Rigidbody3D(this);
+    }
+
+    /// <summary>Field number for the "ID" field.</summary>
+    public const int IDFieldNumber = 1;
+    private string iD_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ID {
+      get { return iD_; }
+      set {
+        iD_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "position" field.</summary>
+    public const int PositionFieldNumber = 2;
+    private global::Serializable.Vector3 position_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Serializable.Vector3 Position {
+      get { return position_; }
+      set {
+        position_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rotation" field.</summary>
+    public const int RotationFieldNumber = 3;
+    private float rotation_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Rotation {
+      get { return rotation_; }
+      set {
+        rotation_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "velocity" field.</summary>
+    public const int VelocityFieldNumber = 4;
+    private global::Serializable.Vector3 velocity_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Serializable.Vector3 Velocity {
+      get { return velocity_; }
+      set {
+        velocity_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Rigidbody3D);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Rigidbody3D other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ID != other.ID) return false;
+      if (!object.Equals(Position, other.Position)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Rotation, other.Rotation)) return false;
+      if (!object.Equals(Velocity, other.Velocity)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ID.Length != 0) hash ^= ID.GetHashCode();
+      if (position_ != null) hash ^= Position.GetHashCode();
+      if (Rotation != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Rotation);
+      if (velocity_ != null) hash ^= Velocity.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ID.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ID);
+      }
+      if (position_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Position);
+      }
+      if (Rotation != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(Rotation);
+      }
+      if (velocity_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Velocity);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ID.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ID);
+      }
+      if (position_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Position);
+      }
+      if (Rotation != 0F) {
+        size += 1 + 4;
+      }
+      if (velocity_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Velocity);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Rigidbody3D other) {
       if (other == null) {
         return;
       }
@@ -629,7 +1031,7 @@ namespace Serializable {
       }
       if (other.velocity_ != null) {
         if (velocity_ == null) {
-          velocity_ = new global::Serializable.Vector2();
+          velocity_ = new global::Serializable.Vector3();
         }
         Velocity.MergeFrom(other.Velocity);
       }
@@ -661,7 +1063,7 @@ namespace Serializable {
           }
           case 34: {
             if (velocity_ == null) {
-              velocity_ = new global::Serializable.Vector2();
+              velocity_ = new global::Serializable.Vector3();
             }
             input.ReadMessage(velocity_);
             break;
@@ -680,7 +1082,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -871,7 +1273,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1034,7 +1436,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1219,7 +1621,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1438,7 +1840,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1623,7 +2025,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1808,7 +2210,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2033,7 +2435,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2190,7 +2592,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2375,7 +2777,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

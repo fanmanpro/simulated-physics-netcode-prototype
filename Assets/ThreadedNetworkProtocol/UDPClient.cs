@@ -17,14 +17,14 @@ public class UDPClient : IClient
 
 	private ClientState clientState;
 
-	private IContextHandler contextBroadcaster;
+	private IContextHandler contextHandler;
 
 	public bool Active => clientState.Connected;
 
 	public UDPClient(int port, ClientEndPoint c, ClientState cs, IContextHandler cb)
 	{
 		udpClient = new UdpClient(port);
-		contextBroadcaster = cb;
+		contextHandler = cb;
 
 		remoteEndPoint = c;
 		clientState = cs;
@@ -93,7 +93,7 @@ public class UDPClient : IClient
 		}
 	}
 
-	public async Task<Error> Send(Serializable.Context context)
+	public async Task<Error> Send(Serializable.Context3D context)
 	{
 		return await Send(context.ToByteArray());
 	}
@@ -106,15 +106,15 @@ public class UDPClient : IClient
 		//}
 		//try
 		//{
-			await Send(new Serializable.Context { Tick = 0 });
+			await Send(new Serializable.Context3D { Tick = 0 });
 			while (udpClient.Client.Connected)
 			{
 				UdpReceiveResult receiveBytes = await udpClient.ReceiveAsync();
 
-				Serializable.Context context = Serializable.Context.Parser.ParseFrom(receiveBytes.Buffer);
+				Serializable.Context3D context = Serializable.Context3D.Parser.ParseFrom(receiveBytes.Buffer);
 				//Debug.Log("[" + remoteEndPoint.Port + "] Reading: " + context.Tick);
 				//lastTick = context.Tick;
-				contextBroadcaster.HandleContext(context);
+				contextHandler.HandleContext(context);
 				//contextBroadcaster?.PrepareContext(context.Tick);
 				//if (packet.OpCode != Gamedata.Header.Types.OpCode.Invalid)
 				//{

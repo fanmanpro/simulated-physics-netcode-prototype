@@ -9,8 +9,8 @@ using ThreadedNetworkProtocol;
 public class ContextManager : MonoBehaviour
 {
 	public Client client;
-	public Dictionary<string, NetSynced.Rigidbody2D> worldOwnedRigidbodiesByGUID;
-	public Dictionary<string, NetSynced.Rigidbody2D> playerOwnedRigidbodiesByGUID;
+	public Dictionary<string, NetSynced.Rigidbody3D> worldOwnedRigidbodiesByGUID;
+	public Dictionary<string, NetSynced.Rigidbody3D> playerOwnedRigidbodiesByGUID;
 	public Dictionary<string, NetSynced.Transform> worldOwnedTransformsByGUID;
 	public Dictionary<string, NetSynced.Transform> playerOwnedTransformsByGUID;
 	public List<string> worldOwnedGuids;
@@ -18,14 +18,14 @@ public class ContextManager : MonoBehaviour
 
 	void Start()
 	{
-		worldOwnedRigidbodiesByGUID = new Dictionary<string, NetSynced.Rigidbody2D>();
-		playerOwnedRigidbodiesByGUID = new Dictionary<string, NetSynced.Rigidbody2D>();
+		worldOwnedRigidbodiesByGUID = new Dictionary<string, NetSynced.Rigidbody3D>();
+		playerOwnedRigidbodiesByGUID = new Dictionary<string, NetSynced.Rigidbody3D>();
 		worldOwnedTransformsByGUID = new Dictionary<string, NetSynced.Transform>();
 		playerOwnedTransformsByGUID = new Dictionary<string, NetSynced.Transform>();
 
 		foreach (GameObject rootGameObject in gameObject.scene.GetRootGameObjects())
 		{
-			foreach (NetSynced.Rigidbody2D r in rootGameObject.GetComponentsInChildren<NetSynced.Rigidbody2D>())
+			foreach (NetSynced.Rigidbody3D r in rootGameObject.GetComponentsInChildren<NetSynced.Rigidbody3D>())
 			{
 				worldOwnedRigidbodiesByGUID.Add(r.GUID, r);
 			}
@@ -43,7 +43,7 @@ public class ContextManager : MonoBehaviour
 
 	public void RegisterPlayerOwned(string guid)
 	{
-		NetSynced.Rigidbody2D r;
+		NetSynced.Rigidbody3D r;
 		if (!worldOwnedRigidbodiesByGUID.TryGetValue(guid, out r))
 			return;
 		playerOwnedRigidbodiesByGUID.Add(guid, r);

@@ -9,7 +9,7 @@ namespace NetSynced
 	public class Rigidbody2D : MonoBehaviour
 	{
 		//public GameServer GameServer;
-		public new UnityEngine.Rigidbody2D rigidbody;
+		public new UnityEngine.Rigidbody2D rb;
 		private NetSync netSync;
 		public string GUID => netSync.GUID;
 
@@ -40,7 +40,7 @@ namespace NetSynced
 			doUpdate = false;
 			syncEndPosition = transform.position;
 
-			rigidbody = GetComponent<UnityEngine.Rigidbody2D>();
+			rb = GetComponent<UnityEngine.Rigidbody2D>();
 		}
 
 		// using this is never really good for multiplayer games because it means sending too many packets.
@@ -49,7 +49,7 @@ namespace NetSynced
 			doUpdate = true;
 
 			t = 0;
-			syncStartPosition = rigidbody.position;
+			syncStartPosition = GetComponent<Rigidbody>().position;
 			syncEndPosition = p;
 		}
 
@@ -59,23 +59,23 @@ namespace NetSynced
 
 			t += Time.deltaTime / timeToReachTarget;
 
-			rigidbody.position = Vector3.Lerp(syncStartPosition, syncEndPosition, t);
+			rb.position = Vector3.Lerp(syncStartPosition, syncEndPosition, t);
 		}
 
-		public Serializable.Rigidbody Export()
+		public Serializable.Rigidbody2D Export()
 		{
-			return new Serializable.Rigidbody
+			return new Serializable.Rigidbody2D
 			{
 				ID = netSync.GUID,
-				Position = new Serializable.Vector3
+				Position = new Serializable.Vector2
 				{
-					X = rigidbody.position.x,
-					Y = rigidbody.position.y,
+					X = rb.position.x,
+					Y = rb.position.y,
 				},
 				Velocity = new Serializable.Vector2
 				{
-					X = rigidbody.velocity.x,
-					Y = rigidbody.velocity.y,
+					X = rb.velocity.x,
+					Y = rb.velocity.y,
 				},
 			};
 		}

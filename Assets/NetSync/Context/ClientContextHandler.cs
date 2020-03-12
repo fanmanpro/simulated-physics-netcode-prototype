@@ -9,7 +9,7 @@ public class ClientContextHandler : MonoBehaviour, IContextHandler
 	public Client client;
 	public ContextManager ContextManager;
 
-	public List<NetSynced.Rigidbody2D> rigidbodies;
+	public List<NetSynced.Rigidbody3D> rigidbodies;
 
 	// these are in bytes, and 32768 is 32KiB
 	public float MaxPacketSize = 32768;
@@ -22,14 +22,14 @@ public class ClientContextHandler : MonoBehaviour, IContextHandler
 
 	void Start()
 	{
-		rigidbodies = new List<NetSynced.Rigidbody2D>();
+		rigidbodies = new List<NetSynced.Rigidbody3D>();
 		foreach (GameObject rootGameObject in gameObject.scene.GetRootGameObjects())
 		{
-			rigidbodies.AddRange(rootGameObject.GetComponentsInChildren<NetSynced.Rigidbody2D>());
+			rigidbodies.AddRange(rootGameObject.GetComponentsInChildren<NetSynced.Rigidbody3D>());
 		}
 	}
 
-	public void HandleContext(Serializable.Context context)
+	public void HandleContext(Serializable.Context3D context)
 	{
 		foreach (Serializable.Transform st in context.Transforms)
 		{
@@ -46,9 +46,9 @@ public class ClientContextHandler : MonoBehaviour, IContextHandler
 				//Debug.Log("[GAM] [Context] " + rb.rigidbody.position);
 			}
 		}
-		foreach (Serializable.Rigidbody sr in context.RigidBodies)
+		foreach (Serializable.Rigidbody3D sr in context.RigidBodies)
 		{
-			NetSynced.Rigidbody2D r;
+			NetSynced.Rigidbody3D r;
 			if (ContextManager.worldOwnedRigidbodiesByGUID.TryGetValue(sr.ID, out r))
 			{
 				//Vector2 currentPosition = r.rigidbody.position;
