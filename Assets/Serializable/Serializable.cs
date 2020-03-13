@@ -30,36 +30,39 @@ namespace Serializable {
             "CgtyaWdpZEJvZGllcxgDIAMoCzIZLnNlcmlhbGl6YWJsZS5SaWdpZGJvZHkz",
             "RCJ2CglDb250ZXh0MkQSDAoEdGljaxgBIAEoBRIrCgp0cmFuc2Zvcm1zGAIg",
             "AygLMhcuc2VyaWFsaXphYmxlLlRyYW5zZm9ybRIuCgtyaWdpZEJvZGllcxgD",
-            "IAMoCzIZLnNlcmlhbGl6YWJsZS5SaWdpZGJvZHkyRCJSCglUcmFuc2Zvcm0S",
+            "IAMoCzIZLnNlcmlhbGl6YWJsZS5SaWdpZGJvZHkyRCJsCglUcmFuc2Zvcm0S",
             "CgoCSUQYASABKAkSJwoIcG9zaXRpb24YAiABKAsyFS5zZXJpYWxpemFibGUu",
-            "VmVjdG9yMxIQCghyb3RhdGlvbhgDIAEoAiJ9CgtSaWdpZGJvZHkyRBIKCgJJ",
-            "RBgBIAEoCRInCghwb3NpdGlvbhgCIAEoCzIVLnNlcmlhbGl6YWJsZS5WZWN0",
-            "b3IyEhAKCHJvdGF0aW9uGAMgASgCEicKCHZlbG9jaXR5GAQgASgLMhUuc2Vy",
-            "aWFsaXphYmxlLlZlY3RvcjIifQoLUmlnaWRib2R5M0QSCgoCSUQYASABKAkS",
-            "JwoIcG9zaXRpb24YAiABKAsyFS5zZXJpYWxpemFibGUuVmVjdG9yMxIQCghy",
-            "b3RhdGlvbhgDIAEoAhInCgh2ZWxvY2l0eRgEIAEoCzIVLnNlcmlhbGl6YWJs",
-            "ZS5WZWN0b3IzImkKCU9sZFBhY2tldBIrCgZvcENvZGUYASABKA4yGy5zZXJp",
-            "YWxpemFibGUuSGVhZGVyLk9wQ29kZRIiCgRkYXRhGAIgASgLMhQuZ29vZ2xl",
-            "LnByb3RvYnVmLkFueRILCgNjaWQYAyABKAkiKQoKQ2xpZW50U2VhdBINCgVv",
-            "d25lchgBIAEoCRIMCgRndWlkGAIgASgJIkQKEEdhbWVTZXJ2ZXJPbmxpbmUS",
-            "DgoGc2VjcmV0GAEgASgJEg4KBnJlZ2lvbhgCIAEoCRIQCghjYXBhY2l0eRgD",
-            "IAEoBSJ5CgpHYW1lT2JqZWN0EgoKAklEGAEgASgJEiQKBlByZWZhYhgCIAEo",
-            "DjIULnNlcmlhbGl6YWJsZS5QcmVmYWISJwoIcG9zaXRpb24YAyABKAsyFS5z",
-            "ZXJpYWxpemFibGUuVmVjdG9yMhIQCghyb3RhdGlvbhgEIAEoAiIsCghWZWxv",
-            "Y2l0eRIKCgJJRBgBIAEoCRIJCgF4GAIgASgCEgkKAXkYAyABKAIiLAoIUG9z",
-            "aXRpb24SCgoCSUQYASABKAkSCQoBeBgCIAEoAhIJCgF5GAMgASgCIoABCgVG",
-            "b3JjZRIKCgJJRBgBIAEoCRIJCgF4GAIgASgCEgkKAXkYAyABKAISMAoJZm9y",
-            "Y2VNb2RlGAQgASgOMh0uc2VyaWFsaXphYmxlLkZvcmNlLkZvcmNlTW9kZSIj",
-            "CglGb3JjZU1vZGUSCQoFRm9yY2UQABILCgdJbXB1bHNlEAEiHwoHVmVjdG9y",
-            "MhIJCgF4GAEgASgCEgkKAXkYAiABKAIiKgoHVmVjdG9yMxIJCgF4GAEgASgC",
-            "EgkKAXkYAiABKAISCQoBehgDIAEoAiL4AQoGSGVhZGVyIu0BCgZPcENvZGUS",
-            "CwoHSW52YWxpZBAAEhQKEENsaWVudERpc2Nvbm5lY3QQZBIQCgxDbGllbnRB",
-            "cHBlYWwQZRIPCgtDbGllbnRUcnVzdBBmEhkKFUNsaWVudERhdGFncmFtQWRk",
-            "cmVzcxBoEg4KCkNsaWVudFNlYXQQZxIMCgdDb250ZXh0EMgBEg8KCkdhbWVP",
-            "YmplY3QQrAISDgoJUmlnaWRib2R5EK0CEg0KCFBvc2l0aW9uEJADEg0KCFJv",
-            "dGF0aW9uEJEDEgoKBVNjYWxlEJIDEg0KCFZlbG9jaXR5EJMDEgoKBUZvcmNl",
-            "EJQDKiIKBlByZWZhYhILCgdJbnZhbGlkEAASCwoHRGVtb0JveBABYgZwcm90",
-            "bzM="));
+            "VmVjdG9yMxIqCghyb3RhdGlvbhgDIAEoCzIYLnNlcmlhbGl6YWJsZS5RdWF0",
+            "ZXJuaW9uIpcBCgtSaWdpZGJvZHkyRBIKCgJJRBgBIAEoCRInCghwb3NpdGlv",
+            "bhgCIAEoCzIVLnNlcmlhbGl6YWJsZS5WZWN0b3IyEioKCHJvdGF0aW9uGAMg",
+            "ASgLMhguc2VyaWFsaXphYmxlLlF1YXRlcm5pb24SJwoIdmVsb2NpdHkYBCAB",
+            "KAsyFS5zZXJpYWxpemFibGUuVmVjdG9yMiKXAQoLUmlnaWRib2R5M0QSCgoC",
+            "SUQYASABKAkSJwoIcG9zaXRpb24YAiABKAsyFS5zZXJpYWxpemFibGUuVmVj",
+            "dG9yMxIqCghyb3RhdGlvbhgDIAEoCzIYLnNlcmlhbGl6YWJsZS5RdWF0ZXJu",
+            "aW9uEicKCHZlbG9jaXR5GAQgASgLMhUuc2VyaWFsaXphYmxlLlZlY3RvcjMi",
+            "HwoHVmVjdG9yMhIJCgF4GAEgASgCEgkKAXkYAiABKAIiKgoHVmVjdG9yMxIJ",
+            "CgF4GAEgASgCEgkKAXkYAiABKAISCQoBehgDIAEoAiI4CgpRdWF0ZXJuaW9u",
+            "EgkKAXcYASABKAISCQoBeBgCIAEoAhIJCgF5GAMgASgCEgkKAXoYBCABKAIi",
+            "aQoJT2xkUGFja2V0EisKBm9wQ29kZRgBIAEoDjIbLnNlcmlhbGl6YWJsZS5I",
+            "ZWFkZXIuT3BDb2RlEiIKBGRhdGEYAiABKAsyFC5nb29nbGUucHJvdG9idWYu",
+            "QW55EgsKA2NpZBgDIAEoCSIpCgpDbGllbnRTZWF0Eg0KBW93bmVyGAEgASgJ",
+            "EgwKBGd1aWQYAiABKAkiRAoQR2FtZVNlcnZlck9ubGluZRIOCgZzZWNyZXQY",
+            "ASABKAkSDgoGcmVnaW9uGAIgASgJEhAKCGNhcGFjaXR5GAMgASgFInkKCkdh",
+            "bWVPYmplY3QSCgoCSUQYASABKAkSJAoGUHJlZmFiGAIgASgOMhQuc2VyaWFs",
+            "aXphYmxlLlByZWZhYhInCghwb3NpdGlvbhgDIAEoCzIVLnNlcmlhbGl6YWJs",
+            "ZS5WZWN0b3IyEhAKCHJvdGF0aW9uGAQgASgCIiwKCFZlbG9jaXR5EgoKAklE",
+            "GAEgASgJEgkKAXgYAiABKAISCQoBeRgDIAEoAiIsCghQb3NpdGlvbhIKCgJJ",
+            "RBgBIAEoCRIJCgF4GAIgASgCEgkKAXkYAyABKAIigAEKBUZvcmNlEgoKAklE",
+            "GAEgASgJEgkKAXgYAiABKAISCQoBeRgDIAEoAhIwCglmb3JjZU1vZGUYBCAB",
+            "KA4yHS5zZXJpYWxpemFibGUuRm9yY2UuRm9yY2VNb2RlIiMKCUZvcmNlTW9k",
+            "ZRIJCgVGb3JjZRAAEgsKB0ltcHVsc2UQASL4AQoGSGVhZGVyIu0BCgZPcENv",
+            "ZGUSCwoHSW52YWxpZBAAEhQKEENsaWVudERpc2Nvbm5lY3QQZBIQCgxDbGll",
+            "bnRBcHBlYWwQZRIPCgtDbGllbnRUcnVzdBBmEhkKFUNsaWVudERhdGFncmFt",
+            "QWRkcmVzcxBoEg4KCkNsaWVudFNlYXQQZxIMCgdDb250ZXh0EMgBEg8KCkdh",
+            "bWVPYmplY3QQrAISDgoJUmlnaWRib2R5EK0CEg0KCFBvc2l0aW9uEJADEg0K",
+            "CFJvdGF0aW9uEJEDEgoKBVNjYWxlEJIDEg0KCFZlbG9jaXR5EJMDEgoKBUZv",
+            "cmNlEJQDKiIKBlByZWZhYhILCgdJbnZhbGlkEAASCwoHRGVtb0JveBABYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Serializable.Prefab), }, new pbr::GeneratedClrTypeInfo[] {
@@ -68,6 +71,9 @@ namespace Serializable {
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Transform), global::Serializable.Transform.Parser, new[]{ "ID", "Position", "Rotation" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Rigidbody2D), global::Serializable.Rigidbody2D.Parser, new[]{ "ID", "Position", "Rotation", "Velocity" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Rigidbody3D), global::Serializable.Rigidbody3D.Parser, new[]{ "ID", "Position", "Rotation", "Velocity" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Vector2), global::Serializable.Vector2.Parser, new[]{ "X", "Y" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Vector3), global::Serializable.Vector3.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Quaternion), global::Serializable.Quaternion.Parser, new[]{ "W", "X", "Y", "Z" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.OldPacket), global::Serializable.OldPacket.Parser, new[]{ "OpCode", "Data", "Cid" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.ClientSeat), global::Serializable.ClientSeat.Parser, new[]{ "Owner", "Guid" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.GameServerOnline), global::Serializable.GameServerOnline.Parser, new[]{ "Secret", "Region", "Capacity" }, null, null, null),
@@ -75,8 +81,6 @@ namespace Serializable {
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Velocity), global::Serializable.Velocity.Parser, new[]{ "ID", "X", "Y" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Position), global::Serializable.Position.Parser, new[]{ "ID", "X", "Y" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Force), global::Serializable.Force.Parser, new[]{ "ID", "X", "Y", "ForceMode" }, null, new[]{ typeof(global::Serializable.Force.Types.ForceMode) }, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Vector2), global::Serializable.Vector2.Parser, new[]{ "X", "Y" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Vector3), global::Serializable.Vector3.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Header), global::Serializable.Header.Parser, null, null, new[]{ typeof(global::Serializable.Header.Types.OpCode) }, null)
           }));
     }
@@ -457,7 +461,7 @@ namespace Serializable {
     public Transform(Transform other) : this() {
       iD_ = other.iD_;
       position_ = other.position_ != null ? other.position_.Clone() : null;
-      rotation_ = other.rotation_;
+      rotation_ = other.rotation_ != null ? other.rotation_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -490,12 +494,12 @@ namespace Serializable {
 
     /// <summary>Field number for the "rotation" field.</summary>
     public const int RotationFieldNumber = 3;
-    private float rotation_;
+    private global::Serializable.Quaternion rotation_;
     /// <summary>
     /// Prefab Prefab = 2;
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float Rotation {
+    public global::Serializable.Quaternion Rotation {
       get { return rotation_; }
       set {
         rotation_ = value;
@@ -517,7 +521,7 @@ namespace Serializable {
       }
       if (ID != other.ID) return false;
       if (!object.Equals(Position, other.Position)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Rotation, other.Rotation)) return false;
+      if (!object.Equals(Rotation, other.Rotation)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -526,7 +530,7 @@ namespace Serializable {
       int hash = 1;
       if (ID.Length != 0) hash ^= ID.GetHashCode();
       if (position_ != null) hash ^= Position.GetHashCode();
-      if (Rotation != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Rotation);
+      if (rotation_ != null) hash ^= Rotation.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -548,9 +552,9 @@ namespace Serializable {
         output.WriteRawTag(18);
         output.WriteMessage(Position);
       }
-      if (Rotation != 0F) {
-        output.WriteRawTag(29);
-        output.WriteFloat(Rotation);
+      if (rotation_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Rotation);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -566,8 +570,8 @@ namespace Serializable {
       if (position_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Position);
       }
-      if (Rotation != 0F) {
-        size += 1 + 4;
+      if (rotation_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Rotation);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -589,8 +593,11 @@ namespace Serializable {
         }
         Position.MergeFrom(other.Position);
       }
-      if (other.Rotation != 0F) {
-        Rotation = other.Rotation;
+      if (other.rotation_ != null) {
+        if (rotation_ == null) {
+          rotation_ = new global::Serializable.Quaternion();
+        }
+        Rotation.MergeFrom(other.Rotation);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -614,8 +621,11 @@ namespace Serializable {
             input.ReadMessage(position_);
             break;
           }
-          case 29: {
-            Rotation = input.ReadFloat();
+          case 26: {
+            if (rotation_ == null) {
+              rotation_ = new global::Serializable.Quaternion();
+            }
+            input.ReadMessage(rotation_);
             break;
           }
         }
@@ -651,7 +661,7 @@ namespace Serializable {
     public Rigidbody2D(Rigidbody2D other) : this() {
       iD_ = other.iD_;
       position_ = other.position_ != null ? other.position_.Clone() : null;
-      rotation_ = other.rotation_;
+      rotation_ = other.rotation_ != null ? other.rotation_.Clone() : null;
       velocity_ = other.velocity_ != null ? other.velocity_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -685,9 +695,9 @@ namespace Serializable {
 
     /// <summary>Field number for the "rotation" field.</summary>
     public const int RotationFieldNumber = 3;
-    private float rotation_;
+    private global::Serializable.Quaternion rotation_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float Rotation {
+    public global::Serializable.Quaternion Rotation {
       get { return rotation_; }
       set {
         rotation_ = value;
@@ -720,7 +730,7 @@ namespace Serializable {
       }
       if (ID != other.ID) return false;
       if (!object.Equals(Position, other.Position)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Rotation, other.Rotation)) return false;
+      if (!object.Equals(Rotation, other.Rotation)) return false;
       if (!object.Equals(Velocity, other.Velocity)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -730,7 +740,7 @@ namespace Serializable {
       int hash = 1;
       if (ID.Length != 0) hash ^= ID.GetHashCode();
       if (position_ != null) hash ^= Position.GetHashCode();
-      if (Rotation != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Rotation);
+      if (rotation_ != null) hash ^= Rotation.GetHashCode();
       if (velocity_ != null) hash ^= Velocity.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -753,9 +763,9 @@ namespace Serializable {
         output.WriteRawTag(18);
         output.WriteMessage(Position);
       }
-      if (Rotation != 0F) {
-        output.WriteRawTag(29);
-        output.WriteFloat(Rotation);
+      if (rotation_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Rotation);
       }
       if (velocity_ != null) {
         output.WriteRawTag(34);
@@ -775,8 +785,8 @@ namespace Serializable {
       if (position_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Position);
       }
-      if (Rotation != 0F) {
-        size += 1 + 4;
+      if (rotation_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Rotation);
       }
       if (velocity_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Velocity);
@@ -801,8 +811,11 @@ namespace Serializable {
         }
         Position.MergeFrom(other.Position);
       }
-      if (other.Rotation != 0F) {
-        Rotation = other.Rotation;
+      if (other.rotation_ != null) {
+        if (rotation_ == null) {
+          rotation_ = new global::Serializable.Quaternion();
+        }
+        Rotation.MergeFrom(other.Rotation);
       }
       if (other.velocity_ != null) {
         if (velocity_ == null) {
@@ -832,8 +845,11 @@ namespace Serializable {
             input.ReadMessage(position_);
             break;
           }
-          case 29: {
-            Rotation = input.ReadFloat();
+          case 26: {
+            if (rotation_ == null) {
+              rotation_ = new global::Serializable.Quaternion();
+            }
+            input.ReadMessage(rotation_);
             break;
           }
           case 34: {
@@ -876,7 +892,7 @@ namespace Serializable {
     public Rigidbody3D(Rigidbody3D other) : this() {
       iD_ = other.iD_;
       position_ = other.position_ != null ? other.position_.Clone() : null;
-      rotation_ = other.rotation_;
+      rotation_ = other.rotation_ != null ? other.rotation_.Clone() : null;
       velocity_ = other.velocity_ != null ? other.velocity_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -910,9 +926,9 @@ namespace Serializable {
 
     /// <summary>Field number for the "rotation" field.</summary>
     public const int RotationFieldNumber = 3;
-    private float rotation_;
+    private global::Serializable.Quaternion rotation_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float Rotation {
+    public global::Serializable.Quaternion Rotation {
       get { return rotation_; }
       set {
         rotation_ = value;
@@ -945,7 +961,7 @@ namespace Serializable {
       }
       if (ID != other.ID) return false;
       if (!object.Equals(Position, other.Position)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Rotation, other.Rotation)) return false;
+      if (!object.Equals(Rotation, other.Rotation)) return false;
       if (!object.Equals(Velocity, other.Velocity)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -955,7 +971,7 @@ namespace Serializable {
       int hash = 1;
       if (ID.Length != 0) hash ^= ID.GetHashCode();
       if (position_ != null) hash ^= Position.GetHashCode();
-      if (Rotation != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Rotation);
+      if (rotation_ != null) hash ^= Rotation.GetHashCode();
       if (velocity_ != null) hash ^= Velocity.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -978,9 +994,9 @@ namespace Serializable {
         output.WriteRawTag(18);
         output.WriteMessage(Position);
       }
-      if (Rotation != 0F) {
-        output.WriteRawTag(29);
-        output.WriteFloat(Rotation);
+      if (rotation_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Rotation);
       }
       if (velocity_ != null) {
         output.WriteRawTag(34);
@@ -1000,8 +1016,8 @@ namespace Serializable {
       if (position_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Position);
       }
-      if (Rotation != 0F) {
-        size += 1 + 4;
+      if (rotation_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Rotation);
       }
       if (velocity_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Velocity);
@@ -1026,8 +1042,11 @@ namespace Serializable {
         }
         Position.MergeFrom(other.Position);
       }
-      if (other.Rotation != 0F) {
-        Rotation = other.Rotation;
+      if (other.rotation_ != null) {
+        if (rotation_ == null) {
+          rotation_ = new global::Serializable.Quaternion();
+        }
+        Rotation.MergeFrom(other.Rotation);
       }
       if (other.velocity_ != null) {
         if (velocity_ == null) {
@@ -1057,8 +1076,11 @@ namespace Serializable {
             input.ReadMessage(position_);
             break;
           }
-          case 29: {
-            Rotation = input.ReadFloat();
+          case 26: {
+            if (rotation_ == null) {
+              rotation_ = new global::Serializable.Quaternion();
+            }
+            input.ReadMessage(rotation_);
             break;
           }
           case 34: {
@@ -1066,6 +1088,561 @@ namespace Serializable {
               velocity_ = new global::Serializable.Vector3();
             }
             input.ReadMessage(velocity_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Vector2 : pb::IMessage<Vector2> {
+    private static readonly pb::MessageParser<Vector2> _parser = new pb::MessageParser<Vector2>(() => new Vector2());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Vector2> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Vector2() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Vector2(Vector2 other) : this() {
+      x_ = other.x_;
+      y_ = other.y_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Vector2 Clone() {
+      return new Vector2(this);
+    }
+
+    /// <summary>Field number for the "x" field.</summary>
+    public const int XFieldNumber = 1;
+    private float x_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float X {
+      get { return x_; }
+      set {
+        x_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "y" field.</summary>
+    public const int YFieldNumber = 2;
+    private float y_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Y {
+      get { return y_; }
+      set {
+        y_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Vector2);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Vector2 other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(X, other.X)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Y, other.Y)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (X != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(X);
+      if (Y != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Y);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (X != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(X);
+      }
+      if (Y != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(Y);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (X != 0F) {
+        size += 1 + 4;
+      }
+      if (Y != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Vector2 other) {
+      if (other == null) {
+        return;
+      }
+      if (other.X != 0F) {
+        X = other.X;
+      }
+      if (other.Y != 0F) {
+        Y = other.Y;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 13: {
+            X = input.ReadFloat();
+            break;
+          }
+          case 21: {
+            Y = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Vector3 : pb::IMessage<Vector3> {
+    private static readonly pb::MessageParser<Vector3> _parser = new pb::MessageParser<Vector3>(() => new Vector3());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Vector3> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Vector3() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Vector3(Vector3 other) : this() {
+      x_ = other.x_;
+      y_ = other.y_;
+      z_ = other.z_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Vector3 Clone() {
+      return new Vector3(this);
+    }
+
+    /// <summary>Field number for the "x" field.</summary>
+    public const int XFieldNumber = 1;
+    private float x_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float X {
+      get { return x_; }
+      set {
+        x_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "y" field.</summary>
+    public const int YFieldNumber = 2;
+    private float y_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Y {
+      get { return y_; }
+      set {
+        y_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "z" field.</summary>
+    public const int ZFieldNumber = 3;
+    private float z_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Z {
+      get { return z_; }
+      set {
+        z_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Vector3);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Vector3 other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(X, other.X)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Y, other.Y)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Z, other.Z)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (X != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(X);
+      if (Y != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Y);
+      if (Z != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Z);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (X != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(X);
+      }
+      if (Y != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(Y);
+      }
+      if (Z != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(Z);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (X != 0F) {
+        size += 1 + 4;
+      }
+      if (Y != 0F) {
+        size += 1 + 4;
+      }
+      if (Z != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Vector3 other) {
+      if (other == null) {
+        return;
+      }
+      if (other.X != 0F) {
+        X = other.X;
+      }
+      if (other.Y != 0F) {
+        Y = other.Y;
+      }
+      if (other.Z != 0F) {
+        Z = other.Z;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 13: {
+            X = input.ReadFloat();
+            break;
+          }
+          case 21: {
+            Y = input.ReadFloat();
+            break;
+          }
+          case 29: {
+            Z = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class Quaternion : pb::IMessage<Quaternion> {
+    private static readonly pb::MessageParser<Quaternion> _parser = new pb::MessageParser<Quaternion>(() => new Quaternion());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Quaternion> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Quaternion() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Quaternion(Quaternion other) : this() {
+      w_ = other.w_;
+      x_ = other.x_;
+      y_ = other.y_;
+      z_ = other.z_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Quaternion Clone() {
+      return new Quaternion(this);
+    }
+
+    /// <summary>Field number for the "w" field.</summary>
+    public const int WFieldNumber = 1;
+    private float w_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float W {
+      get { return w_; }
+      set {
+        w_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "x" field.</summary>
+    public const int XFieldNumber = 2;
+    private float x_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float X {
+      get { return x_; }
+      set {
+        x_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "y" field.</summary>
+    public const int YFieldNumber = 3;
+    private float y_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Y {
+      get { return y_; }
+      set {
+        y_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "z" field.</summary>
+    public const int ZFieldNumber = 4;
+    private float z_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Z {
+      get { return z_; }
+      set {
+        z_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Quaternion);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Quaternion other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(W, other.W)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(X, other.X)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Y, other.Y)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Z, other.Z)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (W != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(W);
+      if (X != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(X);
+      if (Y != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Y);
+      if (Z != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Z);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (W != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(W);
+      }
+      if (X != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(X);
+      }
+      if (Y != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(Y);
+      }
+      if (Z != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(Z);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (W != 0F) {
+        size += 1 + 4;
+      }
+      if (X != 0F) {
+        size += 1 + 4;
+      }
+      if (Y != 0F) {
+        size += 1 + 4;
+      }
+      if (Z != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Quaternion other) {
+      if (other == null) {
+        return;
+      }
+      if (other.W != 0F) {
+        W = other.W;
+      }
+      if (other.X != 0F) {
+        X = other.X;
+      }
+      if (other.Y != 0F) {
+        Y = other.Y;
+      }
+      if (other.Z != 0F) {
+        Z = other.Z;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 13: {
+            W = input.ReadFloat();
+            break;
+          }
+          case 21: {
+            X = input.ReadFloat();
+            break;
+          }
+          case 29: {
+            Y = input.ReadFloat();
+            break;
+          }
+          case 37: {
+            Z = input.ReadFloat();
             break;
           }
         }
@@ -1082,7 +1659,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1273,7 +1850,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1436,7 +2013,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1621,7 +2198,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1840,7 +2417,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2025,7 +2602,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2210,7 +2787,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2427,348 +3004,6 @@ namespace Serializable {
 
   }
 
-  public sealed partial class Vector2 : pb::IMessage<Vector2> {
-    private static readonly pb::MessageParser<Vector2> _parser = new pb::MessageParser<Vector2>(() => new Vector2());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Vector2> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[12]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Vector2() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Vector2(Vector2 other) : this() {
-      x_ = other.x_;
-      y_ = other.y_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Vector2 Clone() {
-      return new Vector2(this);
-    }
-
-    /// <summary>Field number for the "x" field.</summary>
-    public const int XFieldNumber = 1;
-    private float x_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float X {
-      get { return x_; }
-      set {
-        x_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "y" field.</summary>
-    public const int YFieldNumber = 2;
-    private float y_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float Y {
-      get { return y_; }
-      set {
-        y_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Vector2);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Vector2 other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(X, other.X)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Y, other.Y)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (X != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(X);
-      if (Y != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Y);
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (X != 0F) {
-        output.WriteRawTag(13);
-        output.WriteFloat(X);
-      }
-      if (Y != 0F) {
-        output.WriteRawTag(21);
-        output.WriteFloat(Y);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (X != 0F) {
-        size += 1 + 4;
-      }
-      if (Y != 0F) {
-        size += 1 + 4;
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Vector2 other) {
-      if (other == null) {
-        return;
-      }
-      if (other.X != 0F) {
-        X = other.X;
-      }
-      if (other.Y != 0F) {
-        Y = other.Y;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 13: {
-            X = input.ReadFloat();
-            break;
-          }
-          case 21: {
-            Y = input.ReadFloat();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class Vector3 : pb::IMessage<Vector3> {
-    private static readonly pb::MessageParser<Vector3> _parser = new pb::MessageParser<Vector3>(() => new Vector3());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Vector3> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[13]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Vector3() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Vector3(Vector3 other) : this() {
-      x_ = other.x_;
-      y_ = other.y_;
-      z_ = other.z_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Vector3 Clone() {
-      return new Vector3(this);
-    }
-
-    /// <summary>Field number for the "x" field.</summary>
-    public const int XFieldNumber = 1;
-    private float x_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float X {
-      get { return x_; }
-      set {
-        x_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "y" field.</summary>
-    public const int YFieldNumber = 2;
-    private float y_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float Y {
-      get { return y_; }
-      set {
-        y_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "z" field.</summary>
-    public const int ZFieldNumber = 3;
-    private float z_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float Z {
-      get { return z_; }
-      set {
-        z_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Vector3);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Vector3 other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(X, other.X)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Y, other.Y)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Z, other.Z)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (X != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(X);
-      if (Y != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Y);
-      if (Z != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Z);
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (X != 0F) {
-        output.WriteRawTag(13);
-        output.WriteFloat(X);
-      }
-      if (Y != 0F) {
-        output.WriteRawTag(21);
-        output.WriteFloat(Y);
-      }
-      if (Z != 0F) {
-        output.WriteRawTag(29);
-        output.WriteFloat(Z);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (X != 0F) {
-        size += 1 + 4;
-      }
-      if (Y != 0F) {
-        size += 1 + 4;
-      }
-      if (Z != 0F) {
-        size += 1 + 4;
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Vector3 other) {
-      if (other == null) {
-        return;
-      }
-      if (other.X != 0F) {
-        X = other.X;
-      }
-      if (other.Y != 0F) {
-        Y = other.Y;
-      }
-      if (other.Z != 0F) {
-        Z = other.Z;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 13: {
-            X = input.ReadFloat();
-            break;
-          }
-          case 21: {
-            Y = input.ReadFloat();
-            break;
-          }
-          case 29: {
-            Z = input.ReadFloat();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
   public sealed partial class Header : pb::IMessage<Header> {
     private static readonly pb::MessageParser<Header> _parser = new pb::MessageParser<Header>(() => new Header());
     private pb::UnknownFieldSet _unknownFields;
@@ -2777,7 +3012,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

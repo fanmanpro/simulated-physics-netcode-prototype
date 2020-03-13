@@ -13,12 +13,11 @@ namespace NetSynced
 		private NetSync netSync;
 		public string GUID => netSync.GUID;
 
-		//private Vector3 syncStartPosition = Vector3.zero;
 		private Vector3 syncEndPosition = Vector3.zero;
-
-		// copies of Rigidbody2D
 		private Vector2 syncStartPosition = Vector3.zero;
-		//public Vector2 Position { get => syncStartPosition; set => setPosition(value); }
+		private Quaternion syncEndRotation = Quaternion.identity;
+		private Quaternion syncStartRotation = Quaternion.identity;
+
 		float t;
 		const float serverTicksPerSecond = 20;
 		float timeToReachTarget = 1.0f / serverTicksPerSecond;
@@ -39,27 +38,35 @@ namespace NetSynced
 
 			doUpdate = false;
 			syncEndPosition = transform.position;
+			syncEndRotation = transform.rotation;
 
 			rb = GetComponent<UnityEngine.Rigidbody>();
 		}
 
 		// using this is never really good for multiplayer games because it means sending too many packets.
-		public void Sync(Vector3 p, Vector3 v)
+		public void Sync(Vector3 p, Quaternion r, Vector3 v)
 		{
 			doUpdate = true;
 
 			t = 0;
 			syncStartPosition = rb.position;
 			syncEndPosition = p;
+
+			syncStartRotation = rb.rotation;
+			syncEndRotation = r;
+
 		}
 
 		private void FixedUpdate()
 		{
 			if (!doUpdate) return;
 
-			t += Time.deltaTime / timeToReachTarget;
+			t += Time.deltaTime * 10;// / timeToReachTarget;
 
-			rb.position = Vector3.Lerp(syncStartPosition, syncEndPosition, t);
+			//rb.MovePosition(Vector3.Lerp(syncStartPosition, syncEndPosition, t));
+			//rb.MoveRotation(Quaternion.Lerp(syncStartRotation, syncEndRotation, t));
+			rb.MovePosition(syncEndPosition);
+			rb.MoveRotation(syncEndRotation);
 		}
 
 		public Serializable.Rigidbody3D Export()
@@ -72,6 +79,13 @@ namespace NetSynced
 					X = rb.position.x,
 					Y = rb.position.y,
 					Z = rb.position.z,
+				},
+				Rotation = new Serializable.Quaternion
+				{
+					W = rb.rotation.w,
+					X = rb.rotation.x,
+					Y = rb.rotation.y,
+					Z = rb.rotation.z,
 				},
 				Velocity = new Serializable.Vector3
 				{

@@ -54,7 +54,7 @@ public class ClientContextHandler : MonoBehaviour, IContextHandler
 				//Vector2 currentPosition = r.rigidbody.position;
 				//Vector2 endPosition = 
 
-				r.Sync(sr.Position.ToUnityVector(), sr.Velocity.ToUnityVector());
+				r.Sync(sr.Position.ToUnityVector(), sr.Rotation.ToUnityQuaterion(), sr.Velocity.ToUnityVector());
 
 				//r.Set.rigidbody.position = Vector3.Lerp(currentPosition, endPosition, syncTime / syncDelay);
 

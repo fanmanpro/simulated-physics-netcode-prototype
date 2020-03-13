@@ -38,4 +38,14 @@ public static class VectorHelper
 			z = v.Z,
 		};
 	}
+	public static Quaternion ToUnityQuaterion(this Serializable.Quaternion q)
+	{
+		return new Quaternion
+		{
+			w = q.W,
+			x = q.X,
+			y = q.Y,
+			z = q.Z,
+		};
+	}
 }
