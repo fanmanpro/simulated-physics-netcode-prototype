@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &643715295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 840954692}
   - component: {fileID: 840954691}
   - component: {fileID: 840954690}
+  - component: {fileID: 840954693}
   m_Layer: 11
   m_Name: Grip1
   m_TagString: Untagged
@@ -229,6 +230,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &840954693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840954689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b15975c0b6bd943bd6c4fc616ff16d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GUID: 3f6c200d-c8ed-4650-9cac-2f110f1c19c1
 --- !u!1 &875783845
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1012741810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -853,7 +867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Assigned: 0
   ownerOf:
-  - {fileID: 0}
+  - {fileID: 840954693}
 --- !u!114 &1012741811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -945,7 +959,7 @@ MonoBehaviour:
   SimulationClient: 1
   SeatManager: {fileID: 0}
   ContextManager: {fileID: 0}
-  ClientID: 
+  ClientID: sim
   Port: 9737
   WSRemoteEndPoint:
     IPAddress: 127.0.0.1
@@ -1011,6 +1025,7 @@ GameObject:
   - component: {fileID: 1500036085}
   - component: {fileID: 1500036084}
   - component: {fileID: 1500036083}
+  - component: {fileID: 1500036086}
   m_Layer: 11
   m_Name: Grip2
   m_TagString: Untagged
@@ -1062,6 +1077,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1500036086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500036082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b15975c0b6bd943bd6c4fc616ff16d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GUID: 1aea75d5-11b9-4cb0-a065-fc65f5e25c7e
 --- !u!1 &1575317174
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,7 +1107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1575317175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1094,7 +1122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Assigned: 0
   ownerOf:
-  - {fileID: 0}
+  - {fileID: 1500036086}
 --- !u!114 &1575317176
 MonoBehaviour:
   m_ObjectHideFlags: 0

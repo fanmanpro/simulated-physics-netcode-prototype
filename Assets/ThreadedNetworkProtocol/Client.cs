@@ -61,18 +61,17 @@ namespace ThreadedNetworkProtocol
 			//WSTryConnect();
 			// somehow add this in the build command
 #if SIMULATION
-            SimulationClient = true;
+            //SimulationClient = true;
 #endif
 
 
-			if (SimulationClient)
+			if (false/*SimulationClient*/)
 			{
 				ClientID = null;
 				string[] args = Environment.GetCommandLineArgs();
 				if (args.Length < 2)
 				{
-					Debug
-							.LogError("Not enough command line args for simulation client");
+					Debug.LogError("Not enough command line args for simulation client");
 					return;
 				}
 				for (int i = 0; i < args.Length; i++)
