@@ -5,6 +5,7 @@ using UnityEngine;
 public class SimulationContextHandler : MonoBehaviour, IContextHandler
 {
 	public Client client;
+	public SimulationContextManager simulationContextManager;
 
 	public List<NetSynced.Rigidbody3D> rigidbodies;
 	public List<NetSynced.Transform> transforms;
@@ -35,6 +36,26 @@ public class SimulationContextHandler : MonoBehaviour, IContextHandler
 
 	public void HandleContext(Serializable.Context3D context)
 	{
+		// foreach (Serializable.Transform st in context.Transforms)
+		// {
+		// 	NetSynced.Transform t;
+		// 	if (ContextManager.worldOwnedTransformsByGUID.TryGetValue(st.ID, out t))
+		// 	{
+		// 		t.transform.position = st.Position.ToUnityVector();
+		// 	}
+		// }
+		foreach (Serializable.Rigidbody3D sr in context.RigidBodies)
+		{
+			NetSynced.Rigidbody3D r;
+			if (simulationContextManager.worldOwnedRigidbodiesByGUID.TryGetValue(sr.ID, out r))
+			{
+				r.Sync(sr.Position.ToUnityVector(), sr.Rotation.ToUnityQuaterion(), sr.Velocity.ToUnityVector());
+			}
+		}
+	}
+
+	public void SendContext(int tick)
+	{
 		List<Serializable.Rigidbody3D> _rigidbodies = new List<Serializable.Rigidbody3D>();
 		int offset = 0;
 
@@ -43,7 +64,7 @@ public class SimulationContextHandler : MonoBehaviour, IContextHandler
 		{
 			if ((r - offset + 1) * 30 > FullSimulationStatePacketSize)
 			{
-				client.Send(PacketType.Unreliable, new Serializable.Context3D { Tick = context.Tick, RigidBodies = { _rigidbodies } });
+				client.Send(new Serializable.Context3D { Tick = tick, RigidBodies = { _rigidbodies } });
 				_rigidbodies.Clear();
 				offset = r;
 			}
@@ -54,7 +75,7 @@ public class SimulationContextHandler : MonoBehaviour, IContextHandler
 		}
 		if (_rigidbodies.Count > 0)
 		{
-			client.Send(PacketType.Unreliable, new Serializable.Context3D { Tick = context.Tick, RigidBodies = { _rigidbodies } });
+			client.Send(new Serializable.Context3D { Tick = tick, RigidBodies = { _rigidbodies } });
 			_rigidbodies.Clear();
 		}
 	}

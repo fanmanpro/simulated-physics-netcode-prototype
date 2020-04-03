@@ -1,14 +1,9 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using System.Collections;
-using System.Linq;
+﻿using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using ThreadedNetworkProtocol;
 
-public class ContextManager : MonoBehaviour
+public class ClientContextManager : MonoBehaviour 
 {
-	public Client client;
 	public Dictionary<string, NetSynced.Rigidbody3D> worldOwnedRigidbodiesByGUID;
 	public Dictionary<string, NetSynced.Rigidbody3D> playerOwnedRigidbodiesByGUID;
 	public Dictionary<string, NetSynced.Transform> worldOwnedTransformsByGUID;
@@ -46,6 +41,9 @@ public class ContextManager : MonoBehaviour
 		NetSynced.Rigidbody3D r;
 		if (!worldOwnedRigidbodiesByGUID.TryGetValue(guid, out r))
 			return;
+
+		r.DebugIsPlayerOwned = true;
+
 		playerOwnedRigidbodiesByGUID.Add(guid, r);
 		worldOwnedRigidbodiesByGUID.Remove(guid);
 
@@ -54,15 +52,5 @@ public class ContextManager : MonoBehaviour
 		playerOwnedGuids = playerOwnedRigidbodiesByGUID.Select(s => s.Key).ToList();
 		worldOwnedGuids.AddRange(worldOwnedTransformsByGUID.Select(s => s.Key).ToList());
 		playerOwnedGuids.AddRange(playerOwnedTransformsByGUID.Select(s => s.Key).ToList());
-	}
-
-	void FixedUpdate()
-	{
-		//Gamedata.Context context = new Gamedata.Context
-		//{
-		//	RigidBodies = { playerOwnedRigidbodiesByGUID.Select(r => r.Value.Export()) },
-		//};
-		//Debug.Log(context.RigidBodies.Count);
-		//client.Send(PacketType.Unreliable, new Gamedata.Packet { OpCode = Gamedata.Header.Types.OpCode.Context, Data = Any.Pack(context) });
 	}
 }

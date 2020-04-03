@@ -118,4 +118,14 @@ public class WSClient : IClient
 		clientState.Listening = false;
 		return null;
 	}
+
+	public Task<Error> Send(IMessage p)
+	{
+		throw new NotImplementedException();
+	}
+
+	public Task<Error> Send(byte[] p)
+	{
+		throw new NotImplementedException();
+	}
 }

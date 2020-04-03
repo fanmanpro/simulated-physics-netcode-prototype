@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(NetSync))]
-public class PlayerSeat : MonoBehaviour
+public class Seat : MonoBehaviour
 {
 	public bool Assigned;
 

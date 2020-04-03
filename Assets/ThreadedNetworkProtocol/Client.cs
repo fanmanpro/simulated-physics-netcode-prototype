@@ -1,4 +1,5 @@
 ﻿using System;
+using Google.Protobuf;
 using UnityEngine;
 
 namespace ThreadedNetworkProtocol
@@ -11,13 +12,13 @@ namespace ThreadedNetworkProtocol
 
 		public SeatManager SeatManager;
 
-		public ContextManager ContextManager;
-
-		public IContextHandler ContextBroadcaster;
+		public IConnectionHandler ConnectionHandler;
+		public IContextHandler ContextHandler;
+		public IPacketHandler PacketHandler;
 
 		public string ClientID;
 
-		public int Port;
+		//public int Port;
 
 		public ClientEndPoint WSRemoteEndPoint;
 
@@ -37,25 +38,27 @@ namespace ThreadedNetworkProtocol
 
 		private UDPClient udpClient;
 
-		private PacketHandler packetHandler;
 
 		private void Awake()
 		{
-			//packetHandler = new PacketHandler(SeatManager, ContextManager, ContextBroadcaster, this);
 			WSClientState = new ClientState();
 			TCPClientState = new ClientState();
 			UDPClientState = new ClientState();
 
-			foreach (GameObject rootGameObject in gameObject.scene.GetRootGameObjects())
+			if (!gameObject.scene.GetComponentSingle<IConnectionHandler>(out ConnectionHandler))
 			{
-				IContextHandler handler = rootGameObject.GetComponentInChildren<IContextHandler>();
-				if (handler != null)
-				{
-					ContextBroadcaster = rootGameObject.GetComponentInChildren<IContextHandler>();
-					Debug.Log("here");
-					break;
-				}
-				//rigidbodies.AddRange(rootGameObject.GetComponentsInChildren<NetSynced.Rigidbody2D>());
+				Debug.LogError("[Client] Unable to find a connection handler.");
+				return;
+			}
+			if (!gameObject.scene.GetComponentSingle<IContextHandler>(out ContextHandler))
+			{
+				Debug.LogError("[Client] Unable to find a context handler.");
+				return;
+			}
+			if (!gameObject.scene.GetComponentSingle<IPacketHandler>(out PacketHandler))
+			{
+				Debug.LogError("[Client] Unable to find a packet handler.");
+				return;
 			}
 
 			//WSTryConnect();
@@ -92,8 +95,8 @@ namespace ThreadedNetworkProtocol
 				}
 			}
 
-			//TCPTryConnect();
-			UDPTryConnect();
+			TCPTryConnect();
+			// UDPTryConnect();
 		}
 
 		public async void WSTryConnect()
@@ -124,6 +127,10 @@ namespace ThreadedNetworkProtocol
 			}
 		}
 
+		public async void TCPTryDisconnect() {
+			tcpClient?.Disconnect();
+		}
+
 		public async void TCPTryConnect()
 		{
 			var err = TCPRemoteEndPoint.Initialize();
@@ -133,8 +140,9 @@ namespace ThreadedNetworkProtocol
 				return;
 			}
 
-			return;
-			//tcpClient = new TCPClient(Port, TCPRemoteEndPoint, TCPClientState, ContextBroadcaster);
+
+			Debug.LogFormat("{0}:{1} -> {2}:{3}", TCPRemoteEndPoint.RemoteIPAddress, TCPRemoteEndPoint.LocalPort, TCPRemoteEndPoint.RemoteIPAddress, TCPRemoteEndPoint.RemotePort);
+			tcpClient = new TCPClient(TCPRemoteEndPoint.LocalPort, TCPRemoteEndPoint, TCPClientState, ConnectionHandler, PacketHandler);
 			// this blocks but the main thread still goes on so Unity continues as normal
 			err = await tcpClient.Connect();
 			if (err != null)
@@ -150,14 +158,18 @@ namespace ThreadedNetworkProtocol
 			//	return;
 			//}
 
-			//err = await tcpClient.Listen();
-			//if (err != null)
-			//{
-			//	Debug.LogError(err);
-			//	return;
-			//}
+			err = await tcpClient.Listen();
+			if (err != null)
+			{
+				Debug.LogError(err);
+				return;
+			}
 		}
 
+		public async void UDPTryDisconnect() {
+			udpClient?.Disconnect();
+		}
+		
 		public async void UDPTryConnect()
 		{
 			var err = UDPRemoteEndPoint.Initialize();
@@ -167,7 +179,7 @@ namespace ThreadedNetworkProtocol
 				return;
 			}
 
-			udpClient = new UDPClient(Port, UDPRemoteEndPoint, UDPClientState, ContextBroadcaster);
+			udpClient = new UDPClient(UDPRemoteEndPoint.LocalPort, UDPRemoteEndPoint, UDPClientState, ContextHandler);
 			Debug.Log("connecting");
 
 			// this blocks but the main thread still goes on so Unity continues as normal
@@ -186,82 +198,24 @@ namespace ThreadedNetworkProtocol
 			}
 		}
 
-		public async void Send(PacketType type, Serializable.Context3D context)
+		public async void Send(Serializable.Packet packet)
 		{
-			switch (type)
+			if (!tcpClient.Active)
 			{
-				case PacketType.Session:
-					{
-						//await wsClient.Send("Measure twice");
-						Debug.Log("[WS] NOT Sent packet");
-					}
-					break;
-				case PacketType.Important:
-					{
-						if (!tcpClient.Active)
-						{
-							return;
-						}
-
-						//context.Cid = ClientID;
-						//await tcpClient.Send(context);
-						Debug.Log("[TCP] NOT Sent packet");
-					}
-					break;
-				case PacketType.Unreliable:
-					{
-						if (!udpClient.Active)
-						{
-							Debug.Log("[UDP] Sending packet failed. UDP client not active.");
-							return;
-						}
-						Debug.Log("[UDP] Sent packet (" + context.RigidBodies.Count + ")");
-						await udpClient.Send(context);
-						//Debug.Log("[UDP] TODO TODO TODO TODO Sent test packet");
-					}
-					break;
+				Debug.Log("[TCP] Sending packet failed. TCP client not active.");
+				return;
 			}
+			await tcpClient.Send(packet.ToByteArray());
 		}
-
-		public async void SendTestPacket(int i)
+		public async void Send(Serializable.Context3D context)
 		{
-			PacketType t = (PacketType)i;
-			switch (t)
+			if (!udpClient.Active)
 			{
-				case PacketType.Session:
-					{
-						//await wsClient
-						//    .Send(new Gamedata.Packet {
-						//        OpCode = Gamedata.Header.Types.OpCode.Invalid
-						//    });
-						Debug.Log("[WS] Sent test packet");
-					}
-					break;
-				case PacketType.Important:
-					{
-						//await tcpClient
-						//    .Send(new Gamedata.Packet {
-						//        OpCode =
-						//            Gamedata
-						//                .Header
-						//                .Types
-						//                .OpCode
-						//                .ClientDisconnect
-						//    });
-						Debug.Log("[TCP] Sent test packet");
-					}
-					break;
-				case PacketType.Unreliable:
-					{
-						await udpClient
-								.Send(new Serializable.Context3D
-								{
-									//OpCode = Gamedata.Header.Types.OpCode.Context
-								});
-						Debug.Log("[UDP] Sent test packet");
-					}
-					break;
+				Debug.Log("[UDP] Sending packet failed. UDP client not active.");
+				return;
 			}
+			// Debug.Log("[UDP] Sent packet (" + context.RigidBodies.Count + ")");
+			await udpClient.Send(context.ToByteArray());
 		}
 
 		private void OnDestroy()

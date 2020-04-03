@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-	private PlayerSeat seat;
+	private Seat seat;
 	private bool up = false, down = false, stop = false;
 	void Start()
 	{
-		ContextManager context = null;
+		ClientContextManager context = null;
 		foreach (GameObject rootGameObject in gameObject.scene.GetRootGameObjects())
 		{
-			context = rootGameObject.GetComponentInChildren<ContextManager>();
+			context = rootGameObject.GetComponentInChildren<ClientContextManager>();
 			if (context != null)
 			{
 				break;
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
 		if (context == null)
 			return;
 
-		seat = GetComponent<PlayerSeat>();
+		seat = GetComponent<Seat>();
 		foreach (NetSync g in seat.ownerOf)
 		{
 			g.gameObject.AddComponent<PlayerController>();

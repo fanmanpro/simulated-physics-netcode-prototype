@@ -3,30 +3,33 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-	private Rigidbody2D rb;
-	private bool up = false, down = false, stop = false;
+	private Rigidbody rb;
+	public bool forward = false, backward = false, stop = false;
 
-	void Start()
+	void Awake()
 	{
-		rb = GetComponent<Rigidbody2D>();
+		rb = GetComponent<Rigidbody>();
+		if (rb == null) gameObject.SetActive(false);
 	}
 
 	void FixedUpdate()
 	{
 		if (stop)
 		{
-			rb.velocity = new Vector2 { x = 0, y = 0 };
+			// rb.velocity = new Vector3 { x = 0, y = 0, z = 0 };
 			stop = false;
 		}
 		else
 		{
-			if (up)
+			if (forward)
 			{
-				rb.velocity = new Vector2 { x = 0, y = 3 };
+				Vector3 forward = rb.transform.forward * 3;
+				rb.velocity = forward;
 			}
-			else if (down)
+			else if (backward)
 			{
-				rb.velocity = new Vector2 { x = 0, y = -3 };
+				Vector3 backward = rb.transform.forward * -3;
+				rb.velocity = backward;
 			}
 		}
 	}
@@ -42,25 +45,25 @@ public class PlayerController : MonoBehaviour
 			upKey = KeyCode.W;
 		}
 
-		if (Input.GetKeyDown(upKey) && !up)
+		if (Input.GetKey(upKey) && !forward)
 		{
-			if (down)
+			if (backward)
 			{
-				down = false;
+				backward = false;
 			}
-			up = true;
+			forward = true;
 		}
-		if (Input.GetKeyDown(downKey) && !down)
+		else if (Input.GetKey(downKey) && !backward)
 		{
-			if (up)
+			if (forward)
 			{
-				up = false;
+				forward = false;
 			}
-			down = true;
+			backward = true;
 		}
-		if ((Input.GetKeyUp(downKey) && down) || (Input.GetKeyUp(upKey) && up))
+		else if (!Input.GetKey(downKey) && !Input.GetKey(upKey))
 		{
-			down = up = false;
+			backward = forward = false;
 			stop = true;
 		}
 	}

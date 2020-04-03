@@ -9,7 +9,6 @@ namespace ThreadedNetworkProtocol
 
         private SeatManager seatManager;
 
-        private ContextManager contextManager;
 
         private SimulationContextHandler contextBroadcaster;
 

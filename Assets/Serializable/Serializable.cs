@@ -25,47 +25,36 @@ namespace Serializable {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChJzZXJpYWxpemFibGUucHJvdG8SDHNlcmlhbGl6YWJsZRoZZ29vZ2xlL3By",
-            "b3RvYnVmL2FueS5wcm90byJ2CglDb250ZXh0M0QSDAoEdGljaxgBIAEoBRIr",
-            "Cgp0cmFuc2Zvcm1zGAIgAygLMhcuc2VyaWFsaXphYmxlLlRyYW5zZm9ybRIu",
-            "CgtyaWdpZEJvZGllcxgDIAMoCzIZLnNlcmlhbGl6YWJsZS5SaWdpZGJvZHkz",
-            "RCJ2CglDb250ZXh0MkQSDAoEdGljaxgBIAEoBRIrCgp0cmFuc2Zvcm1zGAIg",
-            "AygLMhcuc2VyaWFsaXphYmxlLlRyYW5zZm9ybRIuCgtyaWdpZEJvZGllcxgD",
-            "IAMoCzIZLnNlcmlhbGl6YWJsZS5SaWdpZGJvZHkyRCJsCglUcmFuc2Zvcm0S",
-            "CgoCSUQYASABKAkSJwoIcG9zaXRpb24YAiABKAsyFS5zZXJpYWxpemFibGUu",
-            "VmVjdG9yMxIqCghyb3RhdGlvbhgDIAEoCzIYLnNlcmlhbGl6YWJsZS5RdWF0",
-            "ZXJuaW9uIpcBCgtSaWdpZGJvZHkyRBIKCgJJRBgBIAEoCRInCghwb3NpdGlv",
-            "bhgCIAEoCzIVLnNlcmlhbGl6YWJsZS5WZWN0b3IyEioKCHJvdGF0aW9uGAMg",
-            "ASgLMhguc2VyaWFsaXphYmxlLlF1YXRlcm5pb24SJwoIdmVsb2NpdHkYBCAB",
-            "KAsyFS5zZXJpYWxpemFibGUuVmVjdG9yMiKXAQoLUmlnaWRib2R5M0QSCgoC",
-            "SUQYASABKAkSJwoIcG9zaXRpb24YAiABKAsyFS5zZXJpYWxpemFibGUuVmVj",
-            "dG9yMxIqCghyb3RhdGlvbhgDIAEoCzIYLnNlcmlhbGl6YWJsZS5RdWF0ZXJu",
-            "aW9uEicKCHZlbG9jaXR5GAQgASgLMhUuc2VyaWFsaXphYmxlLlZlY3RvcjMi",
-            "HwoHVmVjdG9yMhIJCgF4GAEgASgCEgkKAXkYAiABKAIiKgoHVmVjdG9yMxIJ",
-            "CgF4GAEgASgCEgkKAXkYAiABKAISCQoBehgDIAEoAiI4CgpRdWF0ZXJuaW9u",
-            "EgkKAXcYASABKAISCQoBeBgCIAEoAhIJCgF5GAMgASgCEgkKAXoYBCABKAIi",
-            "aQoJT2xkUGFja2V0EisKBm9wQ29kZRgBIAEoDjIbLnNlcmlhbGl6YWJsZS5I",
-            "ZWFkZXIuT3BDb2RlEiIKBGRhdGEYAiABKAsyFC5nb29nbGUucHJvdG9idWYu",
-            "QW55EgsKA2NpZBgDIAEoCSIpCgpDbGllbnRTZWF0Eg0KBW93bmVyGAEgASgJ",
-            "EgwKBGd1aWQYAiABKAkiRAoQR2FtZVNlcnZlck9ubGluZRIOCgZzZWNyZXQY",
-            "ASABKAkSDgoGcmVnaW9uGAIgASgJEhAKCGNhcGFjaXR5GAMgASgFInkKCkdh",
-            "bWVPYmplY3QSCgoCSUQYASABKAkSJAoGUHJlZmFiGAIgASgOMhQuc2VyaWFs",
-            "aXphYmxlLlByZWZhYhInCghwb3NpdGlvbhgDIAEoCzIVLnNlcmlhbGl6YWJs",
-            "ZS5WZWN0b3IyEhAKCHJvdGF0aW9uGAQgASgCIiwKCFZlbG9jaXR5EgoKAklE",
-            "GAEgASgJEgkKAXgYAiABKAISCQoBeRgDIAEoAiIsCghQb3NpdGlvbhIKCgJJ",
-            "RBgBIAEoCRIJCgF4GAIgASgCEgkKAXkYAyABKAIigAEKBUZvcmNlEgoKAklE",
-            "GAEgASgJEgkKAXgYAiABKAISCQoBeRgDIAEoAhIwCglmb3JjZU1vZGUYBCAB",
-            "KA4yHS5zZXJpYWxpemFibGUuRm9yY2UuRm9yY2VNb2RlIiMKCUZvcmNlTW9k",
-            "ZRIJCgVGb3JjZRAAEgsKB0ltcHVsc2UQASL4AQoGSGVhZGVyIu0BCgZPcENv",
-            "ZGUSCwoHSW52YWxpZBAAEhQKEENsaWVudERpc2Nvbm5lY3QQZBIQCgxDbGll",
-            "bnRBcHBlYWwQZRIPCgtDbGllbnRUcnVzdBBmEhkKFUNsaWVudERhdGFncmFt",
-            "QWRkcmVzcxBoEg4KCkNsaWVudFNlYXQQZxIMCgdDb250ZXh0EMgBEg8KCkdh",
-            "bWVPYmplY3QQrAISDgoJUmlnaWRib2R5EK0CEg0KCFBvc2l0aW9uEJADEg0K",
-            "CFJvdGF0aW9uEJEDEgoKBVNjYWxlEJIDEg0KCFZlbG9jaXR5EJMDEgoKBUZv",
-            "cmNlEJQDKiIKBlByZWZhYhILCgdJbnZhbGlkEAASCwoHRGVtb0JveBABYgZw",
-            "cm90bzM="));
+            "b3RvYnVmL2FueS5wcm90byK9AQoGUGFja2V0EisKBm9wQ29kZRgBIAEoDjIb",
+            "LnNlcmlhbGl6YWJsZS5QYWNrZXQuT3BDb2RlEiIKBGRhdGEYAiABKAsyFC5n",
+            "b29nbGUucHJvdG9idWYuQW55ImIKBk9wQ29kZRILCgdJbnZhbGlkEAASFAoQ",
+            "Q2xpZW50RGlzY29ubmVjdBBkEhYKEVNlYXRDb25maWd1cmF0aW9uEMgBEgkK",
+            "BFNlYXQQyQESEgoNUnVuU2ltdWxhdGlvbhDKASI2ChFTZWF0Q29uZmlndXJh",
+            "dGlvbhIhCgVzZWF0cxgBIAMoCzISLnNlcmlhbGl6YWJsZS5TZWF0InYKCUNv",
+            "bnRleHQzRBIMCgR0aWNrGAEgASgFEisKCnRyYW5zZm9ybXMYAiADKAsyFy5z",
+            "ZXJpYWxpemFibGUuVHJhbnNmb3JtEi4KC3JpZ2lkQm9kaWVzGAMgAygLMhku",
+            "c2VyaWFsaXphYmxlLlJpZ2lkYm9keTNEInYKCUNvbnRleHQyRBIMCgR0aWNr",
+            "GAEgASgFEisKCnRyYW5zZm9ybXMYAiADKAsyFy5zZXJpYWxpemFibGUuVHJh",
+            "bnNmb3JtEi4KC3JpZ2lkQm9kaWVzGAMgAygLMhkuc2VyaWFsaXphYmxlLlJp",
+            "Z2lkYm9keTJEImwKCVRyYW5zZm9ybRIKCgJJRBgBIAEoCRInCghwb3NpdGlv",
+            "bhgCIAEoCzIVLnNlcmlhbGl6YWJsZS5WZWN0b3IzEioKCHJvdGF0aW9uGAMg",
+            "ASgLMhguc2VyaWFsaXphYmxlLlF1YXRlcm5pb24ilwEKC1JpZ2lkYm9keTJE",
+            "EgoKAklEGAEgASgJEicKCHBvc2l0aW9uGAIgASgLMhUuc2VyaWFsaXphYmxl",
+            "LlZlY3RvcjISKgoIcm90YXRpb24YAyABKAsyGC5zZXJpYWxpemFibGUuUXVh",
+            "dGVybmlvbhInCgh2ZWxvY2l0eRgEIAEoCzIVLnNlcmlhbGl6YWJsZS5WZWN0",
+            "b3IyIpcBCgtSaWdpZGJvZHkzRBIKCgJJRBgBIAEoCRInCghwb3NpdGlvbhgC",
+            "IAEoCzIVLnNlcmlhbGl6YWJsZS5WZWN0b3IzEioKCHJvdGF0aW9uGAMgASgL",
+            "Mhguc2VyaWFsaXphYmxlLlF1YXRlcm5pb24SJwoIdmVsb2NpdHkYBCABKAsy",
+            "FS5zZXJpYWxpemFibGUuVmVjdG9yMyIfCgdWZWN0b3IyEgkKAXgYASABKAIS",
+            "CQoBeRgCIAEoAiIqCgdWZWN0b3IzEgkKAXgYASABKAISCQoBeRgCIAEoAhIJ",
+            "CgF6GAMgASgCIjgKClF1YXRlcm5pb24SCQoBdxgBIAEoAhIJCgF4GAIgASgC",
+            "EgkKAXkYAyABKAISCQoBehgEIAEoAiIjCgRTZWF0Eg0KBW93bmVyGAEgASgF",
+            "EgwKBEdVSUQYAiABKAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Serializable.Prefab), }, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Packet), global::Serializable.Packet.Parser, new[]{ "OpCode", "Data" }, null, new[]{ typeof(global::Serializable.Packet.Types.OpCode) }, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.SeatConfiguration), global::Serializable.SeatConfiguration.Parser, new[]{ "Seats" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Context3D), global::Serializable.Context3D.Parser, new[]{ "Tick", "Transforms", "RigidBodies" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Context2D), global::Serializable.Context2D.Parser, new[]{ "Tick", "Transforms", "RigidBodies" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Transform), global::Serializable.Transform.Parser, new[]{ "ID", "Position", "Rotation" }, null, null, null),
@@ -74,28 +63,318 @@ namespace Serializable {
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Vector2), global::Serializable.Vector2.Parser, new[]{ "X", "Y" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Vector3), global::Serializable.Vector3.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Quaternion), global::Serializable.Quaternion.Parser, new[]{ "W", "X", "Y", "Z" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.OldPacket), global::Serializable.OldPacket.Parser, new[]{ "OpCode", "Data", "Cid" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.ClientSeat), global::Serializable.ClientSeat.Parser, new[]{ "Owner", "Guid" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.GameServerOnline), global::Serializable.GameServerOnline.Parser, new[]{ "Secret", "Region", "Capacity" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.GameObject), global::Serializable.GameObject.Parser, new[]{ "ID", "Prefab", "Position", "Rotation" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Velocity), global::Serializable.Velocity.Parser, new[]{ "ID", "X", "Y" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Position), global::Serializable.Position.Parser, new[]{ "ID", "X", "Y" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Force), global::Serializable.Force.Parser, new[]{ "ID", "X", "Y", "ForceMode" }, null, new[]{ typeof(global::Serializable.Force.Types.ForceMode) }, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Header), global::Serializable.Header.Parser, null, null, new[]{ typeof(global::Serializable.Header.Types.OpCode) }, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Seat), global::Serializable.Seat.Parser, new[]{ "Owner", "GUID" }, null, null, null)
           }));
     }
     #endregion
 
   }
-  #region Enums
-  public enum Prefab {
-    [pbr::OriginalName("Invalid")] Invalid = 0,
-    [pbr::OriginalName("DemoBox")] DemoBox = 1,
+  #region Messages
+  public sealed partial class Packet : pb::IMessage<Packet> {
+    private static readonly pb::MessageParser<Packet> _parser = new pb::MessageParser<Packet>(() => new Packet());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Packet> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Packet() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Packet(Packet other) : this() {
+      opCode_ = other.opCode_;
+      data_ = other.data_ != null ? other.data_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Packet Clone() {
+      return new Packet(this);
+    }
+
+    /// <summary>Field number for the "opCode" field.</summary>
+    public const int OpCodeFieldNumber = 1;
+    private global::Serializable.Packet.Types.OpCode opCode_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Serializable.Packet.Types.OpCode OpCode {
+      get { return opCode_; }
+      set {
+        opCode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "data" field.</summary>
+    public const int DataFieldNumber = 2;
+    private global::Google.Protobuf.WellKnownTypes.Any data_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.Any Data {
+      get { return data_; }
+      set {
+        data_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Packet);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Packet other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (OpCode != other.OpCode) return false;
+      if (!object.Equals(Data, other.Data)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (OpCode != 0) hash ^= OpCode.GetHashCode();
+      if (data_ != null) hash ^= Data.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (OpCode != 0) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) OpCode);
+      }
+      if (data_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Data);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (OpCode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) OpCode);
+      }
+      if (data_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Data);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Packet other) {
+      if (other == null) {
+        return;
+      }
+      if (other.OpCode != 0) {
+        OpCode = other.OpCode;
+      }
+      if (other.data_ != null) {
+        if (data_ == null) {
+          data_ = new global::Google.Protobuf.WellKnownTypes.Any();
+        }
+        Data.MergeFrom(other.Data);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            opCode_ = (global::Serializable.Packet.Types.OpCode) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            if (data_ == null) {
+              data_ = new global::Google.Protobuf.WellKnownTypes.Any();
+            }
+            input.ReadMessage(data_);
+            break;
+          }
+        }
+      }
+    }
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the Packet message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      public enum OpCode {
+        [pbr::OriginalName("Invalid")] Invalid = 0,
+        /// <summary>
+        /// connection related
+        /// </summary>
+        [pbr::OriginalName("ClientDisconnect")] ClientDisconnect = 100,
+        /// <summary>
+        /// game server related
+        /// </summary>
+        [pbr::OriginalName("SeatConfiguration")] SeatConfiguration = 200,
+        [pbr::OriginalName("Seat")] Seat = 201,
+        [pbr::OriginalName("RunSimulation")] RunSimulation = 202,
+      }
+
+    }
+    #endregion
+
   }
 
-  #endregion
+  public sealed partial class SeatConfiguration : pb::IMessage<SeatConfiguration> {
+    private static readonly pb::MessageParser<SeatConfiguration> _parser = new pb::MessageParser<SeatConfiguration>(() => new SeatConfiguration());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SeatConfiguration> Parser { get { return _parser; } }
 
-  #region Messages
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SeatConfiguration() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SeatConfiguration(SeatConfiguration other) : this() {
+      seats_ = other.seats_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SeatConfiguration Clone() {
+      return new SeatConfiguration(this);
+    }
+
+    /// <summary>Field number for the "seats" field.</summary>
+    public const int SeatsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Serializable.Seat> _repeated_seats_codec
+        = pb::FieldCodec.ForMessage(10, global::Serializable.Seat.Parser);
+    private readonly pbc::RepeatedField<global::Serializable.Seat> seats_ = new pbc::RepeatedField<global::Serializable.Seat>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Serializable.Seat> Seats {
+      get { return seats_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SeatConfiguration);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SeatConfiguration other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!seats_.Equals(other.seats_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= seats_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      seats_.WriteTo(output, _repeated_seats_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += seats_.CalculateSize(_repeated_seats_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SeatConfiguration other) {
+      if (other == null) {
+        return;
+      }
+      seats_.Add(other.seats_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            seats_.AddEntriesFrom(input, _repeated_seats_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class Context3D : pb::IMessage<Context3D> {
     private static readonly pb::MessageParser<Context3D> _parser = new pb::MessageParser<Context3D>(() => new Context3D());
     private pb::UnknownFieldSet _unknownFields;
@@ -104,7 +383,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -273,7 +552,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -442,7 +721,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -642,7 +921,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -873,7 +1152,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1104,7 +1383,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1261,7 +1540,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1446,7 +1725,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1651,15 +1930,15 @@ namespace Serializable {
 
   }
 
-  public sealed partial class OldPacket : pb::IMessage<OldPacket> {
-    private static readonly pb::MessageParser<OldPacket> _parser = new pb::MessageParser<OldPacket>(() => new OldPacket());
+  public sealed partial class Seat : pb::IMessage<Seat> {
+    private static readonly pb::MessageParser<Seat> _parser = new pb::MessageParser<Seat>(() => new Seat());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<OldPacket> Parser { get { return _parser; } }
+    public static pb::MessageParser<Seat> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1668,83 +1947,69 @@ namespace Serializable {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public OldPacket() {
+    public Seat() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public OldPacket(OldPacket other) : this() {
-      opCode_ = other.opCode_;
-      data_ = other.data_ != null ? other.data_.Clone() : null;
-      cid_ = other.cid_;
+    public Seat(Seat other) : this() {
+      owner_ = other.owner_;
+      gUID_ = other.gUID_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public OldPacket Clone() {
-      return new OldPacket(this);
+    public Seat Clone() {
+      return new Seat(this);
     }
 
-    /// <summary>Field number for the "opCode" field.</summary>
-    public const int OpCodeFieldNumber = 1;
-    private global::Serializable.Header.Types.OpCode opCode_ = 0;
+    /// <summary>Field number for the "owner" field.</summary>
+    public const int OwnerFieldNumber = 1;
+    private int owner_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Serializable.Header.Types.OpCode OpCode {
-      get { return opCode_; }
+    public int Owner {
+      get { return owner_; }
       set {
-        opCode_ = value;
+        owner_ = value;
       }
     }
 
-    /// <summary>Field number for the "data" field.</summary>
-    public const int DataFieldNumber = 2;
-    private global::Google.Protobuf.WellKnownTypes.Any data_;
+    /// <summary>Field number for the "GUID" field.</summary>
+    public const int GUIDFieldNumber = 2;
+    private string gUID_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Protobuf.WellKnownTypes.Any Data {
-      get { return data_; }
+    public string GUID {
+      get { return gUID_; }
       set {
-        data_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "cid" field.</summary>
-    public const int CidFieldNumber = 3;
-    private string cid_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Cid {
-      get { return cid_; }
-      set {
-        cid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        gUID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as OldPacket);
+      return Equals(other as Seat);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(OldPacket other) {
+    public bool Equals(Seat other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (OpCode != other.OpCode) return false;
-      if (!object.Equals(Data, other.Data)) return false;
-      if (Cid != other.Cid) return false;
+      if (Owner != other.Owner) return false;
+      if (GUID != other.GUID) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (OpCode != 0) hash ^= OpCode.GetHashCode();
-      if (data_ != null) hash ^= Data.GetHashCode();
-      if (Cid.Length != 0) hash ^= Cid.GetHashCode();
+      if (Owner != 0) hash ^= Owner.GetHashCode();
+      if (GUID.Length != 0) hash ^= GUID.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1758,17 +2023,13 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (OpCode != 0) {
+      if (Owner != 0) {
         output.WriteRawTag(8);
-        output.WriteEnum((int) OpCode);
+        output.WriteInt32(Owner);
       }
-      if (data_ != null) {
+      if (GUID.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteMessage(Data);
-      }
-      if (Cid.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Cid);
+        output.WriteString(GUID);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1778,14 +2039,11 @@ namespace Serializable {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (OpCode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) OpCode);
+      if (Owner != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Owner);
       }
-      if (data_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Data);
-      }
-      if (Cid.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Cid);
+      if (GUID.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GUID);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1794,21 +2052,15 @@ namespace Serializable {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(OldPacket other) {
+    public void MergeFrom(Seat other) {
       if (other == null) {
         return;
       }
-      if (other.OpCode != 0) {
-        OpCode = other.OpCode;
+      if (other.Owner != 0) {
+        Owner = other.Owner;
       }
-      if (other.data_ != null) {
-        if (data_ == null) {
-          data_ = new global::Google.Protobuf.WellKnownTypes.Any();
-        }
-        Data.MergeFrom(other.Data);
-      }
-      if (other.Cid.Length != 0) {
-        Cid = other.Cid;
+      if (other.GUID.Length != 0) {
+        GUID = other.GUID;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1822,1336 +2074,16 @@ namespace Serializable {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            opCode_ = (global::Serializable.Header.Types.OpCode) input.ReadEnum();
+            Owner = input.ReadInt32();
             break;
           }
           case 18: {
-            if (data_ == null) {
-              data_ = new global::Google.Protobuf.WellKnownTypes.Any();
-            }
-            input.ReadMessage(data_);
-            break;
-          }
-          case 26: {
-            Cid = input.ReadString();
+            GUID = input.ReadString();
             break;
           }
         }
       }
     }
-
-  }
-
-  public sealed partial class ClientSeat : pb::IMessage<ClientSeat> {
-    private static readonly pb::MessageParser<ClientSeat> _parser = new pb::MessageParser<ClientSeat>(() => new ClientSeat());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<ClientSeat> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[9]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ClientSeat() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ClientSeat(ClientSeat other) : this() {
-      owner_ = other.owner_;
-      guid_ = other.guid_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ClientSeat Clone() {
-      return new ClientSeat(this);
-    }
-
-    /// <summary>Field number for the "owner" field.</summary>
-    public const int OwnerFieldNumber = 1;
-    private string owner_ = "";
-    /// <summary>
-    /// CID of client that is assigned to this seat
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Owner {
-      get { return owner_; }
-      set {
-        owner_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "guid" field.</summary>
-    public const int GuidFieldNumber = 2;
-    private string guid_ = "";
-    /// <summary>
-    /// GUID of the object this seat is on
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Guid {
-      get { return guid_; }
-      set {
-        guid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as ClientSeat);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(ClientSeat other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Owner != other.Owner) return false;
-      if (Guid != other.Guid) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Owner.Length != 0) hash ^= Owner.GetHashCode();
-      if (Guid.Length != 0) hash ^= Guid.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Owner.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Owner);
-      }
-      if (Guid.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Guid);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Owner.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Owner);
-      }
-      if (Guid.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Guid);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(ClientSeat other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Owner.Length != 0) {
-        Owner = other.Owner;
-      }
-      if (other.Guid.Length != 0) {
-        Guid = other.Guid;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Owner = input.ReadString();
-            break;
-          }
-          case 18: {
-            Guid = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class GameServerOnline : pb::IMessage<GameServerOnline> {
-    private static readonly pb::MessageParser<GameServerOnline> _parser = new pb::MessageParser<GameServerOnline>(() => new GameServerOnline());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<GameServerOnline> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[10]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GameServerOnline() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GameServerOnline(GameServerOnline other) : this() {
-      secret_ = other.secret_;
-      region_ = other.region_;
-      capacity_ = other.capacity_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GameServerOnline Clone() {
-      return new GameServerOnline(this);
-    }
-
-    /// <summary>Field number for the "secret" field.</summary>
-    public const int SecretFieldNumber = 1;
-    private string secret_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Secret {
-      get { return secret_; }
-      set {
-        secret_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "region" field.</summary>
-    public const int RegionFieldNumber = 2;
-    private string region_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Region {
-      get { return region_; }
-      set {
-        region_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "capacity" field.</summary>
-    public const int CapacityFieldNumber = 3;
-    private int capacity_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int Capacity {
-      get { return capacity_; }
-      set {
-        capacity_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as GameServerOnline);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(GameServerOnline other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Secret != other.Secret) return false;
-      if (Region != other.Region) return false;
-      if (Capacity != other.Capacity) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Secret.Length != 0) hash ^= Secret.GetHashCode();
-      if (Region.Length != 0) hash ^= Region.GetHashCode();
-      if (Capacity != 0) hash ^= Capacity.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Secret.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Secret);
-      }
-      if (Region.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Region);
-      }
-      if (Capacity != 0) {
-        output.WriteRawTag(24);
-        output.WriteInt32(Capacity);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Secret.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Secret);
-      }
-      if (Region.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Region);
-      }
-      if (Capacity != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Capacity);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(GameServerOnline other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Secret.Length != 0) {
-        Secret = other.Secret;
-      }
-      if (other.Region.Length != 0) {
-        Region = other.Region;
-      }
-      if (other.Capacity != 0) {
-        Capacity = other.Capacity;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Secret = input.ReadString();
-            break;
-          }
-          case 18: {
-            Region = input.ReadString();
-            break;
-          }
-          case 24: {
-            Capacity = input.ReadInt32();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class GameObject : pb::IMessage<GameObject> {
-    private static readonly pb::MessageParser<GameObject> _parser = new pb::MessageParser<GameObject>(() => new GameObject());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<GameObject> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[11]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GameObject() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GameObject(GameObject other) : this() {
-      iD_ = other.iD_;
-      prefab_ = other.prefab_;
-      position_ = other.position_ != null ? other.position_.Clone() : null;
-      rotation_ = other.rotation_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public GameObject Clone() {
-      return new GameObject(this);
-    }
-
-    /// <summary>Field number for the "ID" field.</summary>
-    public const int IDFieldNumber = 1;
-    private string iD_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string ID {
-      get { return iD_; }
-      set {
-        iD_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "Prefab" field.</summary>
-    public const int PrefabFieldNumber = 2;
-    private global::Serializable.Prefab prefab_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Serializable.Prefab Prefab {
-      get { return prefab_; }
-      set {
-        prefab_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "position" field.</summary>
-    public const int PositionFieldNumber = 3;
-    private global::Serializable.Vector2 position_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Serializable.Vector2 Position {
-      get { return position_; }
-      set {
-        position_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "rotation" field.</summary>
-    public const int RotationFieldNumber = 4;
-    private float rotation_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float Rotation {
-      get { return rotation_; }
-      set {
-        rotation_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as GameObject);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(GameObject other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (ID != other.ID) return false;
-      if (Prefab != other.Prefab) return false;
-      if (!object.Equals(Position, other.Position)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Rotation, other.Rotation)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (ID.Length != 0) hash ^= ID.GetHashCode();
-      if (Prefab != 0) hash ^= Prefab.GetHashCode();
-      if (position_ != null) hash ^= Position.GetHashCode();
-      if (Rotation != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Rotation);
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (ID.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(ID);
-      }
-      if (Prefab != 0) {
-        output.WriteRawTag(16);
-        output.WriteEnum((int) Prefab);
-      }
-      if (position_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(Position);
-      }
-      if (Rotation != 0F) {
-        output.WriteRawTag(37);
-        output.WriteFloat(Rotation);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (ID.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ID);
-      }
-      if (Prefab != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Prefab);
-      }
-      if (position_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Position);
-      }
-      if (Rotation != 0F) {
-        size += 1 + 4;
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(GameObject other) {
-      if (other == null) {
-        return;
-      }
-      if (other.ID.Length != 0) {
-        ID = other.ID;
-      }
-      if (other.Prefab != 0) {
-        Prefab = other.Prefab;
-      }
-      if (other.position_ != null) {
-        if (position_ == null) {
-          position_ = new global::Serializable.Vector2();
-        }
-        Position.MergeFrom(other.Position);
-      }
-      if (other.Rotation != 0F) {
-        Rotation = other.Rotation;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            ID = input.ReadString();
-            break;
-          }
-          case 16: {
-            prefab_ = (global::Serializable.Prefab) input.ReadEnum();
-            break;
-          }
-          case 26: {
-            if (position_ == null) {
-              position_ = new global::Serializable.Vector2();
-            }
-            input.ReadMessage(position_);
-            break;
-          }
-          case 37: {
-            Rotation = input.ReadFloat();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class Velocity : pb::IMessage<Velocity> {
-    private static readonly pb::MessageParser<Velocity> _parser = new pb::MessageParser<Velocity>(() => new Velocity());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Velocity> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[12]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Velocity() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Velocity(Velocity other) : this() {
-      iD_ = other.iD_;
-      x_ = other.x_;
-      y_ = other.y_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Velocity Clone() {
-      return new Velocity(this);
-    }
-
-    /// <summary>Field number for the "ID" field.</summary>
-    public const int IDFieldNumber = 1;
-    private string iD_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string ID {
-      get { return iD_; }
-      set {
-        iD_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "x" field.</summary>
-    public const int XFieldNumber = 2;
-    private float x_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float X {
-      get { return x_; }
-      set {
-        x_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "y" field.</summary>
-    public const int YFieldNumber = 3;
-    private float y_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float Y {
-      get { return y_; }
-      set {
-        y_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Velocity);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Velocity other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (ID != other.ID) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(X, other.X)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Y, other.Y)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (ID.Length != 0) hash ^= ID.GetHashCode();
-      if (X != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(X);
-      if (Y != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Y);
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (ID.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(ID);
-      }
-      if (X != 0F) {
-        output.WriteRawTag(21);
-        output.WriteFloat(X);
-      }
-      if (Y != 0F) {
-        output.WriteRawTag(29);
-        output.WriteFloat(Y);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (ID.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ID);
-      }
-      if (X != 0F) {
-        size += 1 + 4;
-      }
-      if (Y != 0F) {
-        size += 1 + 4;
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Velocity other) {
-      if (other == null) {
-        return;
-      }
-      if (other.ID.Length != 0) {
-        ID = other.ID;
-      }
-      if (other.X != 0F) {
-        X = other.X;
-      }
-      if (other.Y != 0F) {
-        Y = other.Y;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            ID = input.ReadString();
-            break;
-          }
-          case 21: {
-            X = input.ReadFloat();
-            break;
-          }
-          case 29: {
-            Y = input.ReadFloat();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class Position : pb::IMessage<Position> {
-    private static readonly pb::MessageParser<Position> _parser = new pb::MessageParser<Position>(() => new Position());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Position> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[13]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Position() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Position(Position other) : this() {
-      iD_ = other.iD_;
-      x_ = other.x_;
-      y_ = other.y_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Position Clone() {
-      return new Position(this);
-    }
-
-    /// <summary>Field number for the "ID" field.</summary>
-    public const int IDFieldNumber = 1;
-    private string iD_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string ID {
-      get { return iD_; }
-      set {
-        iD_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "x" field.</summary>
-    public const int XFieldNumber = 2;
-    private float x_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float X {
-      get { return x_; }
-      set {
-        x_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "y" field.</summary>
-    public const int YFieldNumber = 3;
-    private float y_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float Y {
-      get { return y_; }
-      set {
-        y_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Position);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Position other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (ID != other.ID) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(X, other.X)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Y, other.Y)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (ID.Length != 0) hash ^= ID.GetHashCode();
-      if (X != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(X);
-      if (Y != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Y);
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (ID.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(ID);
-      }
-      if (X != 0F) {
-        output.WriteRawTag(21);
-        output.WriteFloat(X);
-      }
-      if (Y != 0F) {
-        output.WriteRawTag(29);
-        output.WriteFloat(Y);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (ID.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ID);
-      }
-      if (X != 0F) {
-        size += 1 + 4;
-      }
-      if (Y != 0F) {
-        size += 1 + 4;
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Position other) {
-      if (other == null) {
-        return;
-      }
-      if (other.ID.Length != 0) {
-        ID = other.ID;
-      }
-      if (other.X != 0F) {
-        X = other.X;
-      }
-      if (other.Y != 0F) {
-        Y = other.Y;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            ID = input.ReadString();
-            break;
-          }
-          case 21: {
-            X = input.ReadFloat();
-            break;
-          }
-          case 29: {
-            Y = input.ReadFloat();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class Force : pb::IMessage<Force> {
-    private static readonly pb::MessageParser<Force> _parser = new pb::MessageParser<Force>(() => new Force());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Force> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[14]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Force() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Force(Force other) : this() {
-      iD_ = other.iD_;
-      x_ = other.x_;
-      y_ = other.y_;
-      forceMode_ = other.forceMode_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Force Clone() {
-      return new Force(this);
-    }
-
-    /// <summary>Field number for the "ID" field.</summary>
-    public const int IDFieldNumber = 1;
-    private string iD_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string ID {
-      get { return iD_; }
-      set {
-        iD_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "x" field.</summary>
-    public const int XFieldNumber = 2;
-    private float x_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float X {
-      get { return x_; }
-      set {
-        x_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "y" field.</summary>
-    public const int YFieldNumber = 3;
-    private float y_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float Y {
-      get { return y_; }
-      set {
-        y_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "forceMode" field.</summary>
-    public const int ForceModeFieldNumber = 4;
-    private global::Serializable.Force.Types.ForceMode forceMode_ = 0;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Serializable.Force.Types.ForceMode ForceMode {
-      get { return forceMode_; }
-      set {
-        forceMode_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Force);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Force other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (ID != other.ID) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(X, other.X)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Y, other.Y)) return false;
-      if (ForceMode != other.ForceMode) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (ID.Length != 0) hash ^= ID.GetHashCode();
-      if (X != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(X);
-      if (Y != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Y);
-      if (ForceMode != 0) hash ^= ForceMode.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (ID.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(ID);
-      }
-      if (X != 0F) {
-        output.WriteRawTag(21);
-        output.WriteFloat(X);
-      }
-      if (Y != 0F) {
-        output.WriteRawTag(29);
-        output.WriteFloat(Y);
-      }
-      if (ForceMode != 0) {
-        output.WriteRawTag(32);
-        output.WriteEnum((int) ForceMode);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (ID.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(ID);
-      }
-      if (X != 0F) {
-        size += 1 + 4;
-      }
-      if (Y != 0F) {
-        size += 1 + 4;
-      }
-      if (ForceMode != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ForceMode);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Force other) {
-      if (other == null) {
-        return;
-      }
-      if (other.ID.Length != 0) {
-        ID = other.ID;
-      }
-      if (other.X != 0F) {
-        X = other.X;
-      }
-      if (other.Y != 0F) {
-        Y = other.Y;
-      }
-      if (other.ForceMode != 0) {
-        ForceMode = other.ForceMode;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            ID = input.ReadString();
-            break;
-          }
-          case 21: {
-            X = input.ReadFloat();
-            break;
-          }
-          case 29: {
-            Y = input.ReadFloat();
-            break;
-          }
-          case 32: {
-            forceMode_ = (global::Serializable.Force.Types.ForceMode) input.ReadEnum();
-            break;
-          }
-        }
-      }
-    }
-
-    #region Nested types
-    /// <summary>Container for nested types declared in the Force message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static partial class Types {
-      public enum ForceMode {
-        [pbr::OriginalName("Force")] Force = 0,
-        [pbr::OriginalName("Impulse")] Impulse = 1,
-      }
-
-    }
-    #endregion
-
-  }
-
-  public sealed partial class Header : pb::IMessage<Header> {
-    private static readonly pb::MessageParser<Header> _parser = new pb::MessageParser<Header>(() => new Header());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Header> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[15]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Header() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Header(Header other) : this() {
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Header Clone() {
-      return new Header(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Header);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Header other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Header other) {
-      if (other == null) {
-        return;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-        }
-      }
-    }
-
-    #region Nested types
-    /// <summary>Container for nested types declared in the Header message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static partial class Types {
-      /// <summary>
-      /// this is a connection id that expires once the coordinator connection is
-      /// lost
-      /// </summary>
-      public enum OpCode {
-        [pbr::OriginalName("Invalid")] Invalid = 0,
-        /// <summary>
-        /// Bi-directionally inform a connection closure
-        /// </summary>
-        [pbr::OriginalName("ClientDisconnect")] ClientDisconnect = 100,
-        /// <summary>
-        /// Connection is established, not client asks to be accepted
-        /// </summary>
-        [pbr::OriginalName("ClientAppeal")] ClientAppeal = 101,
-        /// <summary>
-        /// Server trusts client, so inform client
-        /// </summary>
-        [pbr::OriginalName("ClientTrust")] ClientTrust = 102,
-        [pbr::OriginalName("ClientDatagramAddress")] ClientDatagramAddress = 104,
-        /// <summary>
-        /// Partial seat packet sent to simulation, complete packet sent in
-        /// return to ALL player clients
-        /// </summary>
-        [pbr::OriginalName("ClientSeat")] ClientSeat = 103,
-        /// <summary>
-        /// Current context of simulated objects at a certain time
-        /// </summary>
-        [pbr::OriginalName("Context")] Context = 200,
-        /// <summary>
-        /// Object creation
-        /// </summary>
-        [pbr::OriginalName("GameObject")] GameObject = 300,
-        [pbr::OriginalName("Rigidbody")] Rigidbody = 301,
-        /// <summary>
-        /// Object updates
-        /// </summary>
-        [pbr::OriginalName("Position")] Position = 400,
-        [pbr::OriginalName("Rotation")] Rotation = 401,
-        [pbr::OriginalName("Scale")] Scale = 402,
-        [pbr::OriginalName("Velocity")] Velocity = 403,
-        [pbr::OriginalName("Force")] Force = 404,
-      }
-
-    }
-    #endregion
 
   }
 

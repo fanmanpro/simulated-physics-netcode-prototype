@@ -24,6 +24,8 @@ namespace NetSynced
 
 		private bool doUpdate = false;
 
+		public bool DebugIsPlayerOwned = false;
+
 		// storage objects to avoid constant memory allocation and deallocation. e.g. "new" keyword abuse.
 
 		void Awake()
@@ -46,6 +48,9 @@ namespace NetSynced
 		// using this is never really good for multiplayer games because it means sending too many packets.
 		public void Sync(Vector3 p, Quaternion r, Vector3 v)
 		{
+			if (DebugIsPlayerOwned) {
+				Debug.Log("Player owned is syncing from sim!");
+			}
 			doUpdate = true;
 
 			t = 0;

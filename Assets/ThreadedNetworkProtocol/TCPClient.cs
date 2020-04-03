@@ -16,14 +16,17 @@ public class TCPClient : IClient
 
 	private ClientState clientState;
 
-	private PacketHandler packetHandler;
+	private IPacketHandler packetHandler;
+	private IConnectionHandler connectionHandler;
 
 	public bool Active => clientState.Connected && clientState.Trusted;
 
-	public TCPClient(int port, ClientEndPoint c, ClientState cs, PacketHandler p)
+	public TCPClient(int port, ClientEndPoint c, ClientState cs, IConnectionHandler ch, IPacketHandler ph)
 	{
 		tcpClient = new TcpClient(new IPEndPoint(new IPAddress(0), port));
-		packetHandler = p;
+
+		connectionHandler = ch;
+		packetHandler = ph;
 
 		remoteEndPoint = c;
 		clientState = cs;
@@ -45,6 +48,8 @@ public class TCPClient : IClient
 			if (!tcpClient.Connected) return new Error("[TCP] Client connected but weird that the socket state is stil not connected");
 			// all good
 			clientState.Connected = true;
+			clientState.Trusted = true;
+			connectionHandler.HandleConnect();
 			return null;
 		}
 		catch (Exception n)
@@ -57,7 +62,7 @@ public class TCPClient : IClient
 	public Error Disconnect()
 	{
 		if (!tcpClient.Connected) return new Error("[TCP] Client tried to disconnect but connection was already closed.");
-		
+
 		clientState.Connected = false;
 		clientState.Connecting = false;
 		clientState.Disconnected = false;
@@ -68,23 +73,23 @@ public class TCPClient : IClient
 
 		//tcpClient.Close();
 		cts.Cancel();
+		tcpClient.Dispose();
 		//tcpClient.Dispose();
-		//tcpClient.Dispose();
+		connectionHandler.HandleDisconnect();
 
 		return null;
 	}
 
-	public async Task<Error> Send(Serializable.Context3D packet)
+	public async Task<Error> Send(byte[] packet)
 	{
 		try
 		{
 			SocketAsyncEventArgs e = new SocketAsyncEventArgs();
-			byte[] p = packet.ToByteArray();
-			e.SetBuffer(p, 0, p.Length);
+			e.SetBuffer(packet, 0, packet.Length);
 
 			if (tcpClient.Client.SendAsync(e))
 			{
-				Debug.LogFormat("[TCP] Wrote {0} bytes for {1}", p.Length, tcpClient.Client.RemoteEndPoint.ToString());
+				Debug.LogFormat("[TCP] Wrote {0} bytes for {1}", packet.Length, tcpClient.Client.RemoteEndPoint.ToString());
 				return null;
 			}
 			else
@@ -110,7 +115,8 @@ public class TCPClient : IClient
 			int read = await stream?.ReadAsync(buffer, 0, buffer.Length);
 			if (read > 0)
 			{
-				Serializable.Context3D packet = Serializable.Context3D.Parser.ParseFrom(buffer.Take(read).ToArray());
+				Serializable.Packet packet = Serializable.Packet.Parser.ParseFrom(buffer.Take(read).ToArray());
+				packetHandler.HandlePacket(packet);
 				//if (packet.OpCode != Gamedata.Header.Types.OpCode.Invalid)
 				//{
 				//	packetHandler.Handle(packet);

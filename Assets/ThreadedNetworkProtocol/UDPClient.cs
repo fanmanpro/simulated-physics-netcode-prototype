@@ -32,14 +32,10 @@ public class UDPClient : IClient
 
 	public async Task<Error> Connect()
 	{
-		if (remoteEndPoint == null)
-			return new Error("[UDP] Client remote end point not provided");
-		if (clientState.Connected)
-			return new Error("[UDP] Client already connected");
-		if (clientState.Connecting)
-			return new Error("[UDP] Client already busy connecting");
-		if (udpClient.Client.Connected)
-			return new Error("[UDP] Client socket open but state not connected");
+		if (remoteEndPoint == null) return new Error("[UDP] Client remote end point not provided");
+		if (clientState.Connected) return new Error("[UDP] Client already connected");
+		if (clientState.Connecting) return new Error("[UDP] Client already busy connecting");
+		if (udpClient.Client.Connected) return new Error("[UDP] Client socket open but state not connected");
 
 		using (CancellationTokenSource cts = new CancellationTokenSource())
 		{
@@ -93,62 +89,25 @@ public class UDPClient : IClient
 		}
 	}
 
-	public async Task<Error> Send(Serializable.Context3D context)
-	{
-		return await Send(context.ToByteArray());
-	}
+	// public async Task<Error> Send(byte[] data)
+	// {
+	//Debug.Log(context.ToByteArray().Length);
+	// 	return await Send(data);
+	// }
 
 	public async Task<Error> Listen()
 	{
-		//if (clientWebSocket.State != WebSocketState.Open)
-		//{
-		//	return new Error("[UDP] Client tried to listen for packets but socket is closed");
-		//}
-		//try
-		//{
-			await Send(new Serializable.Context3D { Tick = 0 });
-			while (udpClient.Client.Connected)
-			{
-				UdpReceiveResult receiveBytes = await udpClient.ReceiveAsync();
+		// await Send(new Serializable.Context3D { Tick = 10 }.ToByteArray());
+		while (udpClient != null && udpClient.Client != null && udpClient.Client.Connected)
+		{
+			UdpReceiveResult receiveBytes = await udpClient.ReceiveAsync();
 
-				Serializable.Context3D context = Serializable.Context3D.Parser.ParseFrom(receiveBytes.Buffer);
-				//Debug.Log("[" + remoteEndPoint.Port + "] Reading: " + context.Tick);
-				//lastTick = context.Tick;
-				contextHandler.HandleContext(context);
-				//contextBroadcaster?.PrepareContext(context.Tick);
-				//if (packet.OpCode != Gamedata.Header.Types.OpCode.Invalid)
-				//{
-				clientState.Trusted = true;
-				//packetHandler.Handle(null);
-				//}
-				//	clientState.Listening = true;
-
-				//	byte[] rcvBytes = new byte[1024];
-				//	ArraySegment<byte> rcvBuffer = new ArraySegment<byte>(rcvBytes);
-				//	WebSocketReceiveResult rcvResult = await clientWebSocket.ReceiveAsync(rcvBuffer, CancellationToken.None);
-				//	if (rcvResult.Count <= 0) break;
-				//	//if (debug) Debug.Log(string.Format("WS - {0}", "Receiving packet"));
-				//	if (rcvBytes.Length < rcvResult.Count)
-				//	{
-				//		Debug.LogError("Incoming message aborted because to big. Decrease message size or increase buffer length.");
-				//		continue;
-				//	}
-				//	if (rcvResult.EndOfMessage)
-				//	{
-				//		byte[] msgBytes = rcvBuffer/*.Skip(rcvBuffer.Offset)*/.Take(rcvResult.Count).ToArray();
-				//		Debug.Log(Encoding.UTF8.GetString(msgBytes, 0, msgBytes.Length));
-				//		//Packet packet = Packet.Parser.ParseFrom(msgBytes);
-				//		//HandlePacket(packet);
-				//	}
-			}
-		//}
-		//catch (Exception n)
-		//{
-		//	clientState.Connecting = false;
-		//	clientState.Connected = false;
-		//	clientState.Listening = false;
-		//	return new Error("[UDP] Client connection was forcibly closed: " + n);
-		//}
+			Serializable.Context3D context = Serializable.Context3D.Parser.ParseFrom(receiveBytes.Buffer);
+			//Debug.Log("[" + remoteEndPoint.Port + "] Reading: " + context.Tick);
+			contextHandler.HandleContext(context);
+			contextHandler.SendContext(context.Tick);
+			clientState.Trusted = true;
+		}
 		clientState.Listening = false;
 		return null;
 	}
