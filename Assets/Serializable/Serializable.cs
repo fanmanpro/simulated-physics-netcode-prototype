@@ -25,38 +25,39 @@ namespace Serializable {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChJzZXJpYWxpemFibGUucHJvdG8SDHNlcmlhbGl6YWJsZRoZZ29vZ2xlL3By",
-            "b3RvYnVmL2FueS5wcm90byK9AQoGUGFja2V0EisKBm9wQ29kZRgBIAEoDjIb",
+            "b3RvYnVmL2FueS5wcm90byLUAQoGUGFja2V0EisKBm9wQ29kZRgBIAEoDjIb",
             "LnNlcmlhbGl6YWJsZS5QYWNrZXQuT3BDb2RlEiIKBGRhdGEYAiABKAsyFC5n",
-            "b29nbGUucHJvdG9idWYuQW55ImIKBk9wQ29kZRILCgdJbnZhbGlkEAASFAoQ",
+            "b29nbGUucHJvdG9idWYuQW55InkKBk9wQ29kZRILCgdJbnZhbGlkEAASFAoQ",
             "Q2xpZW50RGlzY29ubmVjdBBkEhYKEVNlYXRDb25maWd1cmF0aW9uEMgBEgkK",
-            "BFNlYXQQyQESEgoNUnVuU2ltdWxhdGlvbhDKASI2ChFTZWF0Q29uZmlndXJh",
-            "dGlvbhIhCgVzZWF0cxgBIAMoCzISLnNlcmlhbGl6YWJsZS5TZWF0InYKCUNv",
-            "bnRleHQzRBIMCgR0aWNrGAEgASgFEisKCnRyYW5zZm9ybXMYAiADKAsyFy5z",
-            "ZXJpYWxpemFibGUuVHJhbnNmb3JtEi4KC3JpZ2lkQm9kaWVzGAMgAygLMhku",
-            "c2VyaWFsaXphYmxlLlJpZ2lkYm9keTNEInYKCUNvbnRleHQyRBIMCgR0aWNr",
-            "GAEgASgFEisKCnRyYW5zZm9ybXMYAiADKAsyFy5zZXJpYWxpemFibGUuVHJh",
-            "bnNmb3JtEi4KC3JpZ2lkQm9kaWVzGAMgAygLMhkuc2VyaWFsaXphYmxlLlJp",
-            "Z2lkYm9keTJEImwKCVRyYW5zZm9ybRIKCgJJRBgBIAEoCRInCghwb3NpdGlv",
-            "bhgCIAEoCzIVLnNlcmlhbGl6YWJsZS5WZWN0b3IzEioKCHJvdGF0aW9uGAMg",
-            "ASgLMhguc2VyaWFsaXphYmxlLlF1YXRlcm5pb24ilwEKC1JpZ2lkYm9keTJE",
-            "EgoKAklEGAEgASgJEicKCHBvc2l0aW9uGAIgASgLMhUuc2VyaWFsaXphYmxl",
-            "LlZlY3RvcjISKgoIcm90YXRpb24YAyABKAsyGC5zZXJpYWxpemFibGUuUXVh",
-            "dGVybmlvbhInCgh2ZWxvY2l0eRgEIAEoCzIVLnNlcmlhbGl6YWJsZS5WZWN0",
-            "b3IyIpcBCgtSaWdpZGJvZHkzRBIKCgJJRBgBIAEoCRInCghwb3NpdGlvbhgC",
-            "IAEoCzIVLnNlcmlhbGl6YWJsZS5WZWN0b3IzEioKCHJvdGF0aW9uGAMgASgL",
-            "Mhguc2VyaWFsaXphYmxlLlF1YXRlcm5pb24SJwoIdmVsb2NpdHkYBCABKAsy",
-            "FS5zZXJpYWxpemFibGUuVmVjdG9yMyIfCgdWZWN0b3IyEgkKAXgYASABKAIS",
-            "CQoBeRgCIAEoAiIqCgdWZWN0b3IzEgkKAXgYASABKAISCQoBeRgCIAEoAhIJ",
-            "CgF6GAMgASgCIjgKClF1YXRlcm5pb24SCQoBdxgBIAEoAhIJCgF4GAIgASgC",
-            "EgkKAXkYAyABKAISCQoBehgEIAEoAiIjCgRTZWF0Eg0KBW93bmVyGAEgASgF",
-            "EgwKBEdVSUQYAiABKAliBnByb3RvMw=="));
+            "BFNlYXQQyQESEgoNUnVuU2ltdWxhdGlvbhDKARIVChBSZWxvYWRTaW11bGF0",
+            "aW9uEMsBIjYKEVNlYXRDb25maWd1cmF0aW9uEiEKBXNlYXRzGAEgAygLMhIu",
+            "c2VyaWFsaXphYmxlLlNlYXQihgEKCUNvbnRleHQzRBIMCgR0aWNrGAEgASgF",
+            "Eg4KBmNsaWVudBgCIAEoCBIrCgp0cmFuc2Zvcm1zGAMgAygLMhcuc2VyaWFs",
+            "aXphYmxlLlRyYW5zZm9ybRIuCgtyaWdpZEJvZGllcxgEIAMoCzIZLnNlcmlh",
+            "bGl6YWJsZS5SaWdpZGJvZHkzRCKGAQoJQ29udGV4dDJEEgwKBHRpY2sYASAB",
+            "KAUSDgoGY2xpZW50GAIgASgIEisKCnRyYW5zZm9ybXMYAyADKAsyFy5zZXJp",
+            "YWxpemFibGUuVHJhbnNmb3JtEi4KC3JpZ2lkQm9kaWVzGAQgAygLMhkuc2Vy",
+            "aWFsaXphYmxlLlJpZ2lkYm9keTJEImwKCVRyYW5zZm9ybRIKCgJJRBgBIAEo",
+            "CRInCghwb3NpdGlvbhgCIAEoCzIVLnNlcmlhbGl6YWJsZS5WZWN0b3IzEioK",
+            "CHJvdGF0aW9uGAMgASgLMhguc2VyaWFsaXphYmxlLlF1YXRlcm5pb24ilwEK",
+            "C1JpZ2lkYm9keTJEEgoKAklEGAEgASgJEicKCHBvc2l0aW9uGAIgASgLMhUu",
+            "c2VyaWFsaXphYmxlLlZlY3RvcjISKgoIcm90YXRpb24YAyABKAsyGC5zZXJp",
+            "YWxpemFibGUuUXVhdGVybmlvbhInCgh2ZWxvY2l0eRgEIAEoCzIVLnNlcmlh",
+            "bGl6YWJsZS5WZWN0b3IyIpcBCgtSaWdpZGJvZHkzRBIKCgJJRBgBIAEoCRIn",
+            "Cghwb3NpdGlvbhgCIAEoCzIVLnNlcmlhbGl6YWJsZS5WZWN0b3IzEioKCHJv",
+            "dGF0aW9uGAMgASgLMhguc2VyaWFsaXphYmxlLlF1YXRlcm5pb24SJwoIdmVs",
+            "b2NpdHkYBCABKAsyFS5zZXJpYWxpemFibGUuVmVjdG9yMyIfCgdWZWN0b3Iy",
+            "EgkKAXgYASABKAISCQoBeRgCIAEoAiIqCgdWZWN0b3IzEgkKAXgYASABKAIS",
+            "CQoBeRgCIAEoAhIJCgF6GAMgASgCIjgKClF1YXRlcm5pb24SCQoBdxgBIAEo",
+            "AhIJCgF4GAIgASgCEgkKAXkYAyABKAISCQoBehgEIAEoAiIjCgRTZWF0Eg0K",
+            "BW93bmVyGAEgASgFEgwKBEdVSUQYAiABKAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Packet), global::Serializable.Packet.Parser, new[]{ "OpCode", "Data" }, null, new[]{ typeof(global::Serializable.Packet.Types.OpCode) }, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.SeatConfiguration), global::Serializable.SeatConfiguration.Parser, new[]{ "Seats" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Context3D), global::Serializable.Context3D.Parser, new[]{ "Tick", "Transforms", "RigidBodies" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Context2D), global::Serializable.Context2D.Parser, new[]{ "Tick", "Transforms", "RigidBodies" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Context3D), global::Serializable.Context3D.Parser, new[]{ "Tick", "Client", "Transforms", "RigidBodies" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Context2D), global::Serializable.Context2D.Parser, new[]{ "Tick", "Client", "Transforms", "RigidBodies" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Transform), global::Serializable.Transform.Parser, new[]{ "ID", "Position", "Rotation" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Rigidbody2D), global::Serializable.Rigidbody2D.Parser, new[]{ "ID", "Position", "Rotation", "Velocity" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Rigidbody3D), global::Serializable.Rigidbody3D.Parser, new[]{ "ID", "Position", "Rotation", "Velocity" }, null, null, null),
@@ -247,6 +248,7 @@ namespace Serializable {
         [pbr::OriginalName("SeatConfiguration")] SeatConfiguration = 200,
         [pbr::OriginalName("Seat")] Seat = 201,
         [pbr::OriginalName("RunSimulation")] RunSimulation = 202,
+        [pbr::OriginalName("ReloadSimulation")] ReloadSimulation = 203,
       }
 
     }
@@ -401,6 +403,7 @@ namespace Serializable {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Context3D(Context3D other) : this() {
       tick_ = other.tick_;
+      client_ = other.client_;
       transforms_ = other.transforms_.Clone();
       rigidBodies_ = other.rigidBodies_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -422,10 +425,21 @@ namespace Serializable {
       }
     }
 
+    /// <summary>Field number for the "client" field.</summary>
+    public const int ClientFieldNumber = 2;
+    private bool client_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Client {
+      get { return client_; }
+      set {
+        client_ = value;
+      }
+    }
+
     /// <summary>Field number for the "transforms" field.</summary>
-    public const int TransformsFieldNumber = 2;
+    public const int TransformsFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Serializable.Transform> _repeated_transforms_codec
-        = pb::FieldCodec.ForMessage(18, global::Serializable.Transform.Parser);
+        = pb::FieldCodec.ForMessage(26, global::Serializable.Transform.Parser);
     private readonly pbc::RepeatedField<global::Serializable.Transform> transforms_ = new pbc::RepeatedField<global::Serializable.Transform>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Serializable.Transform> Transforms {
@@ -433,9 +447,9 @@ namespace Serializable {
     }
 
     /// <summary>Field number for the "rigidBodies" field.</summary>
-    public const int RigidBodiesFieldNumber = 3;
+    public const int RigidBodiesFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Serializable.Rigidbody3D> _repeated_rigidBodies_codec
-        = pb::FieldCodec.ForMessage(26, global::Serializable.Rigidbody3D.Parser);
+        = pb::FieldCodec.ForMessage(34, global::Serializable.Rigidbody3D.Parser);
     private readonly pbc::RepeatedField<global::Serializable.Rigidbody3D> rigidBodies_ = new pbc::RepeatedField<global::Serializable.Rigidbody3D>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Serializable.Rigidbody3D> RigidBodies {
@@ -456,6 +470,7 @@ namespace Serializable {
         return true;
       }
       if (Tick != other.Tick) return false;
+      if (Client != other.Client) return false;
       if(!transforms_.Equals(other.transforms_)) return false;
       if(!rigidBodies_.Equals(other.rigidBodies_)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -465,6 +480,7 @@ namespace Serializable {
     public override int GetHashCode() {
       int hash = 1;
       if (Tick != 0) hash ^= Tick.GetHashCode();
+      if (Client != false) hash ^= Client.GetHashCode();
       hash ^= transforms_.GetHashCode();
       hash ^= rigidBodies_.GetHashCode();
       if (_unknownFields != null) {
@@ -484,6 +500,10 @@ namespace Serializable {
         output.WriteRawTag(8);
         output.WriteInt32(Tick);
       }
+      if (Client != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Client);
+      }
       transforms_.WriteTo(output, _repeated_transforms_codec);
       rigidBodies_.WriteTo(output, _repeated_rigidBodies_codec);
       if (_unknownFields != null) {
@@ -496,6 +516,9 @@ namespace Serializable {
       int size = 0;
       if (Tick != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Tick);
+      }
+      if (Client != false) {
+        size += 1 + 1;
       }
       size += transforms_.CalculateSize(_repeated_transforms_codec);
       size += rigidBodies_.CalculateSize(_repeated_rigidBodies_codec);
@@ -512,6 +535,9 @@ namespace Serializable {
       }
       if (other.Tick != 0) {
         Tick = other.Tick;
+      }
+      if (other.Client != false) {
+        Client = other.Client;
       }
       transforms_.Add(other.transforms_);
       rigidBodies_.Add(other.rigidBodies_);
@@ -530,11 +556,15 @@ namespace Serializable {
             Tick = input.ReadInt32();
             break;
           }
-          case 18: {
-            transforms_.AddEntriesFrom(input, _repeated_transforms_codec);
+          case 16: {
+            Client = input.ReadBool();
             break;
           }
           case 26: {
+            transforms_.AddEntriesFrom(input, _repeated_transforms_codec);
+            break;
+          }
+          case 34: {
             rigidBodies_.AddEntriesFrom(input, _repeated_rigidBodies_codec);
             break;
           }
@@ -570,6 +600,7 @@ namespace Serializable {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Context2D(Context2D other) : this() {
       tick_ = other.tick_;
+      client_ = other.client_;
       transforms_ = other.transforms_.Clone();
       rigidBodies_ = other.rigidBodies_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -591,10 +622,21 @@ namespace Serializable {
       }
     }
 
+    /// <summary>Field number for the "client" field.</summary>
+    public const int ClientFieldNumber = 2;
+    private bool client_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Client {
+      get { return client_; }
+      set {
+        client_ = value;
+      }
+    }
+
     /// <summary>Field number for the "transforms" field.</summary>
-    public const int TransformsFieldNumber = 2;
+    public const int TransformsFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Serializable.Transform> _repeated_transforms_codec
-        = pb::FieldCodec.ForMessage(18, global::Serializable.Transform.Parser);
+        = pb::FieldCodec.ForMessage(26, global::Serializable.Transform.Parser);
     private readonly pbc::RepeatedField<global::Serializable.Transform> transforms_ = new pbc::RepeatedField<global::Serializable.Transform>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Serializable.Transform> Transforms {
@@ -602,9 +644,9 @@ namespace Serializable {
     }
 
     /// <summary>Field number for the "rigidBodies" field.</summary>
-    public const int RigidBodiesFieldNumber = 3;
+    public const int RigidBodiesFieldNumber = 4;
     private static readonly pb::FieldCodec<global::Serializable.Rigidbody2D> _repeated_rigidBodies_codec
-        = pb::FieldCodec.ForMessage(26, global::Serializable.Rigidbody2D.Parser);
+        = pb::FieldCodec.ForMessage(34, global::Serializable.Rigidbody2D.Parser);
     private readonly pbc::RepeatedField<global::Serializable.Rigidbody2D> rigidBodies_ = new pbc::RepeatedField<global::Serializable.Rigidbody2D>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Serializable.Rigidbody2D> RigidBodies {
@@ -625,6 +667,7 @@ namespace Serializable {
         return true;
       }
       if (Tick != other.Tick) return false;
+      if (Client != other.Client) return false;
       if(!transforms_.Equals(other.transforms_)) return false;
       if(!rigidBodies_.Equals(other.rigidBodies_)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -634,6 +677,7 @@ namespace Serializable {
     public override int GetHashCode() {
       int hash = 1;
       if (Tick != 0) hash ^= Tick.GetHashCode();
+      if (Client != false) hash ^= Client.GetHashCode();
       hash ^= transforms_.GetHashCode();
       hash ^= rigidBodies_.GetHashCode();
       if (_unknownFields != null) {
@@ -653,6 +697,10 @@ namespace Serializable {
         output.WriteRawTag(8);
         output.WriteInt32(Tick);
       }
+      if (Client != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Client);
+      }
       transforms_.WriteTo(output, _repeated_transforms_codec);
       rigidBodies_.WriteTo(output, _repeated_rigidBodies_codec);
       if (_unknownFields != null) {
@@ -665,6 +713,9 @@ namespace Serializable {
       int size = 0;
       if (Tick != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Tick);
+      }
+      if (Client != false) {
+        size += 1 + 1;
       }
       size += transforms_.CalculateSize(_repeated_transforms_codec);
       size += rigidBodies_.CalculateSize(_repeated_rigidBodies_codec);
@@ -681,6 +732,9 @@ namespace Serializable {
       }
       if (other.Tick != 0) {
         Tick = other.Tick;
+      }
+      if (other.Client != false) {
+        Client = other.Client;
       }
       transforms_.Add(other.transforms_);
       rigidBodies_.Add(other.rigidBodies_);
@@ -699,11 +753,15 @@ namespace Serializable {
             Tick = input.ReadInt32();
             break;
           }
-          case 18: {
-            transforms_.AddEntriesFrom(input, _repeated_transforms_codec);
+          case 16: {
+            Client = input.ReadBool();
             break;
           }
           case 26: {
+            transforms_.AddEntriesFrom(input, _repeated_transforms_codec);
+            break;
+          }
+          case 34: {
             rigidBodies_.AddEntriesFrom(input, _repeated_rigidBodies_codec);
             break;
           }

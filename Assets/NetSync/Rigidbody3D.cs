@@ -59,7 +59,6 @@ namespace NetSynced
 
 			syncStartRotation = rb.rotation;
 			syncEndRotation = r;
-
 		}
 
 		private void FixedUpdate()

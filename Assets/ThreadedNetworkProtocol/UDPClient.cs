@@ -103,9 +103,16 @@ public class UDPClient : IClient
 			UdpReceiveResult receiveBytes = await udpClient.ReceiveAsync();
 
 			Serializable.Context3D context = Serializable.Context3D.Parser.ParseFrom(receiveBytes.Buffer);
-			//Debug.Log("[" + remoteEndPoint.Port + "] Reading: " + context.Tick);
-			contextHandler.HandleContext(context);
-			contextHandler.SendContext(context.Tick);
+			// Debug.Log("Reading: " + context.Tick);
+			if (context.Client)
+			{
+				contextHandler.HandleContext(context);
+			}
+			else
+			{
+				contextHandler.HandleContext(context);
+				contextHandler.SendContext(context.Tick);
+			}
 			clientState.Trusted = true;
 		}
 		clientState.Listening = false;

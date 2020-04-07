@@ -44,6 +44,7 @@ public class SimulationContextHandler : MonoBehaviour, IContextHandler
 		// 		t.transform.position = st.Position.ToUnityVector();
 		// 	}
 		// }
+		// if (context.Client)
 		foreach (Serializable.Rigidbody3D sr in context.RigidBodies)
 		{
 			NetSynced.Rigidbody3D r;

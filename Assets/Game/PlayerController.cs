@@ -36,16 +36,16 @@ public class PlayerController : MonoBehaviour
 
 	void Update()
 	{
-		KeyCode downKey = KeyCode.DownArrow;
-		KeyCode upKey = KeyCode.UpArrow;
+		KeyCode forwadKey = KeyCode.S;
+		KeyCode backwardKey = KeyCode.W;
 
 		if (!gameObject.scene.name.Equals(SceneManager.GetActiveScene().name))
 		{
-			downKey = KeyCode.S;
-			upKey = KeyCode.W;
+			forwadKey = KeyCode.S;
+			backwardKey = KeyCode.W;
 		}
 
-		if (Input.GetKey(upKey) && !forward)
+		if (Input.GetKey(backwardKey) && !forward)
 		{
 			if (backward)
 			{
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
 			}
 			forward = true;
 		}
-		else if (Input.GetKey(downKey) && !backward)
+		else if (Input.GetKey(forwadKey) && !backward)
 		{
 			if (forward)
 			{
@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
 			}
 			backward = true;
 		}
-		else if (!Input.GetKey(downKey) && !Input.GetKey(upKey))
+		else if (!Input.GetKey(forwadKey) && !Input.GetKey(backwardKey))
 		{
 			backward = forward = false;
 			stop = true;
