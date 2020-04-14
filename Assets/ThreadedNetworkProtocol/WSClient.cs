@@ -26,7 +26,7 @@ public class WSClient : IClient
 		clientState = cs;
 	}
 
-	public async Task<Error> Connect()
+	public async Task<ILog> Connect()
 	{
 		if (remoteEndPoint == null) return new Error("[WS] Client remote end point not provided");
 		if (clientState.Connected) return new Error("[WS] Client already connected");
@@ -53,13 +53,13 @@ public class WSClient : IClient
 		}
 	}
 
-	public Error Disconnect()
+	public ILog Disconnect()
 	{
 		throw new System.NotImplementedException();
 	}
 
 	//public async Error Send(Packet packet)
-	public async Task<Error> Send(Serializable.Context3D packet)
+	public async Task<ILog> Send(Serializable.Context3D packet)
 	{
 		ArraySegment<byte> sendBuffer = new ArraySegment<byte>(packet.ToByteArray());
 		//if (debug) Debug.Log(string.Format("WS - {0} {1}", "Sending packet", packet.Header.OpCode));
@@ -77,7 +77,7 @@ public class WSClient : IClient
 		}
 	}
 
-	public async Task<Error> Listen()
+	public async Task<ILog> Listen()
 	{
 		if (clientWebSocket.State != WebSocketState.Open)
 		{
@@ -119,12 +119,12 @@ public class WSClient : IClient
 		return null;
 	}
 
-	public Task<Error> Send(IMessage p)
+	public Task<ILog> Send(IMessage p)
 	{
 		throw new NotImplementedException();
 	}
 
-	public Task<Error> Send(byte[] p)
+	public Task<ILog> Send(byte[] p)
 	{
 		throw new NotImplementedException();
 	}

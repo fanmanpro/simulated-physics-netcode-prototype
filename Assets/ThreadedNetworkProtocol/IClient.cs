@@ -4,8 +4,8 @@ using ThreadedNetworkProtocol;
 
 public interface IClient
 {
-	Task<Error> Connect();
-	Error Disconnect();
-	Task<Error> Send(byte[] p);
-	Task<Error> Listen();
+	Task<ILog> Connect();
+	ILog Disconnect();
+	Task<ILog> Send(byte[] p);
+	Task<ILog> Listen();
 }

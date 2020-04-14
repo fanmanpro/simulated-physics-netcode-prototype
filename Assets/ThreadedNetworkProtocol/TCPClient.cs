@@ -1,5 +1,6 @@
 ﻿using Google.Protobuf;
 using System;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -11,7 +12,12 @@ using UnityEngine;
 public class TCPClient : IClient
 {
 	private TcpClient tcpClient;
-	private CancellationTokenSource cts;
+	// NetworkStream seems to be the best approach for good async support.
+	private NetworkStream tcpStream;
+
+	private CancellationTokenSource readToken;
+	// private CancellationTokenSource writeToken;
+
 	private ClientEndPoint remoteEndPoint;
 
 	private ClientState clientState;
@@ -23,6 +29,10 @@ public class TCPClient : IClient
 
 	public TCPClient(int port, ClientEndPoint c, ClientState cs, IConnectionHandler ch, IPacketHandler ph)
 	{
+		readToken = new CancellationTokenSource();
+		// readToken.Token.Register(() => { tcpStream.Close();});
+		// writeToken = new CancellationTokenSource();
+
 		tcpClient = new TcpClient(new IPEndPoint(new IPAddress(0), port));
 
 		connectionHandler = ch;
@@ -32,14 +42,13 @@ public class TCPClient : IClient
 		clientState = cs;
 	}
 
-	public async Task<Error> Connect()
+	public async Task<ILog> Connect()
 	{
 		if (remoteEndPoint == null) return new Error("[TCP] Client remote end point not provided");
 		if (clientState.Connected) return new Error("[TCP] Client already connected");
 		if (clientState.Connecting) return new Error("[TCP] Client already busy connecting");
 		//if (clientWebSocket.State == WebSocketState.Open) return new Error("[TCP] Client socket open but state not connected");
 
-		cts = new CancellationTokenSource();
 		clientState.Connecting = true;
 		try
 		{
@@ -59,7 +68,7 @@ public class TCPClient : IClient
 		}
 	}
 
-	public Error Disconnect()
+	public ILog Disconnect()
 	{
 		if (!tcpClient.Connected) return new Error("[TCP] Client tried to disconnect but connection was already closed.");
 
@@ -71,16 +80,18 @@ public class TCPClient : IClient
 		clientState.Transmitting = false;
 		clientState.Trusted = false;
 
-		//tcpClient.Close();
-		cts.Cancel();
-		tcpClient.Dispose();
-		//tcpClient.Dispose();
+
+		Debug.Log("Disconnecting");
+		readToken.Cancel();
+		tcpClient.Close();
+		// tcpClient.Dispose();
+		// tcpClient.Close();
 		connectionHandler.HandleDisconnect();
 
 		return null;
 	}
 
-	public async Task<Error> Send(byte[] packet)
+	public async Task<ILog> Send(byte[] packet)
 	{
 		try
 		{
@@ -103,38 +114,51 @@ public class TCPClient : IClient
 		}
 	}
 
-	public async Task<Error> Listen()
+	public async Task<ILog> Listen()
 	{
-		//try
-		//{
-		NetworkStream stream = tcpClient.GetStream();
-
-		while (!cts.IsCancellationRequested)
+		ILog error = null;
+		await Task.Run(() =>
 		{
-			byte[] buffer = new byte[1024];
-			int read = await stream?.ReadAsync(buffer, 0, buffer.Length);
-			if (read > 0)
+			using (tcpStream = tcpClient.GetStream())
 			{
-				Serializable.Packet packet = Serializable.Packet.Parser.ParseFrom(buffer.Take(read).ToArray());
-				packetHandler.HandlePacket(packet);
-				//if (packet.OpCode != Gamedata.Header.Types.OpCode.Invalid)
-				//{
-				//	packetHandler.Handle(packet);
-				//}
-				//Debug.Log(packet.OpCode);
-				// you have received a message, do something with it
-			}
-		}
+				while (true)
+				{
+					byte[] buffer = new byte[1024];
+					// Debug.Log("Reading");
+					try
+					{
+						int read = tcpStream.Read(buffer, 0, buffer.Length);
+						if (read > 0)
+						{
+							Serializable.Packet packet = Serializable.Packet.Parser.ParseFrom(buffer.Take(read).ToArray());
+							MainThreadContext.RunOnMainThread(() => packetHandler.HandlePacket(packet));
 
-		//}
-		//catch (Exception n)
-		//{
-		//	clientState.Connecting = false;
-		//	clientState.Connected = false;
-		//	clientState.Listening = false;
-		//	return new Error("[TCP] Client connection was forcibly closed.\n" + n.Message);
-		//}
-		clientState.Listening = false;
-		return null;
+							// MainThreadContext main = new MainThreadContext();
+							// main.packetQueue.Enqueue();
+						}
+					}
+					catch (IOException)
+					{
+						error = new Log("[TCP] Disconnected");
+						break;
+					}
+					catch (Exception e)
+					{
+						error = new Error("[TCP] " + e);
+						break;
+					}
+				}
+			}
+		}, readToken.Token);
+
+		return error;
+		// catch (OperationCanceledException)
+		// {
+		// 	return new Error("[TCP] Disconnected");
+		// }
+		// catch (Exception e)
+		// {
+		// 	return new Error("[TCP] " + e);
+		// }
 	}
 }

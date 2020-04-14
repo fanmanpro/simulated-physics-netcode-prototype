@@ -21,23 +21,17 @@ namespace ThreadedNetworkProtocol
 		//public int Port;
 
 		public ClientEndPoint WSRemoteEndPoint;
-
 		public ClientEndPoint TCPRemoteEndPoint;
-
 		public ClientEndPoint UDPRemoteEndPoint;
 
+		private WSClient wsClient;
 		public ClientState WSClientState;
 
-		private WSClient wsClient;
-
+		private TCPClient tcpClient;
 		public ClientState TCPClientState;
 
-		private TCPClient tcpClient;
-
-		public ClientState UDPClientState;
-
 		private UDPClient udpClient;
-
+		public ClientState UDPClientState;
 
 		private void Awake()
 		{
@@ -101,42 +95,41 @@ namespace ThreadedNetworkProtocol
 
 		public async void WSTryConnect()
 		{
-			var err = WSRemoteEndPoint.Initialize();
-			if (err != null)
+			ILog rsp = WSRemoteEndPoint.Initialize();
+			if (rsp != null)
 			{
-				Debug.LogError(err);
+				rsp.Print();
 				return;
 			}
 
 			wsClient = new WSClient(WSRemoteEndPoint, WSClientState);
 
 			// this blocks but the main thread still goes on so Unity continues as normal
-			err = await wsClient.Connect();
-			if (err != null)
+			rsp = await wsClient.Connect();
+			if (rsp != null)
 			{
-				Debug.LogError(err);
+				rsp.Print();
 				return;
 			}
 
-			err = await wsClient.Listen();
-			if (err != null)
+			rsp = await wsClient.Listen();
+			if (rsp != null)
 			{
-				Debug.LogError(err);
-				Debug.Break();
+				rsp.Print();
 				return;
 			}
 		}
 
 		public async void TCPTryDisconnect() {
-			tcpClient?.Disconnect();
+			tcpClient.Disconnect();
 		}
 
 		public async void TCPTryConnect()
 		{
-			var err = TCPRemoteEndPoint.Initialize();
-			if (err != null)
+			ILog rsp = TCPRemoteEndPoint.Initialize();
+			if (rsp != null)
 			{
-				Debug.LogError(err);
+				rsp.Print();
 				return;
 			}
 
@@ -144,10 +137,10 @@ namespace ThreadedNetworkProtocol
 			Debug.LogFormat("{0}:{1} -> {2}:{3}", TCPRemoteEndPoint.RemoteIPAddress, TCPRemoteEndPoint.LocalPort, TCPRemoteEndPoint.RemoteIPAddress, TCPRemoteEndPoint.RemotePort);
 			tcpClient = new TCPClient(TCPRemoteEndPoint.LocalPort, TCPRemoteEndPoint, TCPClientState, ConnectionHandler, PacketHandler);
 			// this blocks but the main thread still goes on so Unity continues as normal
-			err = await tcpClient.Connect();
-			if (err != null)
+			rsp = await tcpClient.Connect();
+			if (rsp != null)
 			{
-				Debug.LogError(err);
+				rsp.Print();
 				return;
 			}
 
@@ -158,10 +151,10 @@ namespace ThreadedNetworkProtocol
 			//	return;
 			//}
 
-			err = await tcpClient.Listen();
-			if (err != null)
+			rsp = await tcpClient.Listen();
+			if (rsp != null)
 			{
-				Debug.LogError(err);
+				rsp.Print();
 				return;
 			}
 		}
@@ -172,10 +165,10 @@ namespace ThreadedNetworkProtocol
 		
 		public async void UDPTryConnect()
 		{
-			var err = UDPRemoteEndPoint.Initialize();
-			if (err != null)
+			ILog rsp = UDPRemoteEndPoint.Initialize();
+			if (rsp != null)
 			{
-				Debug.LogError(err);
+				rsp.Print();
 				return;
 			}
 
@@ -183,17 +176,17 @@ namespace ThreadedNetworkProtocol
 			Debug.Log("connecting");
 
 			// this blocks but the main thread still goes on so Unity continues as normal
-			err = await udpClient.Connect();
-			if (err != null)
+			rsp = await udpClient.Connect();
+			if (rsp != null)
 			{
-				Debug.LogError(err);
+				rsp.Print();
 				return;
 			}
 
-			err = await udpClient.Listen();
-			if (err != null)
+			rsp = await udpClient.Listen();
+			if (rsp != null)
 			{
-				Debug.LogError(err);
+				rsp.Print();
 				return;
 			}
 		}

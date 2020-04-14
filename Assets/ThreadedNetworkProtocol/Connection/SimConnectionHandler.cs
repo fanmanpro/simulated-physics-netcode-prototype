@@ -24,6 +24,9 @@ namespace ThreadedNetworkProtocol
 			seats.AddRange(seatManager.seats.Select(s => new Serializable.Seat() {
 				GUID = s.GUID
 			}));
+			foreach(Serializable.Seat guid in seats) {
+				Debug.Log("Doing seating for " + guid.GUID);
+			}
 			client.Send(new Serializable.Packet()
 			{
 				OpCode = Packet.Types.OpCode.SeatConfiguration,

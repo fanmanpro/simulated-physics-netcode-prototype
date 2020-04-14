@@ -30,7 +30,7 @@ public class UDPClient : IClient
 		clientState = cs;
 	}
 
-	public async Task<Error> Connect()
+	public async Task<ILog> Connect()
 	{
 		if (remoteEndPoint == null) return new Error("[UDP] Client remote end point not provided");
 		if (clientState.Connected) return new Error("[UDP] Client already connected");
@@ -53,7 +53,7 @@ public class UDPClient : IClient
 		}
 	}
 
-	public Error Disconnect()
+	public ILog Disconnect()
 	{
 		clientState.Connected = false;
 		clientState.Connecting = false;
@@ -68,7 +68,7 @@ public class UDPClient : IClient
 	}
 
 	//public async Error Send(Packet packet)
-	public async Task<Error> Send(byte[] bytes)
+	public async Task<ILog> Send(byte[] bytes)
 	{
 		ArraySegment<byte> sendBuffer = new ArraySegment<byte>(bytes);
 
@@ -95,7 +95,7 @@ public class UDPClient : IClient
 	// 	return await Send(data);
 	// }
 
-	public async Task<Error> Listen()
+	public async Task<ILog> Listen()
 	{
 		// await Send(new Serializable.Context3D { Tick = 10 }.ToByteArray());
 		while (udpClient != null && udpClient.Client != null && udpClient.Client.Connected)

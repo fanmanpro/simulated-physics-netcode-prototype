@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SimPacketHandler : MonoBehaviour, IPacketHandler
 {
 	public Client client;
+	public SimulationContextHandler simulationContextHandler;
 	public void HandlePacket(Packet p)
 	{
 		switch (p.OpCode)
@@ -14,6 +15,7 @@ public class SimPacketHandler : MonoBehaviour, IPacketHandler
 				{
 					Debug.Log("Sim received run simulation packet");
 					client.UDPTryConnect();
+					simulationContextHandler.SendContext(1);
 				}
 				break;
 			case Serializable.Packet.Types.OpCode.ReloadSimulation:
@@ -29,7 +31,7 @@ public class SimPacketHandler : MonoBehaviour, IPacketHandler
 					//  AsyncOperation unloadScene = SceneManager.UnloadSceneAsync(gameObject.scene.buildIndex);
 					//  unloadScene.completed += (s) =>
 					//  {
-						SceneManager.LoadSceneAsync(gameObject.scene.buildIndex, LoadSceneMode.Single);
+						// SceneManager.LoadSceneAsync(gameObject.scene.buildIndex, LoadSceneMode.Single);
 					//  };
 				}
 				break;
