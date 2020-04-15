@@ -13,9 +13,12 @@ public class SimPacketHandler : MonoBehaviour, IPacketHandler
 		{
 			case Serializable.Packet.Types.OpCode.RunSimulation:
 				{
-					Debug.Log("Sim received run simulation packet");
+					Serializable.RunSimulation runSimulation;
+					if (!p.Data.TryUnpack(out runSimulation)) return;
+
+					Debug.Log("sim received run simulation packet " + runSimulation.Tick);
 					client.UDPTryConnect();
-					simulationContextHandler.SendContext(1);
+					simulationContextHandler.SendContext(runSimulation.Tick);
 				}
 				break;
 			case Serializable.Packet.Types.OpCode.ReloadSimulation:

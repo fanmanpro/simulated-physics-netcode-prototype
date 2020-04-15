@@ -48,6 +48,7 @@ public class ClientContextHandler : MonoBehaviour, IContextHandler
 				r.Sync(sr.Position.ToUnityVector(), sr.Rotation.ToUnityQuaterion(), sr.Velocity.ToUnityVector());
 			}
 		}
+		Debug.Log("Synced " + context.RigidBodies.Count + " rigidbodies");
 	}
 
 	public void SendContext(int tick)

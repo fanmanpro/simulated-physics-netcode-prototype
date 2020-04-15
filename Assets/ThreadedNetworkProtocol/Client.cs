@@ -10,8 +10,6 @@ namespace ThreadedNetworkProtocol
 		// preprocessor directives. even better, move it into a separated library/dll for modularity with the actual game
 		public bool SimulationClient = false;
 
-		public SeatManager SeatManager;
-
 		public IConnectionHandler ConnectionHandler;
 		public IContextHandler ContextHandler;
 		public IPacketHandler PacketHandler;
@@ -120,7 +118,8 @@ namespace ThreadedNetworkProtocol
 			}
 		}
 
-		public async void TCPTryDisconnect() {
+		public async void TCPTryDisconnect()
+		{
 			tcpClient.Disconnect();
 		}
 
@@ -134,8 +133,8 @@ namespace ThreadedNetworkProtocol
 			}
 
 
-			Debug.LogFormat("{0}:{1} -> {2}:{3}", TCPRemoteEndPoint.RemoteIPAddress, TCPRemoteEndPoint.LocalPort, TCPRemoteEndPoint.RemoteIPAddress, TCPRemoteEndPoint.RemotePort);
-			tcpClient = new TCPClient(TCPRemoteEndPoint.LocalPort, TCPRemoteEndPoint, TCPClientState, ConnectionHandler, PacketHandler);
+			tcpClient = new TCPClient(SimulationClient, TCPRemoteEndPoint.LocalPort, TCPRemoteEndPoint, TCPClientState, ConnectionHandler, PacketHandler);
+			Debug.Log("[TCP] connecting");
 			// this blocks but the main thread still goes on so Unity continues as normal
 			rsp = await tcpClient.Connect();
 			if (rsp != null)
@@ -159,10 +158,11 @@ namespace ThreadedNetworkProtocol
 			}
 		}
 
-		public async void UDPTryDisconnect() {
+		public async void UDPTryDisconnect()
+		{
 			udpClient?.Disconnect();
 		}
-		
+
 		public async void UDPTryConnect()
 		{
 			ILog rsp = UDPRemoteEndPoint.Initialize();
@@ -172,8 +172,8 @@ namespace ThreadedNetworkProtocol
 				return;
 			}
 
-			udpClient = new UDPClient(UDPRemoteEndPoint.LocalPort, UDPRemoteEndPoint, UDPClientState, ContextHandler);
-			Debug.Log("connecting");
+			udpClient = new UDPClient(SimulationClient, UDPRemoteEndPoint.LocalPort, UDPRemoteEndPoint, UDPClientState, ContextHandler);
+			Debug.Log("[UDP] connecting");
 
 			// this blocks but the main thread still goes on so Unity continues as normal
 			rsp = await udpClient.Connect();
@@ -209,6 +209,7 @@ namespace ThreadedNetworkProtocol
 			}
 			// Debug.Log("[UDP] Sent packet (" + context.RigidBodies.Count + ")");
 			await udpClient.Send(context.ToByteArray());
+			// Debug.Log("[UDP] Sent context.");
 		}
 
 		private void OnDestroy()

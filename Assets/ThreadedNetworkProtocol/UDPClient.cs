@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,7 +13,7 @@ public class UDPClient : IClient
 
 	private int lastTick;
 
-	private UdpClient udpClient;
+	private Socket socket;
 
 	private ClientEndPoint remoteEndPoint;
 
@@ -21,9 +23,17 @@ public class UDPClient : IClient
 
 	public bool Active => clientState.Connected;
 
-	public UDPClient(int port, ClientEndPoint c, ClientState cs, IContextHandler cb)
+	public UDPClient(bool sim, int port, ClientEndPoint c, ClientState cs, IContextHandler cb)
 	{
-		udpClient = new UdpClient(port);
+		// socket = new UdpClient(port);
+		socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+		// socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.DontLinger, true);
+		// socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
+		// socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ExclusiveAddressUse, false);
+
+		if (sim) socket.Bind(new IPEndPoint(IPAddress.Any, port));
+		else socket.Bind(new IPEndPoint(IPAddress.Any, 1888));
+
 		contextHandler = cb;
 
 		remoteEndPoint = c;
@@ -35,21 +45,29 @@ public class UDPClient : IClient
 		if (remoteEndPoint == null) return new Error("[UDP] Client remote end point not provided");
 		if (clientState.Connected) return new Error("[UDP] Client already connected");
 		if (clientState.Connecting) return new Error("[UDP] Client already busy connecting");
-		if (udpClient.Client.Connected) return new Error("[UDP] Client socket open but state not connected");
+		if (socket.Connected) return new Error("[UDP] Client socket open but state not connected");
 
-		using (CancellationTokenSource cts = new CancellationTokenSource())
+		try
 		{
+			// using (CancellationTokenSource cts = new CancellationTokenSource())
+			// {
 			clientState.Connecting = true;
 
 			// Doesn't really do anything. Just establishes a default remote host using the specified network endpoint.
-			udpClient.Connect(remoteEndPoint.IPEndPoint);
+			await socket.ConnectAsync(remoteEndPoint.IPEndPoint);
 			clientState.Connecting = false;
-			if (!udpClient.Client.Connected)
+			if (!socket.Connected)
 				return new Error("[UDP] Client connected but weird that the socket state is stil not connected");
 
 			// all good
 			clientState.Connected = true;
 			return null;
+			// }
+		}
+		catch (Exception n)
+		{
+			clientState.Connecting = false;
+			return new Error("[TCP] Client failed to connect to remote server: " + n);
 		}
 	}
 
@@ -63,7 +81,11 @@ public class UDPClient : IClient
 		clientState.Transmitting = false;
 		clientState.Trusted = false;
 
-		udpClient.Close();
+		Debug.Log("[UDP] disconnecting");
+		socket.Shutdown(SocketShutdown.Both);
+		socket.Close();
+		socket.Dispose();
+		socket = null;
 		return null;
 	}
 
@@ -73,19 +95,17 @@ public class UDPClient : IClient
 		ArraySegment<byte> sendBuffer = new ArraySegment<byte>(bytes);
 
 		//if (debug) Debug.Log(string.Format("WS - {0} {1}", "Sending packet", packet.Header.OpCode));
-		using (CancellationTokenSource cts = new CancellationTokenSource())
+		try
 		{
-			try
-			{
-				await udpClient.SendAsync(sendBuffer.Array, sendBuffer.Count);
+			int sent = await socket.SendAsync(sendBuffer, SocketFlags.None);
+			// Debug.Log("sent " + sent + " bytes");
 
-				//await clientWebSocket.SendAsync(sendBuffer, WebSocketMessageType.Text, true, cts.Token);
-				return null;
-			}
-			catch
-			{
-				return new Error("[UDP] Client failed to send packet");
-			}
+			//await clientWebSocket.SendAsync(sendBuffer, WebSocketMessageType.Text, true, cts.Token);
+			return null;
+		}
+		catch
+		{
+			return new Error("[UDP] Client failed to send packet");
 		}
 	}
 
@@ -98,12 +118,14 @@ public class UDPClient : IClient
 	public async Task<ILog> Listen()
 	{
 		// await Send(new Serializable.Context3D { Tick = 10 }.ToByteArray());
-		while (udpClient != null && udpClient.Client != null && udpClient.Client.Connected)
+		// while (socket != null && socket.Connected)
+		while (true)
 		{
-			UdpReceiveResult receiveBytes = await udpClient.ReceiveAsync();
+			var buffer = new ArraySegment<byte>(new byte[64 * 1024 * 1024]);
+			int read = await socket.ReceiveAsync(buffer, SocketFlags.None);
 
-			Serializable.Context3D context = Serializable.Context3D.Parser.ParseFrom(receiveBytes.Buffer);
-			// Debug.Log("Reading: " + context.Tick);
+			Serializable.Context3D context = Serializable.Context3D.Parser.ParseFrom(buffer.Take(read).ToArray());
+			Debug.Log(context.Client);
 			if (context.Client)
 			{
 				contextHandler.HandleContext(context);
