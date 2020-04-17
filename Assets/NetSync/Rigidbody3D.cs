@@ -48,6 +48,9 @@ namespace NetSynced
 		// using this is never really good for multiplayer games because it means sending too many packets.
 		public void Sync(Vector3 p, Quaternion r, Vector3 v)
 		{
+			if (rb == null) {
+				return;
+			}
 			if (DebugIsPlayerOwned) {
 				Debug.Log("Player owned is syncing from sim!");
 			}

@@ -287,7 +287,6 @@ MonoBehaviour:
   client: {fileID: 1335207352}
   seats:
   - {fileID: 1012741810}
-  - {fileID: 1575317175}
 --- !u!4 &643715296
 Transform:
   m_ObjectHideFlags: 0
@@ -653,7 +652,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SimulationClient: 1
-  SeatManager: {fileID: 0}
   ClientID: sim
   WSRemoteEndPoint:
     RemoteIPAddress: 127.0.0.1
@@ -670,25 +668,16 @@ MonoBehaviour:
   WSClientState:
     Connecting: 0
     Connected: 0
-    Trusted: 0
-    Listening: 0
-    Transmitting: 0
     Disconnecting: 0
     Disconnected: 0
   TCPClientState:
     Connecting: 0
     Connected: 0
-    Trusted: 0
-    Listening: 0
-    Transmitting: 0
     Disconnecting: 0
     Disconnected: 0
   UDPClientState:
     Connecting: 0
     Connected: 0
-    Trusted: 0
-    Listening: 0
-    Transmitting: 0
     Disconnecting: 0
     Disconnected: 0
 --- !u!4 &1335207353

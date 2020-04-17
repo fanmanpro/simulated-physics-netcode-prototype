@@ -134,7 +134,8 @@ namespace ThreadedNetworkProtocol
 
 
 			tcpClient = new TCPClient(SimulationClient, TCPRemoteEndPoint.LocalPort, TCPRemoteEndPoint, TCPClientState, ConnectionHandler, PacketHandler);
-			Debug.Log("[TCP] connecting");
+			Debug.Log("[TCP] Connecting");
+
 			// this blocks but the main thread still goes on so Unity continues as normal
 			rsp = await tcpClient.Connect();
 			if (rsp != null)
@@ -142,6 +143,7 @@ namespace ThreadedNetworkProtocol
 				rsp.Print();
 				return;
 			}
+			Debug.Log("[TCP] Connected");
 
 			//err = await tcpClient.Send(new Gamedata.Packet { OpCode = Gamedata.Header.Types.OpCode.ClientAppeal, Cid = ClientID });
 			//if (err != null)
@@ -156,11 +158,12 @@ namespace ThreadedNetworkProtocol
 				rsp.Print();
 				return;
 			}
+			Debug.Log("[TCP] Disconnected");
 		}
 
 		public async void UDPTryDisconnect()
 		{
-			udpClient?.Disconnect();
+			udpClient.Disconnect();
 		}
 
 		public async void UDPTryConnect()
@@ -173,7 +176,7 @@ namespace ThreadedNetworkProtocol
 			}
 
 			udpClient = new UDPClient(SimulationClient, UDPRemoteEndPoint.LocalPort, UDPRemoteEndPoint, UDPClientState, ContextHandler);
-			Debug.Log("[UDP] connecting");
+			Debug.Log("[UDP] Connecting");
 
 			// this blocks but the main thread still goes on so Unity continues as normal
 			rsp = await udpClient.Connect();
@@ -182,6 +185,7 @@ namespace ThreadedNetworkProtocol
 				rsp.Print();
 				return;
 			}
+			Debug.Log("[UDP] Connected");
 
 			rsp = await udpClient.Listen();
 			if (rsp != null)
@@ -189,6 +193,7 @@ namespace ThreadedNetworkProtocol
 				rsp.Print();
 				return;
 			}
+			Debug.Log("[UDP] Disconnected");
 		}
 
 		public async void Send(Serializable.Packet packet)

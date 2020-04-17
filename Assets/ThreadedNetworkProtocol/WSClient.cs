@@ -87,7 +87,6 @@ public class WSClient : IClient
 		{
 			while (clientWebSocket.State == WebSocketState.Open)
 			{
-				clientState.Listening = true;
 
 				byte[] rcvBytes = new byte[1024];
 				ArraySegment<byte> rcvBuffer = new ArraySegment<byte>(rcvBytes);
@@ -112,10 +111,8 @@ public class WSClient : IClient
 		{
 			clientState.Connecting = false;
 			clientState.Connected = false;
-			clientState.Listening = false;
 			return new Error("[WS] Client connection was forcibly closed");
 		}
-		clientState.Listening = false;
 		return null;
 	}
 

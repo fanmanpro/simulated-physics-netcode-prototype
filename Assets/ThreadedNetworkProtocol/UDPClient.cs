@@ -67,77 +67,74 @@ public class UDPClient : IClient
 		catch (Exception n)
 		{
 			clientState.Connecting = false;
-			return new Error("[TCP] Client failed to connect to remote server: " + n);
+			return new Error("[UDP] Client failed to connect to remote server: " + n);
 		}
 	}
 
 	public ILog Disconnect()
 	{
-		clientState.Connected = false;
-		clientState.Connecting = false;
-		clientState.Disconnected = false;
-		clientState.Disconnecting = false;
-		clientState.Listening = false;
-		clientState.Transmitting = false;
-		clientState.Trusted = false;
+		if (socket == null) return new Error("[UDP] Client cannot disconnect without a socket defined");
+		if (!socket.Connected) return new Error("[UDP] Client tried to disconnect but socket was already closed");
+		if (clientState.Connecting) return new Error("[UDP] Client cannot disconnect while connecting");
+		if (clientState.Disconnecting) return new Error("[UDP] Client already disconnecting");
+		if (clientState.Disconnected) return new Error("[UDP] Client cannot disconnect when already disconnected");
 
-		Debug.Log("[UDP] disconnecting");
+		clientState.Connected = false;
+		clientState.Disconnected = true;
+
 		socket.Shutdown(SocketShutdown.Both);
 		socket.Close();
 		socket.Dispose();
 		socket = null;
+
 		return null;
 	}
 
-	//public async Error Send(Packet packet)
 	public async Task<ILog> Send(byte[] bytes)
 	{
-		ArraySegment<byte> sendBuffer = new ArraySegment<byte>(bytes);
-
-		//if (debug) Debug.Log(string.Format("WS - {0} {1}", "Sending packet", packet.Header.OpCode));
 		try
 		{
-			int sent = await socket.SendAsync(sendBuffer, SocketFlags.None);
-			// Debug.Log("sent " + sent + " bytes");
-
-			//await clientWebSocket.SendAsync(sendBuffer, WebSocketMessageType.Text, true, cts.Token);
+			ArraySegment<byte> buffer = new ArraySegment<byte>(bytes);
+			int sent = await socket.SendAsync(buffer, SocketFlags.None);
 			return null;
 		}
 		catch
 		{
-			return new Error("[UDP] Client failed to send packet");
+			return new Error("[UDP] Client failed to send data");
 		}
 	}
 
-	// public async Task<Error> Send(byte[] data)
-	// {
-	//Debug.Log(context.ToByteArray().Length);
-	// 	return await Send(data);
-	// }
-
 	public async Task<ILog> Listen()
 	{
-		// await Send(new Serializable.Context3D { Tick = 10 }.ToByteArray());
-		// while (socket != null && socket.Connected)
-		while (true)
+		ILog error = null;
+		while (clientState.Connected)
 		{
-			var buffer = new ArraySegment<byte>(new byte[64 * 1024 * 1024]);
-			int read = await socket.ReceiveAsync(buffer, SocketFlags.None);
+			try
+			{
+				var buffer = new ArraySegment<byte>(new byte[64 * 1024 * 1024]);
+				int read = await socket.ReceiveAsync(buffer, SocketFlags.None);
 
-			Serializable.Context3D context = Serializable.Context3D.Parser.ParseFrom(buffer.Take(read).ToArray());
-			Debug.Log(context.Client);
-			if (context.Client)
-			{
-				contextHandler.HandleContext(context);
+				Serializable.Context3D context = Serializable.Context3D.Parser.ParseFrom(buffer.Take(read).ToArray());
+				if (context.Client)
+				{
+					contextHandler.HandleContext(context);
+				}
+				else
+				{
+					contextHandler.HandleContext(context);
+					contextHandler.SendContext(context.Tick);
+				}
 			}
-			else
+			catch (Exception e)
 			{
-				contextHandler.HandleContext(context);
-				contextHandler.SendContext(context.Tick);
+				clientState.Connected = false;
+				if (socket == null)
+				{
+					return null;
+				}
+				return new Error("[UDP] " + e);
 			}
-			clientState.Trusted = true;
 		}
-		clientState.Listening = false;
-		return null;
+		return error;
 	}
 }

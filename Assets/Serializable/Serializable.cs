@@ -25,39 +25,41 @@ namespace Serializable {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChJzZXJpYWxpemFibGUucHJvdG8SDHNlcmlhbGl6YWJsZRoZZ29vZ2xlL3By",
-            "b3RvYnVmL2FueS5wcm90byLUAQoGUGFja2V0EisKBm9wQ29kZRgBIAEoDjIb",
+            "b3RvYnVmL2FueS5wcm90byLkAQoGUGFja2V0EisKBm9wQ29kZRgBIAEoDjIb",
             "LnNlcmlhbGl6YWJsZS5QYWNrZXQuT3BDb2RlEiIKBGRhdGEYAiABKAsyFC5n",
-            "b29nbGUucHJvdG9idWYuQW55InkKBk9wQ29kZRILCgdJbnZhbGlkEAASFAoQ",
-            "Q2xpZW50RGlzY29ubmVjdBBkEhYKEVNlYXRDb25maWd1cmF0aW9uEMgBEgkK",
-            "BFNlYXQQyQESEgoNUnVuU2ltdWxhdGlvbhDKARIVChBSZWxvYWRTaW11bGF0",
-            "aW9uEMsBIjYKEVNlYXRDb25maWd1cmF0aW9uEiEKBXNlYXRzGAEgAygLMhIu",
-            "c2VyaWFsaXphYmxlLlNlYXQiHQoNUnVuU2ltdWxhdGlvbhIMCgR0aWNrGAEg",
-            "ASgFIoYBCglDb250ZXh0M0QSDAoEdGljaxgBIAEoBRIOCgZjbGllbnQYAiAB",
-            "KAgSKwoKdHJhbnNmb3JtcxgDIAMoCzIXLnNlcmlhbGl6YWJsZS5UcmFuc2Zv",
-            "cm0SLgoLcmlnaWRCb2RpZXMYBCADKAsyGS5zZXJpYWxpemFibGUuUmlnaWRi",
-            "b2R5M0QihgEKCUNvbnRleHQyRBIMCgR0aWNrGAEgASgFEg4KBmNsaWVudBgC",
-            "IAEoCBIrCgp0cmFuc2Zvcm1zGAMgAygLMhcuc2VyaWFsaXphYmxlLlRyYW5z",
-            "Zm9ybRIuCgtyaWdpZEJvZGllcxgEIAMoCzIZLnNlcmlhbGl6YWJsZS5SaWdp",
-            "ZGJvZHkyRCJsCglUcmFuc2Zvcm0SCgoCSUQYASABKAkSJwoIcG9zaXRpb24Y",
-            "AiABKAsyFS5zZXJpYWxpemFibGUuVmVjdG9yMxIqCghyb3RhdGlvbhgDIAEo",
-            "CzIYLnNlcmlhbGl6YWJsZS5RdWF0ZXJuaW9uIpcBCgtSaWdpZGJvZHkyRBIK",
-            "CgJJRBgBIAEoCRInCghwb3NpdGlvbhgCIAEoCzIVLnNlcmlhbGl6YWJsZS5W",
-            "ZWN0b3IyEioKCHJvdGF0aW9uGAMgASgLMhguc2VyaWFsaXphYmxlLlF1YXRl",
-            "cm5pb24SJwoIdmVsb2NpdHkYBCABKAsyFS5zZXJpYWxpemFibGUuVmVjdG9y",
-            "MiKXAQoLUmlnaWRib2R5M0QSCgoCSUQYASABKAkSJwoIcG9zaXRpb24YAiAB",
+            "b29nbGUucHJvdG9idWYuQW55IogBCgZPcENvZGUSCwoHSW52YWxpZBAAEhQK",
+            "EENsaWVudERpc2Nvbm5lY3QQZBINCglDbGllbnRNQUMQZRIWChFTZWF0Q29u",
+            "ZmlndXJhdGlvbhDIARIJCgRTZWF0EMkBEhIKDVJ1blNpbXVsYXRpb24QygES",
+            "FQoQUmVsb2FkU2ltdWxhdGlvbhDLASI2ChFTZWF0Q29uZmlndXJhdGlvbhIh",
+            "CgVzZWF0cxgBIAMoCzISLnNlcmlhbGl6YWJsZS5TZWF0Ih0KDVJ1blNpbXVs",
+            "YXRpb24SDAoEdGljaxgBIAEoBSIYCglDbGllbnRNQUMSCwoDTUFDGAEgASgJ",
+            "IoYBCglDb250ZXh0M0QSDAoEdGljaxgBIAEoBRIOCgZjbGllbnQYAiABKAgS",
+            "KwoKdHJhbnNmb3JtcxgDIAMoCzIXLnNlcmlhbGl6YWJsZS5UcmFuc2Zvcm0S",
+            "LgoLcmlnaWRCb2RpZXMYBCADKAsyGS5zZXJpYWxpemFibGUuUmlnaWRib2R5",
+            "M0QihgEKCUNvbnRleHQyRBIMCgR0aWNrGAEgASgFEg4KBmNsaWVudBgCIAEo",
+            "CBIrCgp0cmFuc2Zvcm1zGAMgAygLMhcuc2VyaWFsaXphYmxlLlRyYW5zZm9y",
+            "bRIuCgtyaWdpZEJvZGllcxgEIAMoCzIZLnNlcmlhbGl6YWJsZS5SaWdpZGJv",
+            "ZHkyRCJsCglUcmFuc2Zvcm0SCgoCSUQYASABKAkSJwoIcG9zaXRpb24YAiAB",
             "KAsyFS5zZXJpYWxpemFibGUuVmVjdG9yMxIqCghyb3RhdGlvbhgDIAEoCzIY",
-            "LnNlcmlhbGl6YWJsZS5RdWF0ZXJuaW9uEicKCHZlbG9jaXR5GAQgASgLMhUu",
-            "c2VyaWFsaXphYmxlLlZlY3RvcjMiHwoHVmVjdG9yMhIJCgF4GAEgASgCEgkK",
-            "AXkYAiABKAIiKgoHVmVjdG9yMxIJCgF4GAEgASgCEgkKAXkYAiABKAISCQoB",
-            "ehgDIAEoAiI4CgpRdWF0ZXJuaW9uEgkKAXcYASABKAISCQoBeBgCIAEoAhIJ",
-            "CgF5GAMgASgCEgkKAXoYBCABKAIiIwoEU2VhdBINCgVvd25lchgBIAEoBRIM",
-            "CgRHVUlEGAIgASgJYgZwcm90bzM="));
+            "LnNlcmlhbGl6YWJsZS5RdWF0ZXJuaW9uIpcBCgtSaWdpZGJvZHkyRBIKCgJJ",
+            "RBgBIAEoCRInCghwb3NpdGlvbhgCIAEoCzIVLnNlcmlhbGl6YWJsZS5WZWN0",
+            "b3IyEioKCHJvdGF0aW9uGAMgASgLMhguc2VyaWFsaXphYmxlLlF1YXRlcm5p",
+            "b24SJwoIdmVsb2NpdHkYBCABKAsyFS5zZXJpYWxpemFibGUuVmVjdG9yMiKX",
+            "AQoLUmlnaWRib2R5M0QSCgoCSUQYASABKAkSJwoIcG9zaXRpb24YAiABKAsy",
+            "FS5zZXJpYWxpemFibGUuVmVjdG9yMxIqCghyb3RhdGlvbhgDIAEoCzIYLnNl",
+            "cmlhbGl6YWJsZS5RdWF0ZXJuaW9uEicKCHZlbG9jaXR5GAQgASgLMhUuc2Vy",
+            "aWFsaXphYmxlLlZlY3RvcjMiHwoHVmVjdG9yMhIJCgF4GAEgASgCEgkKAXkY",
+            "AiABKAIiKgoHVmVjdG9yMxIJCgF4GAEgASgCEgkKAXkYAiABKAISCQoBehgD",
+            "IAEoAiI4CgpRdWF0ZXJuaW9uEgkKAXcYASABKAISCQoBeBgCIAEoAhIJCgF5",
+            "GAMgASgCEgkKAXoYBCABKAIiIwoEU2VhdBINCgVvd25lchgBIAEoBRIMCgRH",
+            "VUlEGAIgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Packet), global::Serializable.Packet.Parser, new[]{ "OpCode", "Data" }, null, new[]{ typeof(global::Serializable.Packet.Types.OpCode) }, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.SeatConfiguration), global::Serializable.SeatConfiguration.Parser, new[]{ "Seats" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.RunSimulation), global::Serializable.RunSimulation.Parser, new[]{ "Tick" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.ClientMAC), global::Serializable.ClientMAC.Parser, new[]{ "MAC" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Context3D), global::Serializable.Context3D.Parser, new[]{ "Tick", "Client", "Transforms", "RigidBodies" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Context2D), global::Serializable.Context2D.Parser, new[]{ "Tick", "Client", "Transforms", "RigidBodies" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Serializable.Transform), global::Serializable.Transform.Parser, new[]{ "ID", "Position", "Rotation" }, null, null, null),
@@ -244,6 +246,7 @@ namespace Serializable {
         /// connection related
         /// </summary>
         [pbr::OriginalName("ClientDisconnect")] ClientDisconnect = 100,
+        [pbr::OriginalName("ClientMAC")] ClientMac = 101,
         /// <summary>
         /// game server related
         /// </summary>
@@ -508,6 +511,135 @@ namespace Serializable {
 
   }
 
+  public sealed partial class ClientMAC : pb::IMessage<ClientMAC> {
+    private static readonly pb::MessageParser<ClientMAC> _parser = new pb::MessageParser<ClientMAC>(() => new ClientMAC());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ClientMAC> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ClientMAC() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ClientMAC(ClientMAC other) : this() {
+      mAC_ = other.mAC_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ClientMAC Clone() {
+      return new ClientMAC(this);
+    }
+
+    /// <summary>Field number for the "MAC" field.</summary>
+    public const int MACFieldNumber = 1;
+    private string mAC_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string MAC {
+      get { return mAC_; }
+      set {
+        mAC_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ClientMAC);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ClientMAC other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (MAC != other.MAC) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (MAC.Length != 0) hash ^= MAC.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (MAC.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(MAC);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (MAC.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(MAC);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ClientMAC other) {
+      if (other == null) {
+        return;
+      }
+      if (other.MAC.Length != 0) {
+        MAC = other.MAC;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            MAC = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   public sealed partial class Context3D : pb::IMessage<Context3D> {
     private static readonly pb::MessageParser<Context3D> _parser = new pb::MessageParser<Context3D>(() => new Context3D());
     private pb::UnknownFieldSet _unknownFields;
@@ -516,7 +648,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -713,7 +845,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -910,7 +1042,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1110,7 +1242,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1341,7 +1473,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1572,7 +1704,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1729,7 +1861,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1914,7 +2046,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2127,7 +2259,7 @@ namespace Serializable {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Serializable.SerializableReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

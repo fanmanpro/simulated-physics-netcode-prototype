@@ -16,7 +16,7 @@ public class SimPacketHandler : MonoBehaviour, IPacketHandler
 					Serializable.RunSimulation runSimulation;
 					if (!p.Data.TryUnpack(out runSimulation)) return;
 
-					Debug.Log("sim received run simulation packet " + runSimulation.Tick);
+					// Debug.Log("sim received run simulation packet " + runSimulation.Tick);
 					client.UDPTryConnect();
 					simulationContextHandler.SendContext(runSimulation.Tick);
 				}
