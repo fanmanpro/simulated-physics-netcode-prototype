@@ -10,3 +10,5 @@
 !/Assets/
 !/ProjectSettings/
 !/Packages/
+
+!/Builds/SimulationClient/
